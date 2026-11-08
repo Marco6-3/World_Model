@@ -1,0 +1,175 @@
+{
+  "control_dt_s": 0.03333333333333333,
+  "horizon": 24,
+  "history": 12,
+  "episodes": [
+    {
+      "regime": "fast",
+      "seed": 20,
+      "scheme": "hold",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 0.00018848106376664897,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 786,
+      "branch_starts": [
+        247,
+        585
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          328
+        ],
+        [
+          585,
+          666
+        ]
+      ],
+      "expert_steps": 162
+    },
+    {
+      "regime": "fast",
+      "seed": 20,
+      "scheme": "recover",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 0.00013505667489101738,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 988,
+      "branch_starts": [
+        247,
+        686
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          429
+        ],
+        [
+          686,
+          868
+        ]
+      ],
+      "expert_steps": 364
+    },
+    {
+      "regime": "fast",
+      "seed": 21,
+      "scheme": "hold",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 0.00019415281834986412,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 788,
+      "branch_starts": [
+        247,
+        586
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          329
+        ],
+        [
+          586,
+          668
+        ]
+      ],
+      "expert_steps": 164
+    },
+    {
+      "regime": "fast",
+      "seed": 21,
+      "scheme": "recover",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 0.0004003048050025917,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 990,
+      "branch_starts": [
+        247,
+        687
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          430
+        ],
+        [
+          687,
+          870
+        ]
+      ],
+      "expert_steps": 366
+    },
+    {
+      "regime": "fast",
+      "seed": 22,
+      "scheme": "hold",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 8.638296287074132e-05,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 790,
+      "branch_starts": [
+        247,
+        587
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          330
+        ],
+        [
+          587,
+          670
+        ]
+      ],
+      "expert_steps": 166
+    },
+    {
+      "regime": "fast",
+      "seed": 22,
+      "scheme": "recover",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 0.00012674927745424735,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 992,
+      "branch_starts": [
+        247,
+        688
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          431
+        ],
+        [
+          688,
+          872
+        ]
+      ],
+      "expert_steps": 368
+    }
+  ]
+}

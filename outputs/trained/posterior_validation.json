@@ -1,0 +1,24 @@
+{
+  "val": {
+    "windows": 1748,
+    "expert_windows": 1427,
+    "clearance_mae_m": 0.006164560094475746,
+    "occupied_clearance_mae_m": 0.008392143994569778,
+    "impulse_mae_Ns": 0.0031387873459607363,
+    "collision_positive_steps": 2455,
+    "collision_precision": 0.8824876001526135,
+    "collision_recall": 0.9421588594704684,
+    "latent_accuracy": 0.6298627257347107
+  },
+  "test": {
+    "windows": 1755,
+    "expert_windows": 1429,
+    "clearance_mae_m": 0.006240851245820522,
+    "occupied_clearance_mae_m": 0.008822879754006863,
+    "impulse_mae_Ns": 0.0029703269246965647,
+    "collision_positive_steps": 2505,
+    "collision_precision": 0.8961287849750862,
+    "collision_recall": 0.9333333333333333,
+    "latent_accuracy": 0.6131054162979126
+  }
+}

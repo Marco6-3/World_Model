@@ -1,0 +1,162 @@
+{
+  "train": {
+    "windows": 1753,
+    "expert_windows": 1432,
+    "clearance_mae_m": 0.004663186147809029,
+    "occupied_clearance_mae_m": 0.008161875419318676,
+    "impulse_mae_Ns": 0.002036310499534011,
+    "collision_positive_steps": 2462,
+    "collision_precision": 0.9184383455740239,
+    "collision_recall": 0.9650690495532088,
+    "latent_accuracy": 0.6457501649856567
+  },
+  "val": {
+    "windows": 1748,
+    "expert_windows": 1427,
+    "clearance_mae_m": 0.0051688761450350285,
+    "occupied_clearance_mae_m": 0.00833029393106699,
+    "impulse_mae_Ns": 0.0030726627446711063,
+    "collision_positive_steps": 2455,
+    "collision_precision": 0.8868217054263566,
+    "collision_recall": 0.9319755600814664,
+    "latent_accuracy": 0.6298627257347107,
+    "paired": {
+      "matched_action_pairs": 3,
+      "max_prefix_feature_difference": 0.03532435745000839,
+      "paired_clearance_effect_mae_m": 0.014345848156760136,
+      "informative_collision_pairs": 2,
+      "correct_collision_order": 2
+    }
+  },
+  "test": {
+    "windows": 1755,
+    "expert_windows": 1429,
+    "clearance_mae_m": 0.005181439220905304,
+    "occupied_clearance_mae_m": 0.008591405116021633,
+    "impulse_mae_Ns": 0.0029008511919528246,
+    "collision_positive_steps": 2505,
+    "collision_precision": 0.9042428960685092,
+    "collision_recall": 0.9273453093812375,
+    "latent_accuracy": 0.6131054162979126,
+    "paired": {
+      "matched_action_pairs": 3,
+      "max_prefix_feature_difference": 0.06562183797359467,
+      "paired_clearance_effect_mae_m": 0.014455710848172506,
+      "informative_collision_pairs": 2,
+      "correct_collision_order": 2
+    }
+  },
+  "training_seed": 124,
+  "updates": 1250,
+  "group_seeds": [
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ]
+  ],
+  "curve": [
+    {
+      "step": 1,
+      "flow": 1.7389322519302368,
+      "joint": 1.6440796852111816,
+      "world": 5.426974296569824,
+      "latent": 1.1248340606689453
+    },
+    {
+      "step": 100,
+      "flow": 1.1121159791946411,
+      "joint": 1.1028324365615845,
+      "world": 0.8420921564102173,
+      "latent": 0.7725975513458252
+    },
+    {
+      "step": 200,
+      "flow": 1.040905475616455,
+      "joint": 1.0146068334579468,
+      "world": 0.8435893058776855,
+      "latent": 0.8463534712791443
+    },
+    {
+      "step": 300,
+      "flow": 0.8903669714927673,
+      "joint": 0.9226590991020203,
+      "world": 0.14280742406845093,
+      "latent": 0.953338086605072
+    },
+    {
+      "step": 400,
+      "flow": 0.7940798997879028,
+      "joint": 0.8408936262130737,
+      "world": 1.4601107835769653,
+      "latent": 0.8972867727279663
+    },
+    {
+      "step": 500,
+      "flow": 0.746520459651947,
+      "joint": 0.7894090414047241,
+      "world": 0.6847269535064697,
+      "latent": 0.9732264876365662
+    },
+    {
+      "step": 600,
+      "flow": 0.6595090627670288,
+      "joint": 0.7617722749710083,
+      "world": 0.18603886663913727,
+      "latent": 0.8025254607200623
+    },
+    {
+      "step": 700,
+      "flow": 0.6373363733291626,
+      "joint": 0.7450100779533386,
+      "world": 0.06267030537128448,
+      "latent": 0.8026995658874512
+    },
+    {
+      "step": 800,
+      "flow": 0.6307529807090759,
+      "joint": 0.7171710729598999,
+      "world": 0.11190217733383179,
+      "latent": 0.7521898746490479
+    },
+    {
+      "step": 900,
+      "flow": 0.5464745163917542,
+      "joint": 0.703269898891449,
+      "world": 0.05462461709976196,
+      "latent": 0.8299709558486938
+    },
+    {
+      "step": 1000,
+      "flow": 0.5012757778167725,
+      "joint": 0.6467047929763794,
+      "world": 0.03903685137629509,
+      "latent": 0.6669081449508667
+    },
+    {
+      "step": 1100,
+      "flow": 0.5198836326599121,
+      "joint": 0.6846039295196533,
+      "world": 0.0726107805967331,
+      "latent": 0.676640510559082
+    },
+    {
+      "step": 1200,
+      "flow": 0.47005975246429443,
+      "joint": 0.6698689460754395,
+      "world": 0.1378258913755417,
+      "latent": 0.8515455722808838
+    },
+    {
+      "step": 1250,
+      "flow": 0.45353227853775024,
+      "joint": 0.6388558149337769,
+      "world": 0.20596307516098022,
+      "latent": 0.7980040311813354
+    }
+  ]
+}

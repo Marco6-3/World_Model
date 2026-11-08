@@ -1,0 +1,151 @@
+{
+  "train": {
+    "windows": 990,
+    "expert_windows": 548,
+    "clearance_mae_m": 0.004929639399051666,
+    "occupied_clearance_mae_m": 0.004348623100668192,
+    "impulse_mae_Ns": 0.00401574419811368,
+    "collision_positive_steps": 3343,
+    "collision_precision": 0.8821647560650493,
+    "collision_recall": 0.9898294944660485,
+    "latent_accuracy": 0.8979797959327698
+  },
+  "val": {
+    "windows": 1040,
+    "expert_windows": 576,
+    "clearance_mae_m": 0.005941069219261408,
+    "occupied_clearance_mae_m": 0.004799828864634037,
+    "impulse_mae_Ns": 0.0054311142303049564,
+    "collision_positive_steps": 3535,
+    "collision_precision": 0.8595980962453729,
+    "collision_recall": 0.9196605374823197,
+    "latent_accuracy": 0.8288461565971375,
+    "paired": {
+      "matched_action_pairs": 3,
+      "max_prefix_feature_difference": 0.28202056884765625,
+      "paired_clearance_effect_mae_m": 0.008661654156943163,
+      "informative_collision_pairs": 2,
+      "correct_collision_order": 2
+    }
+  },
+  "test": {
+    "windows": 218,
+    "expert_windows": 218,
+    "clearance_mae_m": 0.006286048796027899,
+    "occupied_clearance_mae_m": 0.0044233957305550575,
+    "impulse_mae_Ns": 1.162203261628747e-05,
+    "collision_positive_steps": 0,
+    "collision_precision": 0.0,
+    "collision_recall": null,
+    "latent_accuracy": 0.9678899049758911,
+    "paired": {
+      "matched_action_pairs": 0,
+      "max_prefix_feature_difference": null,
+      "paired_clearance_effect_mae_m": null,
+      "informative_collision_pairs": 0,
+      "correct_collision_order": 0
+    }
+  },
+  "posterior_marginalized": {
+    "val": {
+      "windows": 1040,
+      "expert_windows": 576,
+      "clearance_mae_m": 0.006155878305435181,
+      "occupied_clearance_mae_m": 0.0047899107448756695,
+      "impulse_mae_Ns": 0.005462793167680502,
+      "collision_positive_steps": 3535,
+      "collision_precision": 0.8478036175710595,
+      "collision_recall": 0.9281471004243281,
+      "latent_accuracy": 0.8288461565971375
+    },
+    "test": {
+      "windows": 218,
+      "expert_windows": 218,
+      "clearance_mae_m": 0.006442566402256489,
+      "occupied_clearance_mae_m": 0.0038036361802369356,
+      "impulse_mae_Ns": 1.9750008505070582e-05,
+      "collision_positive_steps": 0,
+      "collision_precision": 0.0,
+      "collision_recall": null,
+      "latent_accuracy": 0.9678899049758911
+    }
+  },
+  "training_seed": 124,
+  "updates": 800,
+  "group_seeds": [
+    [
+      100
+    ],
+    [
+      105
+    ],
+    [
+      20
+    ]
+  ],
+  "curve": [
+    {
+      "step": 1,
+      "flow": 6.3975419998168945,
+      "joint": 6.18046760559082,
+      "world": 4.332761764526367,
+      "latent": 1.0835213661193848
+    },
+    {
+      "step": 100,
+      "flow": 0.42685166001319885,
+      "joint": 0.30066147446632385,
+      "world": 0.6951621770858765,
+      "latent": 0.8238764405250549
+    },
+    {
+      "step": 200,
+      "flow": 0.22433198988437653,
+      "joint": 0.1860903650522232,
+      "world": 0.39770179986953735,
+      "latent": 0.9129776358604431
+    },
+    {
+      "step": 300,
+      "flow": 0.15172192454338074,
+      "joint": 0.1953357458114624,
+      "world": 0.28717494010925293,
+      "latent": 0.7366584539413452
+    },
+    {
+      "step": 400,
+      "flow": 0.13932079076766968,
+      "joint": 0.1354462057352066,
+      "world": 0.25837016105651855,
+      "latent": 0.7011347413063049
+    },
+    {
+      "step": 500,
+      "flow": 0.11694086343050003,
+      "joint": 0.11637736111879349,
+      "world": 0.257772833108902,
+      "latent": 0.6838203072547913
+    },
+    {
+      "step": 600,
+      "flow": 0.08671504259109497,
+      "joint": 0.0757419541478157,
+      "world": 0.20961706340312958,
+      "latent": 0.715726912021637
+    },
+    {
+      "step": 700,
+      "flow": 0.0857401043176651,
+      "joint": 0.075815349817276,
+      "world": 0.12991459667682648,
+      "latent": 0.4595041871070862
+    },
+    {
+      "step": 800,
+      "flow": 0.07148152589797974,
+      "joint": 0.09391644597053528,
+      "world": 0.15739253163337708,
+      "latent": 0.5574964284896851
+    }
+  ]
+}

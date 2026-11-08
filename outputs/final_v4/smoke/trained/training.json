@@ -1,0 +1,158 @@
+{
+  "train": {
+    "windows": 1028,
+    "expert_windows": 580,
+    "clearance_mae_m": 0.004175407811999321,
+    "occupied_clearance_mae_m": 0.004894301760941744,
+    "impulse_mae_Ns": 0.0031418995931744576,
+    "collision_positive_steps": 3667,
+    "collision_precision": 0.928480529396793,
+    "collision_recall": 0.9948186528497409,
+    "latent_accuracy": 0.674124538898468
+  },
+  "val": {
+    "windows": 1078,
+    "expert_windows": 608,
+    "clearance_mae_m": 0.0050597903318703175,
+    "occupied_clearance_mae_m": 0.0055135516449809074,
+    "impulse_mae_Ns": 0.004598686005920172,
+    "collision_positive_steps": 3805,
+    "collision_precision": 0.8876101860920667,
+    "collision_recall": 0.9526938239159002,
+    "latent_accuracy": 0.5909090638160706,
+    "paired": {
+      "matched_action_pairs": 3,
+      "max_prefix_feature_difference": 0.2703913450241089,
+      "paired_clearance_effect_mae_m": 0.01565568335354328,
+      "informative_collision_pairs": 2,
+      "correct_collision_order": 2
+    }
+  },
+  "test": {
+    "windows": 1034,
+    "expert_windows": 584,
+    "clearance_mae_m": 0.005567648913711309,
+    "occupied_clearance_mae_m": 0.007672507781535387,
+    "impulse_mae_Ns": 0.005426149349659681,
+    "collision_positive_steps": 3513,
+    "collision_precision": 0.8844065166795966,
+    "collision_recall": 0.9735269000853971,
+    "latent_accuracy": 0.6141199469566345,
+    "paired": {
+      "matched_action_pairs": 3,
+      "max_prefix_feature_difference": 0.06665408611297607,
+      "paired_clearance_effect_mae_m": 0.014646666745344797,
+      "informative_collision_pairs": 2,
+      "correct_collision_order": 2
+    }
+  },
+  "posterior_marginalized": {
+    "val": {
+      "windows": 1078,
+      "expert_windows": 608,
+      "clearance_mae_m": 0.005048082210123539,
+      "occupied_clearance_mae_m": 0.005444096866995096,
+      "impulse_mae_Ns": 0.005131690762937069,
+      "collision_positive_steps": 3805,
+      "collision_precision": 0.879835589941973,
+      "collision_recall": 0.9563731931668856,
+      "latent_accuracy": 0.5909090638160706
+    },
+    "test": {
+      "windows": 1034,
+      "expert_windows": 584,
+      "clearance_mae_m": 0.005598973482847214,
+      "occupied_clearance_mae_m": 0.0075432960875332355,
+      "impulse_mae_Ns": 0.005940418690443039,
+      "collision_positive_steps": 3513,
+      "collision_precision": 0.8755748594787941,
+      "collision_recall": 0.9755194990037005,
+      "latent_accuracy": 0.6141199469566345
+    }
+  },
+  "training_seed": 124,
+  "updates": 900,
+  "group_seeds": [
+    [
+      100
+    ],
+    [
+      105
+    ],
+    [
+      101
+    ]
+  ],
+  "curve": [
+    {
+      "step": 1,
+      "flow": 8.5590238571167,
+      "joint": 7.636112689971924,
+      "world": 6.174121856689453,
+      "latent": 1.0777714252471924
+    },
+    {
+      "step": 100,
+      "flow": 0.30065464973449707,
+      "joint": 0.3315805494785309,
+      "world": 0.9587513208389282,
+      "latent": 0.6172857284545898
+    },
+    {
+      "step": 200,
+      "flow": 0.295196533203125,
+      "joint": 0.2835922837257385,
+      "world": 0.32471758127212524,
+      "latent": 0.6337465047836304
+    },
+    {
+      "step": 300,
+      "flow": 0.24019372463226318,
+      "joint": 0.15963031351566315,
+      "world": 0.3962774872779846,
+      "latent": 0.5205131769180298
+    },
+    {
+      "step": 400,
+      "flow": 0.12915953993797302,
+      "joint": 0.1635495275259018,
+      "world": 0.2736319899559021,
+      "latent": 0.42615529894828796
+    },
+    {
+      "step": 500,
+      "flow": 0.1396225243806839,
+      "joint": 0.1558728814125061,
+      "world": 0.24813519418239594,
+      "latent": 0.40012291073799133
+    },
+    {
+      "step": 600,
+      "flow": 0.17849192023277283,
+      "joint": 0.12169409543275833,
+      "world": 0.182044118642807,
+      "latent": 0.3742913007736206
+    },
+    {
+      "step": 700,
+      "flow": 0.1236879974603653,
+      "joint": 0.1127251610159874,
+      "world": 0.15697628259658813,
+      "latent": 0.38413944840431213
+    },
+    {
+      "step": 800,
+      "flow": 0.1246582642197609,
+      "joint": 0.09940839558839798,
+      "world": 0.10203225165605545,
+      "latent": 0.32950034737586975
+    },
+    {
+      "step": 900,
+      "flow": 0.0596325621008873,
+      "joint": 0.07602810114622116,
+      "world": 0.14331354200839996,
+      "latent": 0.30949023365974426
+    }
+  ]
+}

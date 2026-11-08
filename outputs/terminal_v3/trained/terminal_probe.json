@@ -1,0 +1,30 @@
+[
+  {
+    "seed": 108,
+    "scheme": "direct",
+    "step_cost": -0.734801709651947,
+    "with_terminal": -0.6993988752365112,
+    "terminal": 0.03540283441543579
+  },
+  {
+    "seed": 108,
+    "scheme": "hold",
+    "step_cost": -0.4276067614555359,
+    "with_terminal": -0.4276067614555359,
+    "terminal": 0.0
+  },
+  {
+    "seed": 109,
+    "scheme": "direct",
+    "step_cost": -0.5618525147438049,
+    "with_terminal": -0.5205022096633911,
+    "terminal": 0.04135030508041382
+  },
+  {
+    "seed": 109,
+    "scheme": "hold",
+    "step_cost": -0.43778982758522034,
+    "with_terminal": -0.43778982758522034,
+    "terminal": 0.0
+  }
+]

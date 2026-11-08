@@ -1,0 +1,74 @@
+[
+  {
+    "regime": "static",
+    "method": "M1",
+    "seeds": [
+      108,
+      109
+    ],
+    "samples": 32,
+    "consecutive_right_waypoint_jump_m": 0.003792120493017137,
+    "max_consecutive_right_waypoint_jump_m": 0.007500004023313522,
+    "requested_consecutive_right_waypoint_jump_m": 0.003646198660135269
+  },
+  {
+    "regime": "static",
+    "method": "M4-b",
+    "seeds": [
+      108,
+      109
+    ],
+    "samples": 32,
+    "consecutive_right_waypoint_jump_m": 0.007499998435378075,
+    "max_consecutive_right_waypoint_jump_m": 0.00750000448897481,
+    "requested_consecutive_right_waypoint_jump_m": 0.007758149178698659
+  },
+  {
+    "regime": "slow",
+    "method": "M1",
+    "seeds": [
+      108,
+      109
+    ],
+    "samples": 32,
+    "consecutive_right_waypoint_jump_m": 0.0025217797374352813,
+    "max_consecutive_right_waypoint_jump_m": 0.007500004954636097,
+    "requested_consecutive_right_waypoint_jump_m": 0.0024789279559627175
+  },
+  {
+    "regime": "slow",
+    "method": "M4-b",
+    "seeds": [
+      108,
+      109
+    ],
+    "samples": 32,
+    "consecutive_right_waypoint_jump_m": 0.0046928992960602045,
+    "max_consecutive_right_waypoint_jump_m": 0.007500004023313522,
+    "requested_consecutive_right_waypoint_jump_m": 0.0041910032741725445
+  },
+  {
+    "regime": "fast",
+    "method": "M1",
+    "seeds": [
+      108,
+      109
+    ],
+    "samples": 32,
+    "consecutive_right_waypoint_jump_m": 0.0023827487602829933,
+    "max_consecutive_right_waypoint_jump_m": 0.007500004023313522,
+    "requested_consecutive_right_waypoint_jump_m": 0.0023827487602829933
+  },
+  {
+    "regime": "fast",
+    "method": "M4-b",
+    "seeds": [
+      108,
+      109
+    ],
+    "samples": 32,
+    "consecutive_right_waypoint_jump_m": 0.0034984792582690716,
+    "max_consecutive_right_waypoint_jump_m": 0.00750000448897481,
+    "requested_consecutive_right_waypoint_jump_m": 0.0030829128809273243
+  }
+]

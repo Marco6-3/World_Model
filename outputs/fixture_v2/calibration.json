@@ -1,0 +1,242 @@
+{
+  "physics_dt_s": 0.008333333333333333,
+  "backend": "IsaacLab / PhysX CPU",
+  "runs": [
+    {
+      "regime": "static",
+      "stiffness_Nm_rad": 0.0,
+      "damping_Nms_rad": 0.012,
+      "mode": "release",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 0.8299998350032717,
+      "low_clearance_s": null,
+      "occupied_steps": 0,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        0.125,
+        0.1080000028014183
+      ]
+    },
+    {
+      "regime": "static",
+      "stiffness_Nm_rad": 0.0,
+      "damping_Nms_rad": 0.012,
+      "mode": "direct",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 0.8299998350032717,
+      "low_clearance_s": null,
+      "occupied_steps": 25,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        -0.009999990463256836,
+        0.029000021517276764
+      ]
+    },
+    {
+      "regime": "static",
+      "stiffness_Nm_rad": 0.0,
+      "damping_Nms_rad": 0.012,
+      "mode": "delayed",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 0.8299998350032717,
+      "low_clearance_s": null,
+      "occupied_steps": 26,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        -0.009999986737966537,
+        0.029000017791986465
+      ]
+    },
+    {
+      "regime": "static",
+      "stiffness_Nm_rad": 0.0,
+      "damping_Nms_rad": 0.012,
+      "mode": "withdraw",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 0.8299998350032717,
+      "low_clearance_s": null,
+      "occupied_steps": 10,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        0.15499979257583618,
+        0.1080000028014183
+      ]
+    },
+    {
+      "regime": "slow",
+      "stiffness_Nm_rad": 0.06,
+      "damping_Nms_rad": 0.035,
+      "mode": "release",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 0.008514294563814286,
+      "low_clearance_s": 0.9249999999999999,
+      "occupied_steps": 0,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        0.125,
+        0.1080000028014183
+      ]
+    },
+    {
+      "regime": "slow",
+      "stiffness_Nm_rad": 0.06,
+      "damping_Nms_rad": 0.035,
+      "mode": "direct",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 0.008514294563814286,
+      "low_clearance_s": 0.9249999999999999,
+      "occupied_steps": 25,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        -0.009999990463256836,
+        0.029000021517276764
+      ]
+    },
+    {
+      "regime": "slow",
+      "stiffness_Nm_rad": 0.06,
+      "damping_Nms_rad": 0.035,
+      "mode": "delayed",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": -5.720969056741809e-06,
+      "low_clearance_s": 0.9249999999999999,
+      "occupied_steps": 65,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.060035303235054016,
+      "collided": true,
+      "final_workpiece_xyz_m": [
+        -0.05241761356592178,
+        0.02790551818907261,
+        0.09599411487579346
+      ]
+    },
+    {
+      "regime": "slow",
+      "stiffness_Nm_rad": 0.06,
+      "damping_Nms_rad": 0.035,
+      "mode": "withdraw",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 0.008514294563814286,
+      "low_clearance_s": 0.9249999999999999,
+      "occupied_steps": 10,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        0.15499979257583618,
+        0.1080000028014183
+      ]
+    },
+    {
+      "regime": "fast",
+      "stiffness_Nm_rad": 0.62,
+      "damping_Nms_rad": 0.022,
+      "mode": "release",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 5.208269324324724e-06,
+      "low_clearance_s": 0.08333333333333333,
+      "occupied_steps": 0,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        0.125,
+        0.1080000028014183
+      ]
+    },
+    {
+      "regime": "fast",
+      "stiffness_Nm_rad": 0.62,
+      "damping_Nms_rad": 0.022,
+      "mode": "direct",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 1.3021846826090622e-05,
+      "low_clearance_s": 0.08333333333333333,
+      "occupied_steps": 25,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.02496328204870224,
+      "collided": true,
+      "final_workpiece_xyz_m": [
+        -0.04698718711733818,
+        0.030563509091734886,
+        0.09598955512046814
+      ]
+    },
+    {
+      "regime": "fast",
+      "stiffness_Nm_rad": 0.62,
+      "damping_Nms_rad": 0.022,
+      "mode": "delayed",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": -1.670778346117224e-07,
+      "low_clearance_s": 0.08333333333333333,
+      "occupied_steps": 26,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.02527163177728653,
+      "collided": true,
+      "final_workpiece_xyz_m": [
+        -0.046990685164928436,
+        0.03045397624373436,
+        0.0959988608956337
+      ]
+    },
+    {
+      "regime": "fast",
+      "stiffness_Nm_rad": 0.62,
+      "damping_Nms_rad": 0.022,
+      "mode": "withdraw",
+      "initial_angle_rad": 0.83,
+      "final_angle_rad": 1.0240983101718322e-05,
+      "low_clearance_s": 0.08333333333333333,
+      "occupied_steps": 10,
+      "occupied_at_end": false,
+      "peak_lid_object_impulse_Ns": 0.0,
+      "collided": false,
+      "final_workpiece_xyz_m": [
+        -0.04699999839067459,
+        0.15499979257583618,
+        0.1080000028014183
+      ]
+    }
+  ],
+  "trace_columns": [
+    "time_s",
+    "angle_rad",
+    "object_x_m",
+    "object_y_m",
+    "object_z_m",
+    "clearance_m",
+    "occupancy",
+    "progress",
+    "impulse_Ns",
+    "lid_x_m",
+    "lid_y_m",
+    "lid_z_m",
+    "lid_omega_rad_s",
+    "front_force_N",
+    "back_force_N",
+    "west_force_N",
+    "east_force_N",
+    "table_force_N"
+  ]
+}

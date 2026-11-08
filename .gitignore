@@ -1,0 +1,20 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large simulation rollouts, checkpoints, and verbose logs
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.log
+*.jsonl
+*_waypoints.json
+outputs/**/matrix.json
+
+# OS / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

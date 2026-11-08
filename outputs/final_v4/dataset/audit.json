@@ -1,0 +1,86 @@
+{
+  "static:direct": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "expert_steps": 1654,
+    "train_handoffs": 12
+  },
+  "static:hold": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "expert_steps": 1894,
+    "train_handoffs": 12
+  },
+  "static:delayed": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "expert_steps": 0,
+    "train_handoffs": 0
+  },
+  "static:recover": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "expert_steps": 0,
+    "train_handoffs": 0
+  },
+  "slow:direct": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 10,
+    "expert_steps": 220,
+    "train_handoffs": 12
+  },
+  "slow:hold": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "expert_steps": 1894,
+    "train_handoffs": 12
+  },
+  "slow:delayed": {
+    "episodes": 10,
+    "success": 0,
+    "collision": 10,
+    "expert_steps": 0,
+    "train_handoffs": 0
+  },
+  "slow:recover": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "expert_steps": 3534,
+    "train_handoffs": 0
+  },
+  "fast:direct": {
+    "episodes": 10,
+    "success": 9,
+    "collision": 10,
+    "expert_steps": 120,
+    "train_handoffs": 12
+  },
+  "fast:hold": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "expert_steps": 1894,
+    "train_handoffs": 12
+  },
+  "fast:delayed": {
+    "episodes": 10,
+    "success": 0,
+    "collision": 10,
+    "expert_steps": 0,
+    "train_handoffs": 0
+  },
+  "fast:recover": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "expert_steps": 3534,
+    "train_handoffs": 0
+  }
+}

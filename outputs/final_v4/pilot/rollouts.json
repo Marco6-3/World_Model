@@ -1,0 +1,259 @@
+{
+  "control_dt_s": 0.03333333333333333,
+  "horizon": 24,
+  "history": 12,
+  "episodes": [
+    {
+      "regime": "static",
+      "seed": 100,
+      "scheme": "direct",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 1.3652257621712394e-05,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 869,
+      "branch_starts": [
+        247,
+        584
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          327
+        ],
+        [
+          584,
+          664
+        ]
+      ],
+      "expert_steps": 160
+    },
+    {
+      "regime": "static",
+      "seed": 100,
+      "scheme": "hold",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 1.1407769536756335e-05,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 893,
+      "branch_starts": [
+        247,
+        596
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          339
+        ],
+        [
+          596,
+          688
+        ]
+      ],
+      "expert_steps": 184
+    },
+    {
+      "regime": "static",
+      "seed": 100,
+      "scheme": "recover",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 8.574686954992312e-05,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 1063,
+      "branch_starts": [
+        247,
+        681
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          424
+        ],
+        [
+          681,
+          858
+        ]
+      ],
+      "expert_steps": 0
+    },
+    {
+      "regime": "slow",
+      "seed": 100,
+      "scheme": "direct",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 0.003986063572096844,
+      "success": true,
+      "peak_impulse_Ns": 0.1050046980381012,
+      "collided": true,
+      "steps": 784,
+      "branch_starts": [
+        247,
+        584
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          327
+        ],
+        [
+          584,
+          664
+        ]
+      ],
+      "expert_steps": 22
+    },
+    {
+      "regime": "slow",
+      "seed": 100,
+      "scheme": "hold",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 1.1827796697616605e-07,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 893,
+      "branch_starts": [
+        247,
+        596
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          339
+        ],
+        [
+          596,
+          688
+        ]
+      ],
+      "expert_steps": 184
+    },
+    {
+      "regime": "slow",
+      "seed": 100,
+      "scheme": "recover",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 1.6246922314881786e-05,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 1091,
+      "branch_starts": [
+        247,
+        695
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          438
+        ],
+        [
+          695,
+          886
+        ]
+      ],
+      "expert_steps": 348
+    },
+    {
+      "regime": "fast",
+      "seed": 100,
+      "scheme": "direct",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 0.0001575686044060589,
+      "success": true,
+      "peak_impulse_Ns": 0.09971535950899124,
+      "collided": true,
+      "steps": 784,
+      "branch_starts": [
+        247,
+        584
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          327
+        ],
+        [
+          584,
+          664
+        ]
+      ],
+      "expert_steps": 12
+    },
+    {
+      "regime": "fast",
+      "seed": 100,
+      "scheme": "hold",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 6.40749931335493e-07,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 808,
+      "branch_starts": [
+        247,
+        596
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          339
+        ],
+        [
+          596,
+          688
+        ]
+      ],
+      "expert_steps": 184
+    },
+    {
+      "regime": "fast",
+      "seed": 100,
+      "scheme": "recover",
+      "opened": true,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle_rad": 0.00032087786623860993,
+      "success": true,
+      "peak_impulse_Ns": 0.0,
+      "collided": false,
+      "steps": 978,
+      "branch_starts": [
+        247,
+        681
+      ],
+      "insertion_ranges": [
+        [
+          247,
+          424
+        ],
+        [
+          681,
+          858
+        ]
+      ],
+      "expert_steps": 348
+    }
+  ]
+}

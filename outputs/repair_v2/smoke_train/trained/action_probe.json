@@ -1,0 +1,68 @@
+[
+  {
+    "regime": "static",
+    "method": "M1",
+    "seeds": [
+      105
+    ],
+    "samples": 16,
+    "consecutive_right_waypoint_jump_m": 0.006072235759347677,
+    "max_consecutive_right_waypoint_jump_m": 0.007500004023313522,
+    "requested_consecutive_right_waypoint_jump_m": 0.004455832066014409
+  },
+  {
+    "regime": "static",
+    "method": "M4-b",
+    "seeds": [
+      105
+    ],
+    "samples": 16,
+    "consecutive_right_waypoint_jump_m": 0.007134837564080954,
+    "max_consecutive_right_waypoint_jump_m": 0.007500003557652235,
+    "requested_consecutive_right_waypoint_jump_m": 0.005094106309115887
+  },
+  {
+    "regime": "slow",
+    "method": "M1",
+    "seeds": [
+      105
+    ],
+    "samples": 16,
+    "consecutive_right_waypoint_jump_m": 0.004831175319850445,
+    "max_consecutive_right_waypoint_jump_m": 0.007500003557652235,
+    "requested_consecutive_right_waypoint_jump_m": 0.004004026297479868
+  },
+  {
+    "regime": "slow",
+    "method": "M4-b",
+    "seeds": [
+      105
+    ],
+    "samples": 16,
+    "consecutive_right_waypoint_jump_m": 0.005460658110678196,
+    "max_consecutive_right_waypoint_jump_m": 0.007500004023313522,
+    "requested_consecutive_right_waypoint_jump_m": 0.004485118202865124
+  },
+  {
+    "regime": "fast",
+    "method": "M1",
+    "seeds": [
+      105
+    ],
+    "samples": 16,
+    "consecutive_right_waypoint_jump_m": 0.004817307461053133,
+    "max_consecutive_right_waypoint_jump_m": 0.007500005885958672,
+    "requested_consecutive_right_waypoint_jump_m": 0.004396263975650072
+  },
+  {
+    "regime": "fast",
+    "method": "M4-b",
+    "seeds": [
+      105
+    ],
+    "samples": 16,
+    "consecutive_right_waypoint_jump_m": 0.004901260603219271,
+    "max_consecutive_right_waypoint_jump_m": 0.00750000448897481,
+    "requested_consecutive_right_waypoint_jump_m": 0.00421039666980505
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "slow": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "perturbation_steps": 21,
+    "withdraw_angle_rad": 0.5461410880088806,
+    "previous_withdraw_angle_rad": 1.1674585938453674
+  },
+  "fast": {
+    "episodes": 10,
+    "success": 10,
+    "collision": 0,
+    "perturbation_steps": 7,
+    "withdraw_angle_rad": 1.0522499799728393,
+    "previous_withdraw_angle_rad": 1.052104127407074
+  }
+}

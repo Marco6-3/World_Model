@@ -1,0 +1,122 @@
+[
+  {
+    "regime": "static",
+    "method": "M1",
+    "n": 16,
+    "right_waypoint_error_m": 0.07594066113233566,
+    "consecutive_right_waypoint_jump_m": 0.06191767007112503,
+    "max_consecutive_right_waypoint_jump_m": 0.18805204331874847,
+    "open_gap_commands": 5,
+    "commands": 128
+  },
+  {
+    "regime": "static",
+    "method": "M3",
+    "n": 16,
+    "right_waypoint_error_m": 0.06277600675821304,
+    "consecutive_right_waypoint_jump_m": 0.0539182685315609,
+    "max_consecutive_right_waypoint_jump_m": 0.14411191642284393,
+    "open_gap_commands": 2,
+    "commands": 128
+  },
+  {
+    "regime": "static",
+    "method": "M4-a",
+    "n": 16,
+    "right_waypoint_error_m": 0.07572390139102936,
+    "consecutive_right_waypoint_jump_m": 0.061934296041727066,
+    "max_consecutive_right_waypoint_jump_m": 0.18812210857868195,
+    "open_gap_commands": 5,
+    "commands": 128
+  },
+  {
+    "regime": "static",
+    "method": "M4-b",
+    "n": 16,
+    "right_waypoint_error_m": 0.06317973881959915,
+    "consecutive_right_waypoint_jump_m": 0.0525999441742897,
+    "max_consecutive_right_waypoint_jump_m": 0.1442270278930664,
+    "open_gap_commands": 3,
+    "commands": 128
+  },
+  {
+    "regime": "slow",
+    "method": "M1",
+    "n": 16,
+    "right_waypoint_error_m": 0.07702354341745377,
+    "consecutive_right_waypoint_jump_m": 0.06168454885482788,
+    "max_consecutive_right_waypoint_jump_m": 0.18734976649284363,
+    "open_gap_commands": 5,
+    "commands": 128
+  },
+  {
+    "regime": "slow",
+    "method": "M3",
+    "n": 16,
+    "right_waypoint_error_m": 0.06369893252849579,
+    "consecutive_right_waypoint_jump_m": 0.05392170697450638,
+    "max_consecutive_right_waypoint_jump_m": 0.14389751851558685,
+    "open_gap_commands": 2,
+    "commands": 128
+  },
+  {
+    "regime": "slow",
+    "method": "M4-a",
+    "n": 16,
+    "right_waypoint_error_m": 0.07680433988571167,
+    "consecutive_right_waypoint_jump_m": 0.06169997155666351,
+    "max_consecutive_right_waypoint_jump_m": 0.18742145597934723,
+    "open_gap_commands": 5,
+    "commands": 128
+  },
+  {
+    "regime": "slow",
+    "method": "M4-b",
+    "n": 16,
+    "right_waypoint_error_m": 0.0635111927986145,
+    "consecutive_right_waypoint_jump_m": 0.05387484282255173,
+    "max_consecutive_right_waypoint_jump_m": 0.14400994777679443,
+    "open_gap_commands": 2,
+    "commands": 128
+  },
+  {
+    "regime": "fast",
+    "method": "M1",
+    "n": 16,
+    "right_waypoint_error_m": 0.0755469799041748,
+    "consecutive_right_waypoint_jump_m": 0.06206589937210083,
+    "max_consecutive_right_waypoint_jump_m": 0.18781881034374237,
+    "open_gap_commands": 5,
+    "commands": 128
+  },
+  {
+    "regime": "fast",
+    "method": "M3",
+    "n": 16,
+    "right_waypoint_error_m": 0.060403987765312195,
+    "consecutive_right_waypoint_jump_m": 0.060273125767707825,
+    "max_consecutive_right_waypoint_jump_m": 0.1833622306585312,
+    "open_gap_commands": 3,
+    "commands": 128
+  },
+  {
+    "regime": "fast",
+    "method": "M4-a",
+    "n": 16,
+    "right_waypoint_error_m": 0.07520931959152222,
+    "consecutive_right_waypoint_jump_m": 0.06232257932424545,
+    "max_consecutive_right_waypoint_jump_m": 0.1880020648241043,
+    "open_gap_commands": 5,
+    "commands": 128
+  },
+  {
+    "regime": "fast",
+    "method": "M4-b",
+    "n": 16,
+    "right_waypoint_error_m": 0.060210518538951874,
+    "consecutive_right_waypoint_jump_m": 0.060267746448516846,
+    "max_consecutive_right_waypoint_jump_m": 0.1835799664258957,
+    "open_gap_commands": 3,
+    "commands": 128
+  }
+]

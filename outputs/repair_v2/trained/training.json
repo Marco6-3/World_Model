@@ -1,0 +1,228 @@
+{
+  "train": {
+    "windows": 6090,
+    "expert_windows": 3372,
+    "clearance_mae_m": 0.0029426557011902332,
+    "occupied_clearance_mae_m": 0.003757053054869175,
+    "impulse_mae_Ns": 0.0024334569461643696,
+    "collision_positive_steps": 20629,
+    "collision_precision": 0.9080851440456698,
+    "collision_recall": 0.9947161762567259,
+    "latent_accuracy": 0.8914614319801331
+  },
+  "val": {
+    "windows": 2118,
+    "expert_windows": 1172,
+    "clearance_mae_m": 0.0030857298988848925,
+    "occupied_clearance_mae_m": 0.0037659932859241962,
+    "impulse_mae_Ns": 0.0026643997989594936,
+    "collision_positive_steps": 7309,
+    "collision_precision": 0.9087105363255991,
+    "collision_recall": 0.9805718976604186,
+    "latent_accuracy": 0.8437204957008362,
+    "paired": {
+      "matched_action_pairs": 6,
+      "max_prefix_feature_difference": 0.2672194838523865,
+      "paired_clearance_effect_mae_m": 0.007135609358859559,
+      "informative_collision_pairs": 4,
+      "correct_collision_order": 4
+    }
+  },
+  "test": {
+    "windows": 1964,
+    "expert_windows": 1088,
+    "clearance_mae_m": 0.0034375654067844152,
+    "occupied_clearance_mae_m": 0.0036025734152644873,
+    "impulse_mae_Ns": 0.006741772871464491,
+    "collision_positive_steps": 6571,
+    "collision_precision": 0.8876098152075129,
+    "collision_recall": 0.8917972911276822,
+    "latent_accuracy": 0.8757637739181519,
+    "paired": {
+      "matched_action_pairs": 6,
+      "max_prefix_feature_difference": 0.2743334174156189,
+      "paired_clearance_effect_mae_m": 0.006562935654073954,
+      "informative_collision_pairs": 4,
+      "correct_collision_order": 4
+    }
+  },
+  "posterior_marginalized": {
+    "val": {
+      "windows": 2118,
+      "expert_windows": 1172,
+      "clearance_mae_m": 0.00342534389346838,
+      "occupied_clearance_mae_m": 0.004177357070147991,
+      "impulse_mae_Ns": 0.00294857588596642,
+      "collision_positive_steps": 7309,
+      "collision_precision": 0.8822588582677166,
+      "collision_recall": 0.9811191681488576,
+      "latent_accuracy": 0.8437204957008362
+    },
+    "test": {
+      "windows": 1964,
+      "expert_windows": 1088,
+      "clearance_mae_m": 0.003865635022521019,
+      "occupied_clearance_mae_m": 0.0040360186249017715,
+      "impulse_mae_Ns": 0.007069546263664961,
+      "collision_positive_steps": 6571,
+      "collision_precision": 0.8584394671351193,
+      "collision_recall": 0.8924060264799878,
+      "latent_accuracy": 0.8757637739181519
+    }
+  },
+  "training_seed": 124,
+  "updates": 1800,
+  "group_seeds": [
+    [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    [
+      106,
+      107
+    ],
+    [
+      108,
+      109
+    ]
+  ],
+  "curve": [
+    {
+      "step": 1,
+      "flow": 7.054586887359619,
+      "joint": 5.995924472808838,
+      "world": 4.891908168792725,
+      "latent": 1.0930625200271606
+    },
+    {
+      "step": 100,
+      "flow": 0.38205111026763916,
+      "joint": 0.24589593708515167,
+      "world": 0.583816647529602,
+      "latent": 0.8801019787788391
+    },
+    {
+      "step": 200,
+      "flow": 0.22541657090187073,
+      "joint": 0.15778836607933044,
+      "world": 0.4066641926765442,
+      "latent": 0.8180111646652222
+    },
+    {
+      "step": 300,
+      "flow": 0.25971993803977966,
+      "joint": 0.21936623752117157,
+      "world": 0.3526410460472107,
+      "latent": 0.8280847072601318
+    },
+    {
+      "step": 400,
+      "flow": 0.1243973970413208,
+      "joint": 0.12351275980472565,
+      "world": 0.2785227298736572,
+      "latent": 0.7589955925941467
+    },
+    {
+      "step": 500,
+      "flow": 0.11732964962720871,
+      "joint": 0.1260504275560379,
+      "world": 0.2579067647457123,
+      "latent": 0.6848955750465393
+    },
+    {
+      "step": 600,
+      "flow": 0.09155557304620743,
+      "joint": 0.08212137967348099,
+      "world": 0.20078861713409424,
+      "latent": 0.6165893077850342
+    },
+    {
+      "step": 700,
+      "flow": 0.09262185543775558,
+      "joint": 0.08954140543937683,
+      "world": 0.24174006283283234,
+      "latent": 0.5919381976127625
+    },
+    {
+      "step": 800,
+      "flow": 0.09453746676445007,
+      "joint": 0.13289564847946167,
+      "world": 0.2332257181406021,
+      "latent": 0.510106086730957
+    },
+    {
+      "step": 900,
+      "flow": 0.09077563136816025,
+      "joint": 0.09866055846214294,
+      "world": 0.3427995443344116,
+      "latent": 0.5156545042991638
+    },
+    {
+      "step": 1000,
+      "flow": 0.056459467858076096,
+      "joint": 0.09317561984062195,
+      "world": 0.12280663847923279,
+      "latent": 0.5573428869247437
+    },
+    {
+      "step": 1100,
+      "flow": 0.06849278509616852,
+      "joint": 0.07829425483942032,
+      "world": 0.1601180136203766,
+      "latent": 0.5753594636917114
+    },
+    {
+      "step": 1200,
+      "flow": 0.08187093585729599,
+      "joint": 0.08427654951810837,
+      "world": 0.09189379215240479,
+      "latent": 0.41409966349601746
+    },
+    {
+      "step": 1300,
+      "flow": 0.09617959707975388,
+      "joint": 0.07485833019018173,
+      "world": 0.05215851962566376,
+      "latent": 0.40033790469169617
+    },
+    {
+      "step": 1400,
+      "flow": 0.07032394409179688,
+      "joint": 0.10133448243141174,
+      "world": 0.150767982006073,
+      "latent": 0.33297020196914673
+    },
+    {
+      "step": 1500,
+      "flow": 0.06528110802173615,
+      "joint": 0.060850150883197784,
+      "world": 0.10334774851799011,
+      "latent": 0.2653470039367676
+    },
+    {
+      "step": 1600,
+      "flow": 0.053804151713848114,
+      "joint": 0.06988061964511871,
+      "world": 0.10940687358379364,
+      "latent": 0.3159485459327698
+    },
+    {
+      "step": 1700,
+      "flow": 0.050595950335264206,
+      "joint": 0.0649687796831131,
+      "world": 0.13794684410095215,
+      "latent": 0.34486499428749084
+    },
+    {
+      "step": 1800,
+      "flow": 0.05118078365921974,
+      "joint": 0.046971868723630905,
+      "world": 0.13118702173233032,
+      "latent": 0.33820798993110657
+    }
+  ]
+}

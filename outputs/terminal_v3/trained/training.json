@@ -1,0 +1,228 @@
+{
+  "train": {
+    "windows": 6174,
+    "expert_windows": 3276,
+    "clearance_mae_m": 0.0026938961818814278,
+    "occupied_clearance_mae_m": 0.0037251347675919533,
+    "impulse_mae_Ns": 0.0023526507429778576,
+    "collision_positive_steps": 20629,
+    "collision_precision": 0.9177874089629596,
+    "collision_recall": 0.995734160647632,
+    "latent_accuracy": 0.8932620882987976
+  },
+  "val": {
+    "windows": 2146,
+    "expert_windows": 1140,
+    "clearance_mae_m": 0.0027311479207128286,
+    "occupied_clearance_mae_m": 0.003540370147675276,
+    "impulse_mae_Ns": 0.002594487741589546,
+    "collision_positive_steps": 7309,
+    "collision_precision": 0.914260158446205,
+    "collision_recall": 0.9789300861951019,
+    "latent_accuracy": 0.8606710433959961,
+    "paired": {
+      "matched_action_pairs": 6,
+      "max_prefix_feature_difference": 0.2672194838523865,
+      "paired_clearance_effect_mae_m": 0.006400875863619149,
+      "informative_collision_pairs": 4,
+      "correct_collision_order": 4
+    }
+  },
+  "test": {
+    "windows": 1992,
+    "expert_windows": 1056,
+    "clearance_mae_m": 0.0030948237981647253,
+    "occupied_clearance_mae_m": 0.003570694476366043,
+    "impulse_mae_Ns": 0.00655039306730032,
+    "collision_positive_steps": 6571,
+    "collision_precision": 0.9029529375576746,
+    "collision_recall": 0.8934713133465226,
+    "latent_accuracy": 0.8569276928901672,
+    "paired": {
+      "matched_action_pairs": 6,
+      "max_prefix_feature_difference": 0.2743334174156189,
+      "paired_clearance_effect_mae_m": 0.006193618639372289,
+      "informative_collision_pairs": 4,
+      "correct_collision_order": 4
+    }
+  },
+  "posterior_marginalized": {
+    "val": {
+      "windows": 2146,
+      "expert_windows": 1140,
+      "clearance_mae_m": 0.003039692062884569,
+      "occupied_clearance_mae_m": 0.0038506987038999796,
+      "impulse_mae_Ns": 0.0027493841480463743,
+      "collision_positive_steps": 7309,
+      "collision_precision": 0.906614292954891,
+      "collision_recall": 0.9789300861951019,
+      "latent_accuracy": 0.8606710433959961
+    },
+    "test": {
+      "windows": 1992,
+      "expert_windows": 1056,
+      "clearance_mae_m": 0.003485571825876832,
+      "occupied_clearance_mae_m": 0.00397346168756485,
+      "impulse_mae_Ns": 0.00680459663271904,
+      "collision_positive_steps": 6571,
+      "collision_precision": 0.892960316253611,
+      "collision_recall": 0.8937756810226754,
+      "latent_accuracy": 0.8569276928901672
+    }
+  },
+  "training_seed": 124,
+  "updates": 1800,
+  "group_seeds": [
+    [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    [
+      106,
+      107
+    ],
+    [
+      108,
+      109
+    ]
+  ],
+  "curve": [
+    {
+      "step": 1,
+      "flow": 7.57732629776001,
+      "joint": 6.386975288391113,
+      "world": 5.896389007568359,
+      "latent": 1.1166683435440063
+    },
+    {
+      "step": 100,
+      "flow": 0.5355775356292725,
+      "joint": 0.23765592277050018,
+      "world": 1.5219945907592773,
+      "latent": 0.9086800813674927
+    },
+    {
+      "step": 200,
+      "flow": 0.16883423924446106,
+      "joint": 0.21555770933628082,
+      "world": 0.6340807676315308,
+      "latent": 0.8384703993797302
+    },
+    {
+      "step": 300,
+      "flow": 0.1578378975391388,
+      "joint": 0.17999856173992157,
+      "world": 0.2832762897014618,
+      "latent": 0.8115776181221008
+    },
+    {
+      "step": 400,
+      "flow": 0.10459961742162704,
+      "joint": 0.09539803862571716,
+      "world": 0.3312841057777405,
+      "latent": 0.7241629958152771
+    },
+    {
+      "step": 500,
+      "flow": 0.11607383191585541,
+      "joint": 0.12812118232250214,
+      "world": 0.4310794174671173,
+      "latent": 0.7758421301841736
+    },
+    {
+      "step": 600,
+      "flow": 0.07088567316532135,
+      "joint": 0.07213781774044037,
+      "world": 0.19901616871356964,
+      "latent": 0.6792307496070862
+    },
+    {
+      "step": 700,
+      "flow": 0.08802095055580139,
+      "joint": 0.07207229733467102,
+      "world": 0.21940964460372925,
+      "latent": 0.5953360199928284
+    },
+    {
+      "step": 800,
+      "flow": 0.09772410243749619,
+      "joint": 0.08721094578504562,
+      "world": 0.23446941375732422,
+      "latent": 0.5396085977554321
+    },
+    {
+      "step": 900,
+      "flow": 0.09129302948713303,
+      "joint": 0.1025661900639534,
+      "world": 0.1996193528175354,
+      "latent": 0.466167688369751
+    },
+    {
+      "step": 1000,
+      "flow": 0.06662873923778534,
+      "joint": 0.07787801325321198,
+      "world": 0.3823968172073364,
+      "latent": 0.489829957485199
+    },
+    {
+      "step": 1100,
+      "flow": 0.0701075941324234,
+      "joint": 0.07322753220796585,
+      "world": 0.25376489758491516,
+      "latent": 0.5714201331138611
+    },
+    {
+      "step": 1200,
+      "flow": 0.08281926810741425,
+      "joint": 0.0823880136013031,
+      "world": 0.13139373064041138,
+      "latent": 0.5297622680664062
+    },
+    {
+      "step": 1300,
+      "flow": 0.08118835836648941,
+      "joint": 0.08033126592636108,
+      "world": 0.13637059926986694,
+      "latent": 0.3750692903995514
+    },
+    {
+      "step": 1400,
+      "flow": 0.07122360169887543,
+      "joint": 0.06094427406787872,
+      "world": 0.15234261751174927,
+      "latent": 0.6107607483863831
+    },
+    {
+      "step": 1500,
+      "flow": 0.06267666071653366,
+      "joint": 0.06367508322000504,
+      "world": 0.11808949708938599,
+      "latent": 0.36455997824668884
+    },
+    {
+      "step": 1600,
+      "flow": 0.0433826744556427,
+      "joint": 0.06374163925647736,
+      "world": 0.06810633093118668,
+      "latent": 0.5468510389328003
+    },
+    {
+      "step": 1700,
+      "flow": 0.05011271312832832,
+      "joint": 0.054552555084228516,
+      "world": 0.11154548078775406,
+      "latent": 0.3744003474712372
+    },
+    {
+      "step": 1800,
+      "flow": 0.05005659535527229,
+      "joint": 0.03499801829457283,
+      "world": 0.04972135275602341,
+      "latent": 0.3406714200973511
+    }
+  ]
+}

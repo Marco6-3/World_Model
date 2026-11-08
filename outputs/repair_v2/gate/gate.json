@@ -1,0 +1,715 @@
+{
+  "passed": true,
+  "m1_static_success_rate": 1.0,
+  "b1_fast_collisions": 0,
+  "m1_static": [
+    {
+      "method": "M1",
+      "regime": "static",
+      "seed": 55,
+      "tau_start": 0.7,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle": 8.893199276725774e-05,
+      "success": true,
+      "pinch_or_collision": false,
+      "peak_impulse_Ns": 0.0,
+      "elapsed_s": 30.666666666666668,
+      "left_engaged_s": 19.0,
+      "cost": 37.31666666666667,
+      "chunks": [
+        {
+          "ms": 4.239900001266506,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.280500004824717,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.023399997095112,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.295200000342447,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.748300005099736,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.717800005688332,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 2
+        },
+        {
+          "ms": 4.934100004902575,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.701000001456123,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.361100000096485,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.907999995339196,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.5970000026281923,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.70660000044154,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 5.231600000115577,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.987700001744088,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 5.807500005175825,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.9479000042774715,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.36479999916628,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.13509999634698,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.093899995496031,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.9974000028450973,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.4812000012607314,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.291999997803941,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 1
+        }
+      ],
+      "baseline_hold": [],
+      "final_object_xyz_m": [
+        [
+          -0.04489454627037048,
+          0.007510979659855366,
+          0.026000002399086952
+        ],
+        [
+          0.04709964990615845,
+          0.007096007000654936,
+          0.025999976322054863
+        ]
+      ]
+    },
+    {
+      "method": "M1",
+      "regime": "static",
+      "seed": 56,
+      "tau_start": 0.7,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle": 8.375664318539041e-05,
+      "success": true,
+      "pinch_or_collision": false,
+      "peak_impulse_Ns": 0.0,
+      "elapsed_s": 30.766666666666666,
+      "left_engaged_s": 22.933333333333334,
+      "cost": 38.79333333333333,
+      "chunks": [
+        {
+          "ms": 3.714900005434174,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.7768999973195605,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.614999998011626,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.209600003378,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.9391000027535483,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.8830999983474612,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 3
+        },
+        {
+          "ms": 3.8604000001214445,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.390099995362107,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.9755999969202094,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 5.520999999134801,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.677200002130121,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.058500002429355,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.150000000663567,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.322699998738244,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.622299998824019,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.280799999833107,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.105799998797011,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.487399997538887,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.069800001161639,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.977899999881629,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.687999997055158,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.6650999973062426,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 3
+        }
+      ],
+      "baseline_hold": [],
+      "final_object_xyz_m": [
+        [
+          -0.04686597362160683,
+          0.013595432974398136,
+          0.025999993085861206
+        ],
+        [
+          0.04512102156877518,
+          0.01169963926076889,
+          0.025999996811151505
+        ]
+      ]
+    },
+    {
+      "method": "M1",
+      "regime": "static",
+      "seed": 57,
+      "tau_start": 0.7,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle": 4.223454744879336e-05,
+      "success": true,
+      "pinch_or_collision": false,
+      "peak_impulse_Ns": 0.0,
+      "elapsed_s": 30.599999999999998,
+      "left_engaged_s": 19.2,
+      "cost": 37.32,
+      "chunks": [
+        {
+          "ms": 4.501999996136874,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.3484999987413175,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 5.776700003480073,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.442099998414051,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.11780000285944,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.092800001672003,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.082000006746966,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.7198999998508953,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.401899997901637,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.9993999962462112,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.1692999948281795,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.3873999966308475,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.468900002189912,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.059300001244992,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.0891999960877,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.4285000001545995,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.063500004122034,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.5422000000835396,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 4.114600000320934,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.528000001097098,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 8
+        },
+        {
+          "ms": 3.4940000041387975,
+          "flow_batches": 10,
+          "flow_particles": 10,
+          "world_batches": 0,
+          "world_rollouts": 0,
+          "committed_steps": 1
+        }
+      ],
+      "baseline_hold": [],
+      "final_object_xyz_m": [
+        [
+          -0.04363388940691948,
+          0.0011584620224311948,
+          0.025999991223216057
+        ],
+        [
+          0.04604058712720871,
+          0.008917958475649357,
+          0.025999991223216057
+        ]
+      ]
+    }
+  ],
+  "b1_fast": [
+    {
+      "method": "B1",
+      "regime": "fast",
+      "seed": 55,
+      "tau_start": 0.7,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle": 0.00011837204494368442,
+      "success": true,
+      "pinch_or_collision": false,
+      "peak_impulse_Ns": 0.0,
+      "elapsed_s": 26.133333333333333,
+      "left_engaged_s": 24.4,
+      "cost": 34.67333333333333,
+      "chunks": [],
+      "baseline_hold": [
+        true,
+        true
+      ],
+      "final_object_xyz_m": [
+        [
+          -0.05050637573003769,
+          -0.018877169117331505,
+          0.025999996811151505
+        ],
+        [
+          0.04985770955681801,
+          -0.021858740597963333,
+          0.025999996811151505
+        ]
+      ]
+    },
+    {
+      "method": "B1",
+      "regime": "fast",
+      "seed": 56,
+      "tau_start": 0.7,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle": 8.033681669532148e-05,
+      "success": true,
+      "pinch_or_collision": false,
+      "peak_impulse_Ns": 0.0,
+      "elapsed_s": 26.2,
+      "left_engaged_s": 24.466666666666665,
+      "cost": 34.763333333333335,
+      "chunks": [],
+      "baseline_hold": [
+        true,
+        true
+      ],
+      "final_object_xyz_m": [
+        [
+          -0.04937909170985222,
+          -0.015121763572096825,
+          0.026000000536441803
+        ],
+        [
+          0.05312967672944069,
+          -0.017214402556419373,
+          0.025999996811151505
+        ]
+      ]
+    },
+    {
+      "method": "B1",
+      "regime": "fast",
+      "seed": 57,
+      "tau_start": 0.7,
+      "placed_a": true,
+      "placed_b": true,
+      "final_angle": 6.262213738269368e-06,
+      "success": true,
+      "pinch_or_collision": false,
+      "peak_impulse_Ns": 0.0,
+      "elapsed_s": 26.266666666666666,
+      "left_engaged_s": 24.53333333333333,
+      "cost": 34.85333333333333,
+      "chunks": [],
+      "baseline_hold": [
+        true,
+        true
+      ],
+      "final_object_xyz_m": [
+        [
+          -0.05014095455408096,
+          -0.01994679681956768,
+          0.02599998749792576
+        ],
+        [
+          0.05015647038817406,
+          -0.022944407537579536,
+          0.025999996811151505
+        ]
+      ]
+    }
+  ]
+}
