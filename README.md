@@ -158,6 +158,8 @@ $py = 'C:\isaacsim_env\Scripts\python.exe'
 
 ## 5. 后续研究展望与论文路线图 (Future Outlook & Paper Roadmap)
 
+> **最新完整架构设计与三阶段实验规划文档**：请参见 [`docs/Phase2_Unified_Mamba_GPC_Roadmap.md`](docs/Phase2_Unified_Mamba_GPC_Roadmap.md)（包含 **统一双向时序 Mamba 世界模型 + 两层解耦升维 ($D_z=128$) + 正面对标 Harvard GPC (IEEE RA-L 2026) 的公开数据集与旗舰动态装包实验规划**）。
+
 基于 Phase 1 机理台架所验证的核心数学机制与发现的控制边界，后续研究将沿以下三个递进阶段推进，最终形成完整的顶会论文：
 
 ### Phase 1.5：闭环重接触自适应与滚动时域精调 (Closed-Loop Re-Contact Refinement)
