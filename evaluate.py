@@ -16,17 +16,35 @@ from scene import COLLISION_THRESHOLD, DEPTH, DYNAMICS, TARGETS
 
 
 COMMIT = 8
+FAST_COMMIT = 4
+FAST_PROBABILITY = 0.4
+FAST_CLOSING_RAD_S = 2.0
 MAX_CHUNKS = 26
 
 
-def learned_insert(task, model, rng, method, tau, exact):
+def learned_insert(task, model, rng, method, tau, exact, *, adaptive=False):
     samples = []
     released = False
-    for _ in range(MAX_CHUNKS):
+    budget = MAX_CHUNKS * COMMIT
+    initial_step = task.insertion_step
+    for _ in range(budget // (FAST_COMMIT if adaptive else COMMIT)):
+        remaining = budget - (task.insertion_step - initial_step)
+        if remaining <= 0:
+            break
         start = perf_counter()
         result = propose(model, np.asarray(task.history), task.stage, method, rng, tau_start=tau, exact=exact)
+        commit = COMMIT
+        probability = result.fast_probability
+        omega = float(task.history[-1][33])
+        if adaptive:
+            if probability is None:
+                with torch.no_grad():
+                    obs = model.encode(torch.as_tensor(np.asarray(task.history), device=model.action_mean.device)[None])
+                    probability = float(model.world.encode(obs)[1].softmax(-1)[0, 2])
+            if probability > FAST_PROBABILITY or omega < -FAST_CLOSING_RAD_S:
+                commit = FAST_COMMIT
         milliseconds = (perf_counter() - start) * 1000
-        planned = result.action[:COMMIT]
+        planned = result.action[:min(commit, remaining)]
         offset = len(task.trace)
         for action in planned.numpy().copy():
             action[6] = GRASP_GAP
@@ -40,6 +58,8 @@ def learned_insert(task, model, rng, method, tau, exact):
             "world_batches": result.world_batches, "world_rollouts": result.world_rollouts,
             "committed_steps": len(executed),
         }
+        if adaptive:
+            sample.update(commit_limit=commit, fast_probability=probability, omega_rad_s=omega)
         if result.predicted is not None:
             pred = result.predicted[:len(executed)].clone()
             pred[:, 1:3].clamp_(0, 1)
@@ -102,28 +122,31 @@ def recovered(trace, initial_y):
     return False
 
 
-def run_episode(task, model, regime, seed, method, tau, exact, *, perturbed=False):
+def run_episode(task, model, regime, seed, method, tau, exact, *, perturbed=False, adaptive=False):
     rng = torch.Generator().manual_seed(5000 + seed)
     task.reset(regime, seed)
     park = np.array([0.0, 0.21, 0.17])
     task.open_lid(park, OPEN_GAP)
     samples, baseline, placed = [], [], []
     recovery = {}
+    handoff_peaks = []
     for item in (0, 1):
         task.stage = item + 1
         task.open_lid(park, OPEN_GAP)
         task.pick(item)
+        pre_entry_start = len(task.trace)
         pre = task.pre_entry(item)
         task.begin_insertion()
         if perturbed and item == 0:
             task.perturb_entry(pre)
             recovery = {"handoff_angle_rad": task.env.angle, "handoff_right_y_m": float(task.controller.tip(1)[1])}
         offset = len(task.trace)
+        handoff_peaks.append(float(max(record[2][3] for record in task.trace[pre_entry_start + 22:offset])))
         if method in ("B1", "B2"):
             baseline.append(baseline_insert(task, item, method, pre, 26 + seed % 9))
             placed.append(task.placed(item))
         else:
-            chunks, success = learned_insert(task, model, rng, method, tau, exact)
+            chunks, success = learned_insert(task, model, rng, method, tau, exact, adaptive=adaptive)
             samples.extend(chunks)
             placed.append(success)
         if recovery and item == 0:
@@ -149,6 +172,7 @@ def run_episode(task, model, regime, seed, method, tau, exact, *, perturbed=Fals
         "pinch_or_collision": peak >= COLLISION_THRESHOLD, "peak_impulse_Ns": peak,
         "elapsed_s": seconds, "left_engaged_s": left_seconds, "cost": seconds + 0.35 * left_seconds,
         "chunks": samples, "baseline_hold": baseline,
+        "preplan_peak_impulse_Ns": max(handoff_peaks),
         "final_object_xyz_m": [obj.data.root_link_pos_w[0].tolist() for obj in task.env.objects],
         **recovery,
     }
@@ -218,3 +242,56 @@ def gate(out, robot_usd, model_path, seeds):
     }
     (out / "gate.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     return report["passed"]
+
+
+def evaluate_phase2(out, robot_usd, seeds, *, regimes=tuple(DYNAMICS), dimensions=(128, 4, 32, 256),
+                    checkpoint_dir=None, device="cpu"):
+    from hashlib import sha256
+
+    from phase2_spring import HISTORY, dump
+
+    task = PackingTask(robot_usd, history=HISTORY)
+    checkpoint_dir = checkpoint_dir or out
+    configs = (
+        ("BC", "M1", 1.0, True), ("Joint-FM", "M2", TAU_START, True),
+        ("GPC-RANK", "GPC-RANK", 1.0, True), ("GPC-OPT", "GPC-OPT", 1.0, True),
+        ("GPC-RANK+OPT", "GPC-RANK+OPT", 1.0, True),
+        ("Ours", "M4-b", TAU_START, True), ("Ours fixed COMMIT=8", "M4-b", TAU_START, False),
+        *((f"tau={tau}", "M4-b", tau, True) for tau in ABLATIONS if tau != TAU_START),
+    )
+    path = out / "episodes.jsonl"
+    prior = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()] if path.exists() else []
+    done = {(row["d_z"], row["variant"], row["regime"], row["seed"], row["perturbed"]): row for row in prior}
+    with path.open("a", encoding="utf-8") as stream:
+        for dim in dimensions:
+            checkpoint = checkpoint_dir / f"world_{dim}.pt"
+            model_hash = sha256(checkpoint.read_bytes()).hexdigest()
+            if any(row["d_z"] == dim and row["weights_sha256"] != model_hash for row in prior):
+                raise ValueError(f"Existing packing journal uses a different checkpoint at Dz={dim}")
+            model = load_model(checkpoint).to(device)
+            selected = configs if dim == 128 else tuple(c for c in configs if c[0] == "Ours")
+            for seed in seeds:
+                for regime in regimes:
+                    for label, method, tau, adaptive in selected:
+                        for perturbed in (False, True):
+                            if perturbed and (dim != 128 or regime == "static" or label.startswith("tau=")):
+                                continue
+                            key = dim, label, regime, seed, perturbed
+                            if key in done:
+                                continue
+                            row = run_episode(task, model, regime, seed, method, tau, True, perturbed=perturbed,
+                                              adaptive=adaptive)
+                            row.update(d_z=dim, variant=label, perturbed=perturbed, adaptive=adaptive,
+                                       weights_sha256=model_hash)
+                            stream.write(json.dumps(row, allow_nan=False) + "\n")
+                            stream.flush()
+                            done[key] = row
+                            print(f"Packing {len(done)}: Dz={dim}, {label}, {regime}/{seed}, "
+                                  f"perturbed={perturbed}, success={row['success']}, "
+                                  f"collision={row['pinch_or_collision']}", flush=True)
+    rows = [row for row in done.values() if row["d_z"] in dimensions and row["seed"] in seeds
+            and row["regime"] in regimes]
+    dump(out / "closed_loop.json", dict(seeds=list(seeds), regimes=list(regimes), dimensions=list(dimensions),
+                                       history=HISTORY, commit=[FAST_COMMIT, COMMIT],
+                                       fast_probability=FAST_PROBABILITY, closing_rad_s=FAST_CLOSING_RAD_S,
+                                       torch_version=str(torch.__version__), device=str(device), episodes=rows))

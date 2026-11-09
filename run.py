@@ -78,7 +78,7 @@ def calibration(out, robot_usd):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("calibrate", "robot-probe", "collect", "evaluate", "gate"))
+    parser.add_argument("command", choices=("calibrate", "robot-probe", "collect", "evaluate", "evaluate-phase2", "gate"))
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--robot-usd", type=Path, default=ASSET)
     parser.add_argument("--groups", type=int, default=1)
@@ -88,8 +88,11 @@ def main():
     parser.add_argument("--schemes", nargs="+", choices=("direct", "hold", "delayed", "recover"),
                         default=("direct", "hold", "delayed", "recover"))
     parser.add_argument("--model", type=Path)
+    parser.add_argument("--checkpoint-dir", type=Path)
+    parser.add_argument("--policy-device", default="auto", choices=("auto", "cpu", "cuda"))
     parser.add_argument("--eval-seeds", type=int, nargs="+", default=(60, 61, 62))
     parser.add_argument("--exact", action="store_true")
+    parser.add_argument("--dimensions", type=int, nargs="+", choices=(4, 32, 128, 256), default=(128, 4, 32, 256))
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     if args.command != "calibrate" and not args.robot_usd.is_file():
@@ -98,7 +101,14 @@ def main():
         parser.error("Evaluation requires an existing --model checkpoint")
 
     os.environ.setdefault("OMNI_KIT_ACCEPT_EULA", "YES")
+    if args.command == "evaluate-phase2" and args.policy_device != "cpu":
+        cuda_site = r"C:\isaacsim_env\phase2_cuda"
+        if os.path.isdir(cuda_site) and "torch" not in sys.modules:
+            sys.path.insert(0, cuda_site)
     import torch
+
+    if args.policy_device == "auto":
+        args.policy_device = "cuda" if torch.cuda.is_available() else "cpu"
 
     torch.set_num_threads(1)
     from isaacsim import SimulationApp
@@ -124,6 +134,11 @@ def main():
 
             evaluate(args.out, args.robot_usd, args.model, args.eval_seeds,
                      exact=args.exact, regimes=args.regimes)
+        elif args.command == "evaluate-phase2":
+            from evaluate import evaluate_phase2
+
+            evaluate_phase2(args.out, args.robot_usd, args.eval_seeds, regimes=args.regimes, dimensions=args.dimensions,
+                            checkpoint_dir=args.checkpoint_dir, device=args.policy_device)
         elif args.command == "gate":
             from evaluate import gate
 

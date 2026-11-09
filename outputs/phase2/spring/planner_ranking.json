@@ -1,0 +1,1874 @@
+[
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.038235731422901154,
+      0.0064936066046357155
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03240559995174408,
+      0.010973447933793068
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "GPC-RANK",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03746100515127182,
+      0.006630365736782551
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03540840372443199,
+      0.008860122412443161
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.02397114597260952,
+      0.019227080047130585
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "Ours",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.037008967250585556,
+      0.007119324989616871
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.014692806638777256,
+      0.029205292463302612
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03556996211409569,
+      0.00890300516039133
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "GPC-RANK",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.027151266112923622,
+      0.01628132164478302
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.01422121375799179,
+      0.030266959220170975
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.017828350886702538,
+      0.026949644088745117
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.017060648649930954,
+      0.02714076265692711
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.04349147528409958,
+      0.0015358668752014637
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.04262765869498253,
+      0.001800388447009027
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "GPC-RANK",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.024480462074279785,
+      0.01858419179916382
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.04059942066669464,
+      0.002946631982922554
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.021169962361454964,
+      0.021939601749181747
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "Ours",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.021664613857865334,
+      0.021411359310150146
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.037770673632621765,
+      0.007227235473692417
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.024459233507514,
+      0.019365491345524788
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.014423572458326817,
+      0.02942625619471073
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.035505205392837524,
+      0.009299451485276222
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.02671351470053196,
+      0.016349051147699356
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "Ours",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.02747570537030697,
+      0.015525948256254196
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.020545676350593567,
+      0.023130856454372406
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "Joint-FM",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.013105309568345547,
+      0.03061363287270069
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0181234423071146,
+      0.025074943900108337
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.019391696900129318,
+      0.024480504915118217
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.01563965529203415,
+      0.027648335322737694
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.016582977026700974,
+      0.026636596769094467
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0038056806661188602,
+      0.04190463200211525
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.02831285260617733,
+      0.015382969751954079
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0018158182501792908,
+      0.04271953925490379
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.003541926620528102,
+      0.0423177070915699
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.002055218443274498,
+      0.04222104698419571
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.001714326092042029,
+      0.042795389890670776
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.04301108419895172,
+      0.0017188882920891047
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.04192804917693138,
+      0.0017660509329289198
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0018369604367762804,
+      0.04327351599931717
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0407680869102478,
+      0.0031285230070352554
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0020180551800876856,
+      0.04233120009303093
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0017610605573281646,
+      0.04256148263812065
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.018688181415200233,
+      0.025847256183624268
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "Joint-FM",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.006763235665857792,
+      0.03723687306046486
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.002594685647636652,
+      0.04326462000608444
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.017817651852965355,
+      0.026636533439159393
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0027631332632154226,
+      0.04313819110393524
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0026756757870316505,
+      0.04329664260149002
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.019854940474033356,
+      0.023600947111845016
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "Joint-FM",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.008563418872654438,
+      0.03472743555903435
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.00204714247956872,
+      0.0426873043179512
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.018345516175031662,
+      0.02533125691115856
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.015237802639603615,
+      0.027851976454257965
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.01642341911792755,
+      0.026642341166734695
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.005065727047622204,
+      0.04046832025051117
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.02336801402270794,
+      0.020433882251381874
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0032394498120993376,
+      0.04069378972053528
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0041340854950249195,
+      0.041476041078567505
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.001953559461981058,
+      0.04245311766862869
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0020110574550926685,
+      0.0424177348613739
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.043983519077301025,
+      0.0024549784138798714
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.03607477620244026,
+      0.0075739528983831406
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0019302875734865665,
+      0.04153009504079819
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.041894786059856415,
+      0.0026976033113896847
+    ],
+    "match": false
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0018044366734102368,
+      0.042567647993564606
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0015311649767681956,
+      0.04256433993577957
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.018840305507183075,
+      0.025537095963954926
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "Joint-FM",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.004799646325409412,
+      0.03940513730049133
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0019706040620803833,
+      0.043466947972774506
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.017656661570072174,
+      0.026696927845478058
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.016964979469776154,
+      0.025967638939619064
+    ],
+    "match": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.018436744809150696,
+      0.024540625512599945
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03925834968686104,
+      0.0056503466330468655
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03421063348650932,
+      0.009153889492154121
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "GPC-RANK",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03163095563650131,
+      0.011367314495146275
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.036367885768413544,
+      0.007935117930173874
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.029914796352386475,
+      0.013182926923036575
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 19,
+    "method": "Ours",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.031280696392059326,
+      0.011725067161023617
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.018485475331544876,
+      0.02519136667251587
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03599373996257782,
+      0.008547959849238396
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "GPC-RANK",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.024327239021658897,
+      0.01961355283856392
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.018350547179579735,
+      0.025291960686445236
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.02210952527821064,
+      0.0218905508518219
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 83,
+    "method": "Ours",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03277529776096344,
+      0.010536136105656624
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.04338953644037247,
+      0.0014717911835759878
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.042561519891023636,
+      0.0017975660739466548
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "GPC-RANK",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.029419077560305595,
+      0.013647613115608692
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.04044513404369354,
+      0.003076704451814294
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.025353265926241875,
+      0.01778445392847061
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 156,
+    "method": "Ours",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.026696711778640747,
+      0.01633460819721222
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03923103213310242,
+      0.005908012390136719
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.027261104434728622,
+      0.016394373029470444
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.021470030769705772,
+      0.022164857015013695
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03685581311583519,
+      0.007890364155173302
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03030923753976822,
+      0.012723902240395546
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "proposal_seed": 201,
+    "method": "Ours",
+    "matched_candidate": "hold",
+    "reference_candidate": "hold",
+    "mean_distance_m": [
+      0.03187877684831619,
+      0.011152929626405239
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.030647169798612595,
+      0.013024039566516876
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "Joint-FM",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.01674780622124672,
+      0.026641318574547768
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0035629691556096077,
+      0.03973989933729172
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.02889666147530079,
+      0.014921272173523903
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.00969665963202715,
+      0.03335096687078476
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 19,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.010567737743258476,
+      0.03240369260311127
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0055912574753165245,
+      0.03913183882832527
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.03051893413066864,
+      0.013328006491065025
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.00206618569791317,
+      0.04248744994401932
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.00510643795132637,
+      0.039928026497364044
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0020405647810548544,
+      0.04242704436182976
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 83,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.00201750872656703,
+      0.042505331337451935
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.04369388520717621,
+      0.0019190842285752296
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.042283739894628525,
+      0.0015415702946484089
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.005133753642439842,
+      0.038037072867155075
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.04141461104154587,
+      0.002803386189043522
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.003940153867006302,
+      0.03962383046746254
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 156,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0036964325699955225,
+      0.03969670832157135
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.026681097224354744,
+      0.017610257491469383
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "Joint-FM",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.008805535733699799,
+      0.03507044166326523
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0171634703874588,
+      0.02623932994902134
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.025267744436860085,
+      0.018945669755339622
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.024187978357076645,
+      0.018828434869647026
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "proposal_seed": 201,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0027943134773522615,
+      0.04331054538488388
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.020779455080628395,
+      0.022633200511336327
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "Joint-FM",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.009456535801291466,
+      0.03370281308889389
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.002121150493621826,
+      0.04269321635365486
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.01928439736366272,
+      0.024341903626918793
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.01606585644185543,
+      0.026982992887496948
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 19,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.00933346338570118,
+      0.03364448621869087
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0051217107102274895,
+      0.0404500812292099
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.024714037775993347,
+      0.01914936676621437
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.003061810741201043,
+      0.04073607921600342
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.004133167210966349,
+      0.04143644869327545
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0019832707475870848,
+      0.04247424378991127
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 83,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0019978596828877926,
+      0.04245323687791824
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "BC",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.04401148483157158,
+      0.0023791594430804253
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "Joint-FM",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.036039549857378006,
+      0.007528949528932571
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0020164710003882647,
+      0.04136787727475166
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "GPC-OPT",
+    "matched_candidate": "hold",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.04167144373059273,
+      0.002877397695556283
+    ],
+    "match": false
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0018408591859042645,
+      0.04243989288806915
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 156,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0015829395269975066,
+      0.04246601462364197
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "BC",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.019421488046646118,
+      0.0248279869556427
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "Joint-FM",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.004622451029717922,
+      0.039334721863269806
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "GPC-RANK",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0019538847263902426,
+      0.04348349571228027
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "GPC-OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.01820732094347477,
+      0.026029441505670547
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "GPC-RANK+OPT",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.0174805149435997,
+      0.025447020307183266
+    ],
+    "match": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "proposal_seed": 201,
+    "method": "Ours",
+    "matched_candidate": "direct",
+    "reference_candidate": "direct",
+    "mean_distance_m": [
+      0.018960462883114815,
+      0.02401723340153694
+    ],
+    "match": true
+  }
+]

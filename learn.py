@@ -166,10 +166,10 @@ def temporal_noise(shape, *, generator=None, device=None, dtype=None):
 
 def flow_loss(model, clean, obs, stage, action_dim, mask, lambda_smooth=0.6):
     last = (mask.sum(dim=1) - 1).clamp_min(0)
-    endpoint = clean[torch.arange(len(clean)), last]
+    endpoint = clean[torch.arange(len(clean), device=clean.device), last]
     clean = torch.where(mask[..., None], clean, endpoint[:, None])
     noise = temporal_noise(clean.shape, device=clean.device, dtype=clean.dtype)
-    tau = torch.rand((len(clean), 1))
+    tau = torch.rand((len(clean), 1), device=clean.device)
     mixed = torch.lerp(noise, clean, tau[:, :, None])
     velocity = model(mixed, tau, obs, stage)
     pred_clean = mixed + (1 - tau[:, :, None]) * velocity
@@ -183,12 +183,16 @@ def flow_loss(model, clean, obs, stage, action_dim, mask, lambda_smooth=0.6):
 
 def world_loss(world, obs, action, state, stage, xi, event_weight):
     pred = world(obs, stage, action, xi, raw=True)
+    return safety_loss(pred, state, event_weight)
+
+
+def safety_loss(pred, state, event_weight):
     positive = state[..., 3] >= IMPULSE_THRESHOLD / STATE_SCALE[3]
     collision = F.binary_cross_entropy_with_logits(pred[..., 4], positive.float(), pos_weight=event_weight)
     error = F.smooth_l1_loss(F.softplus(pred[..., 3]), state[..., 3], reduction="none")
     magnitude = (error * positive).sum() / positive.sum().clamp_min(1)
     clearance = F.smooth_l1_loss(pred[..., 0], state[..., 0])
-    occupancy = F.binary_cross_entropy_with_logits(pred[..., 1], state[..., 1], pos_weight=torch.tensor(3.0))
+    occupancy = F.binary_cross_entropy_with_logits(pred[..., 1], state[..., 1], pos_weight=pred.new_tensor(3.0))
     progress = F.smooth_l1_loss(pred[..., 2].sigmoid(), state[..., 2])
     return 3 * clearance + occupancy + 2 * progress + collision + 0.5 * magnitude
 
@@ -343,6 +347,11 @@ def fit(raw, out, train_seeds, val_seeds, test_seeds, *, horizon=24, steps=850, 
 def load_model(file):
     ckpt = torch.load(file, map_location="cpu", weights_only=True)
     models = Modules(**ckpt["config"])
+    if "phase2" in ckpt:
+        from phase2_spring import configure
+
+        configure(models, ckpt["phase2"]["d_z"])
+        models.warning_clearance = ckpt["phase2"]["warning_clearance"]
     models.load_state_dict(ckpt["weights"])
     return models.eval().requires_grad_(False)
 

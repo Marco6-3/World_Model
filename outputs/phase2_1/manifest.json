@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-11-09T17:25:06.311758+08:00",
+  "source_sha256": {
+    "pusht_benchmark.py": "97600654def574457777207d2f41cb79e81a58c60c18510faa3397b5e032e699",
+    "phase2_spring.py": "0e33a526df036ac7e5170a2b1963e5dcad946cc85101c17892f4c57c24c465ac",
+    "inference.py": "0ad61f61e95c429518199ab25a827189f48273385d63aad4886bbcf334c280a5",
+    "mamba_wm.py": "d6a5ee84d03e08726a08404aa7a064d62c8472f7ba497fb8be640b459ae95256",
+    "evaluate.py": "ece408f026534e4eebffbe9dd9c28f98a2351ff724d20def11f361bdf51cceec",
+    "run.py": "9595773ccec8b3ab18726ccdc2bbb414dafd483464287f0438bf7a85fb0e440e",
+    "learn.py": "137a32dfec0214be374f23670c33dc06df6bcacf1c2830b5fa506bb654a73dd2",
+    "control.py": "942b49d75bb5106e4da18c5b37de560d577403791074c9edd52b04f9b48ca757"
+  },
+  "thresholds": {
+    "safe_clearance_m": 0.018,
+    "terminal_clearance_m": 0.09,
+    "terminal_weight": 3200
+  },
+  "push_flow_updates": 25000,
+  "push_world_updates": 15000,
+  "spring_world_updates": 650,
+  "status": "evaluation_complete; empirical_targets_not_all_met",
+  "evaluation_source_sha256": {
+    "pusht_benchmark.py": "fc9e9f095125cd85caeb4b6d4a3e245899f749183d434b909f8de6d5dfe164d1",
+    "phase2_spring.py": "10e397ce63af20dcb7adbe721d9bd803849b169a1f2dc1972ff048f923fa6afa",
+    "inference.py": "0ad61f61e95c429518199ab25a827189f48273385d63aad4886bbcf334c280a5",
+    "mamba_wm.py": "d6a5ee84d03e08726a08404aa7a064d62c8472f7ba497fb8be640b459ae95256",
+    "evaluate.py": "ece408f026534e4eebffbe9dd9c28f98a2351ff724d20def11f361bdf51cceec",
+    "run.py": "9595773ccec8b3ab18726ccdc2bbb414dafd483464287f0438bf7a85fb0e440e",
+    "learn.py": "137a32dfec0214be374f23670c33dc06df6bcacf1c2830b5fa506bb654a73dd2",
+    "control.py": "942b49d75bb5106e4da18c5b37de560d577403791074c9edd52b04f9b48ca757",
+    "phase2_report.py": "b0586145c7486756bc49bdc22100c96350c2d30de5ec571480a26445d522cac1",
+    "phase2_acceptance.py": "77dbb74f74b14c0d7590684398f5a4050442f874037fcda936b6d33326a24adb",
+    "phase2_timing.py": "00063c5a7e2c12014e7eb29156d14d60f715940e5ee4837792263b9f2365bf23",
+    "test_phase2_fixes.py": "916d4120d9990b3d18abdd9a1246631f6ff44aaed1d074af30ac34b19510cb46"
+  },
+  "push_max_steps": 300,
+  "push_test_seeds": [
+    10000,
+    10049
+  ],
+  "spring_test_seeds": [
+    60,
+    61,
+    62
+  ],
+  "spring_policy_device": "cuda",
+  "commands": [
+    "C:\\isaacsim_env\\Scripts\\python.exe pusht_benchmark.py fit --out outputs/phase2_1/pusht --flow-steps 25000 --world-steps 15000",
+    "C:\\isaacsim_env\\Scripts\\python.exe phase2_spring.py fit --out outputs/phase2_1/spring --steps 650",
+    "C:\\isaacsim_env\\Scripts\\python.exe phase2_spring.py memory --out outputs/phase2_1/spring",
+    "C:\\isaacsim_env\\Scripts\\python.exe phase2_spring.py ranking --out outputs/phase2_1/spring",
+    "C:\\isaacsim_env\\Scripts\\python.exe pusht_benchmark.py evaluate --out outputs/phase2_1/pusht --max-steps 300",
+    "$env:PYTHONPATH='C:\\isaacsim_env\\phase2_cuda'; & C:\\isaacsim_env\\Scripts\\python.exe run.py evaluate-phase2 --out outputs/phase2_1/spring --checkpoint-dir outputs/phase2_1/spring --policy-device cuda"
+  ],
+  "completed_at": "2026-11-09T18:14:19.900503+08:00",
+  "episodes": {
+    "pusht": 550,
+    "spring": 177
+  },
+  "all_empirical_targets_met": false,
+  "regression_tests_passed": 5,
+  "report_sha256": {
+    "outputs\\Phase2_GPC_Mamba_实验报告.md": "e07658aad2834920607f797631e9eca68d7f6a48cc275deaa976e2660434da1e",
+    "outputs\\Phase1_实验报告.md": "7d0d219945b05ecbebd48776e2d50cc35cd592db50b672a41a975e5324c3caaf",
+    "outputs\\evaluation\\results.md": "790b2a5949e2c08f49e884a463f4dd259385b7d08301e3e62a1796f135bf7025"
+  },
+  "final_source_sha256": {
+    "pusht_benchmark.py": "fc9e9f095125cd85caeb4b6d4a3e245899f749183d434b909f8de6d5dfe164d1",
+    "phase2_spring.py": "d39c4acca364d9e319e4624ff38c854621faf49aadbb25f76c318f5dfddb2acc",
+    "inference.py": "0ad61f61e95c429518199ab25a827189f48273385d63aad4886bbcf334c280a5",
+    "mamba_wm.py": "d6a5ee84d03e08726a08404aa7a064d62c8472f7ba497fb8be640b459ae95256",
+    "evaluate.py": "ece408f026534e4eebffbe9dd9c28f98a2351ff724d20def11f361bdf51cceec",
+    "run.py": "c46d329a8a62fa113f4b8a3b3d88a3ad2f01aa2da98b58fc82f592232bf657ad",
+    "learn.py": "137a32dfec0214be374f23670c33dc06df6bcacf1c2830b5fa506bb654a73dd2",
+    "control.py": "942b49d75bb5106e4da18c5b37de560d577403791074c9edd52b04f9b48ca757",
+    "phase2_report.py": "943123f6e55d3ad069f14b1a9f4341acce127091b017ce4b36abac90957fb7f8",
+    "phase2_acceptance.py": "58e3f94585665b37b89b092b6fab39ff2d56b9661edd3f0e0cbfeb976e3f6918",
+    "phase2_timing.py": "00063c5a7e2c12014e7eb29156d14d60f715940e5ee4837792263b9f2365bf23",
+    "test_phase2_fixes.py": "4eaae30a806438baee0d44a1f965ce2f0b5b00a79f6bbb89cc97532664e4477b"
+  }
+}

@@ -10,8 +10,17 @@ __pycache__/
 *.ckpt
 *.log
 *.jsonl
+*.zip
+*.parquet
 *_waypoints.json
 outputs/**/matrix.json
+outputs/**/results.json
+outputs/**/closed_loop.json
+outputs/**/shard_*/
+outputs/**/seed*/
+outputs/**/source_snapshot/
+outputs/**/evaluation_source/
+outputs/**/final_source/
 
 # OS / IDE files
 .DS_Store

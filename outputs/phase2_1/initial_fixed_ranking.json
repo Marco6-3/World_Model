@@ -1,0 +1,128 @@
+[
+  {
+    "seed": 108,
+    "regime": "fast",
+    "predicted_cost": [
+      1.9898242950439453,
+      -0.7157430648803711
+    ],
+    "observed_cost": [
+      1.4382977485656738,
+      -0.6281135082244873
+    ],
+    "predicted_choice": "hold",
+    "observed_choice": "hold",
+    "peak_impulse": [
+      0.03686133399605751,
+      0.0
+    ],
+    "max_prefix_feature_difference": 0.1309521198272705,
+    "expected_safe_choice": "hold",
+    "safe_ranking_pass": true
+  },
+  {
+    "seed": 108,
+    "regime": "slow",
+    "predicted_cost": [
+      -0.26964271068573,
+      -0.7491284608840942
+    ],
+    "observed_cost": [
+      -0.5923950672149658,
+      -0.6281517744064331
+    ],
+    "predicted_choice": "hold",
+    "observed_choice": "hold",
+    "peak_impulse": [
+      0.02182251401245594,
+      0.0
+    ],
+    "max_prefix_feature_difference": 0.011071085929870605,
+    "expected_safe_choice": "hold",
+    "safe_ranking_pass": true
+  },
+  {
+    "seed": 108,
+    "regime": "static",
+    "predicted_cost": [
+      -1.3430026769638062,
+      -0.6687244772911072
+    ],
+    "observed_cost": [
+      -1.2939578294754028,
+      -0.6287435293197632
+    ],
+    "predicted_choice": "direct",
+    "observed_choice": "direct",
+    "peak_impulse": [
+      0.0,
+      0.0
+    ],
+    "max_prefix_feature_difference": 0.2701396346092224,
+    "expected_safe_choice": "direct",
+    "safe_ranking_pass": true
+  },
+  {
+    "seed": 109,
+    "regime": "fast",
+    "predicted_cost": [
+      1.9761916399002075,
+      -0.7142896056175232
+    ],
+    "observed_cost": [
+      1.4340559244155884,
+      -0.6316630244255066
+    ],
+    "predicted_choice": "hold",
+    "observed_choice": "hold",
+    "peak_impulse": [
+      0.03685448318719864,
+      0.0
+    ],
+    "max_prefix_feature_difference": 0.20079147815704346,
+    "expected_safe_choice": "hold",
+    "safe_ranking_pass": true
+  },
+  {
+    "seed": 109,
+    "regime": "slow",
+    "predicted_cost": [
+      -0.2577401399612427,
+      -0.7507198452949524
+    ],
+    "observed_cost": [
+      -0.5949538946151733,
+      -0.6334649324417114
+    ],
+    "predicted_choice": "hold",
+    "observed_choice": "hold",
+    "peak_impulse": [
+      0.021836547181010246,
+      0.0
+    ],
+    "max_prefix_feature_difference": 0.06892973184585571,
+    "expected_safe_choice": "hold",
+    "safe_ranking_pass": true
+  },
+  {
+    "seed": 109,
+    "regime": "static",
+    "predicted_cost": [
+      -1.342286229133606,
+      -0.6657019853591919
+    ],
+    "observed_cost": [
+      -1.2978111505508423,
+      -0.6316936016082764
+    ],
+    "predicted_choice": "direct",
+    "observed_choice": "direct",
+    "peak_impulse": [
+      0.0,
+      0.0
+    ],
+    "max_prefix_feature_difference": 0.2678380012512207,
+    "expected_safe_choice": "direct",
+    "safe_ranking_pass": true
+  }
+]

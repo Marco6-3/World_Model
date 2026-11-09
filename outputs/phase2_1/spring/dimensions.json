@@ -1,0 +1,914 @@
+{
+  "128": {
+    "d_z": 128,
+    "warning_clearance": 0.054999999701976776,
+    "updates": 650,
+    "seed": 214,
+    "split_seeds": [
+      [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      [
+        106,
+        107
+      ],
+      [
+        108,
+        109
+      ]
+    ],
+    "warning_occupied_fraction": 0.09592507779598236,
+    "parameters": 436886,
+    "val": {
+      "windows": 2194,
+      "clearance_mae_m": 0.004311175085604191,
+      "lid_angle_mae_rad": 0.03453700244426727,
+      "lid_speed_mae_rad_s": 0.18498574197292328,
+      "visible_object_xyz_mae_m": 0.003984155133366585,
+      "impulse_mae_Ns": 0.00624327315017581,
+      "collision_steps": 8062,
+      "missed_steps": 130,
+      "noncollision_steps": 44594,
+      "false_alarm_steps": 169,
+      "posterior_accuracy": 0.9680948257446289
+    },
+    "test": {
+      "windows": 2040,
+      "clearance_mae_m": 0.00415613641962409,
+      "lid_angle_mae_rad": 0.034405287355184555,
+      "lid_speed_mae_rad_s": 0.19180390238761902,
+      "visible_object_xyz_mae_m": 0.003650444792583585,
+      "impulse_mae_Ns": 0.006570711731910706,
+      "collision_steps": 7000,
+      "missed_steps": 101,
+      "noncollision_steps": 41960,
+      "false_alarm_steps": 419,
+      "posterior_accuracy": 0.9705882668495178
+    },
+    "offline_test": [
+      {
+        "seed": 108,
+        "regime": "fast",
+        "predicted_cost": [
+          0.9003198742866516,
+          -0.6889532208442688
+        ],
+        "observed_cost": [
+          1.4382977485656738,
+          -0.6281135082244873
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.03686133399605751,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.1309521198272705,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.100267693400383,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 108,
+        "regime": "slow",
+        "predicted_cost": [
+          -1.0006722211837769,
+          -0.7059445381164551
+        ],
+        "observed_cost": [
+          -0.5923950672149658,
+          -0.6281517744064331
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.02182251401245594,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.011071085929870605,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": false,
+        "episode_peak_impulse": [
+          0.1048770472407341,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 108,
+        "regime": "static",
+        "predicted_cost": [
+          -1.386916160583496,
+          -0.7230825424194336
+        ],
+        "observed_cost": [
+          -1.2939578294754028,
+          -0.6287435293197632
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "direct",
+        "peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.2701396346092224,
+        "expected_safe_choice": "direct",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "fast",
+        "predicted_cost": [
+          0.9068730473518372,
+          -0.688495934009552
+        ],
+        "observed_cost": [
+          1.4340559244155884,
+          -0.6316630244255066
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.03685448318719864,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.20079147815704346,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.09440229833126068,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "slow",
+        "predicted_cost": [
+          -0.9984632134437561,
+          -0.7046261429786682
+        ],
+        "observed_cost": [
+          -0.5949538946151733,
+          -0.6334649324417114
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.021836547181010246,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.06892973184585571,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": false,
+        "episode_peak_impulse": [
+          0.10521110892295837,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "static",
+        "predicted_cost": [
+          -1.387676477432251,
+          -0.7225930094718933
+        ],
+        "observed_cost": [
+          -1.2978111505508423,
+          -0.6316936016082764
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "direct",
+        "peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.2678380012512207,
+        "expected_safe_choice": "direct",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "4": {
+    "d_z": 4,
+    "warning_clearance": 0.054999999701976776,
+    "updates": 650,
+    "seed": 214,
+    "split_seeds": [
+      [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      [
+        106,
+        107
+      ],
+      [
+        108,
+        109
+      ]
+    ],
+    "warning_occupied_fraction": 0.09592507779598236,
+    "parameters": 190467,
+    "val": {
+      "windows": 2194,
+      "clearance_mae_m": 0.011662188917398453,
+      "lid_angle_mae_rad": 0.19659237563610077,
+      "lid_speed_mae_rad_s": 0.4025172293186188,
+      "visible_object_xyz_mae_m": 0.026726622134447098,
+      "impulse_mae_Ns": 0.03381803259253502,
+      "collision_steps": 8062,
+      "missed_steps": 5725,
+      "noncollision_steps": 44594,
+      "false_alarm_steps": 39792,
+      "posterior_accuracy": 0.940291702747345
+    },
+    "test": {
+      "windows": 2040,
+      "clearance_mae_m": 0.01169443130493164,
+      "lid_angle_mae_rad": 0.20362122356891632,
+      "lid_speed_mae_rad_s": 0.4122620224952698,
+      "visible_object_xyz_mae_m": 0.02654085122048855,
+      "impulse_mae_Ns": 0.032486286014318466,
+      "collision_steps": 7000,
+      "missed_steps": 4949,
+      "noncollision_steps": 41960,
+      "false_alarm_steps": 37212,
+      "posterior_accuracy": 0.9500000476837158
+    },
+    "offline_test": [
+      {
+        "seed": 108,
+        "regime": "fast",
+        "predicted_cost": [
+          6.228122711181641,
+          1.4461896419525146
+        ],
+        "observed_cost": [
+          1.4382977485656738,
+          -0.6281135082244873
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.03686133399605751,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.1309521198272705,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.100267693400383,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 108,
+        "regime": "slow",
+        "predicted_cost": [
+          0.1680593639612198,
+          1.602763056755066
+        ],
+        "observed_cost": [
+          -0.5923950672149658,
+          -0.6281517744064331
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.02182251401245594,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.011071085929870605,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": false,
+        "episode_peak_impulse": [
+          0.1048770472407341,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 108,
+        "regime": "static",
+        "predicted_cost": [
+          1.340476393699646,
+          1.099342942237854
+        ],
+        "observed_cost": [
+          -1.2939578294754028,
+          -0.6287435293197632
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "direct",
+        "peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.2701396346092224,
+        "expected_safe_choice": "direct",
+        "safe_ranking_pass": false,
+        "episode_peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "fast",
+        "predicted_cost": [
+          6.078568458557129,
+          1.4414094686508179
+        ],
+        "observed_cost": [
+          1.4340559244155884,
+          -0.6316630244255066
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.03685448318719864,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.20079147815704346,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.09440229833126068,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "slow",
+        "predicted_cost": [
+          0.21913908421993256,
+          1.6154462099075317
+        ],
+        "observed_cost": [
+          -0.5949538946151733,
+          -0.6334649324417114
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.021836547181010246,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.06892973184585571,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": false,
+        "episode_peak_impulse": [
+          0.10521110892295837,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "static",
+        "predicted_cost": [
+          1.3209280967712402,
+          1.0797040462493896
+        ],
+        "observed_cost": [
+          -1.2978111505508423,
+          -0.6316936016082764
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "direct",
+        "peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.2678380012512207,
+        "expected_safe_choice": "direct",
+        "safe_ranking_pass": false,
+        "episode_peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "32": {
+    "d_z": 32,
+    "warning_clearance": 0.054999999701976776,
+    "updates": 650,
+    "seed": 214,
+    "split_seeds": [
+      [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      [
+        106,
+        107
+      ],
+      [
+        108,
+        109
+      ]
+    ],
+    "warning_occupied_fraction": 0.09592507779598236,
+    "parameters": 210134,
+    "val": {
+      "windows": 2194,
+      "clearance_mae_m": 0.0054547423496842384,
+      "lid_angle_mae_rad": 0.054884836077690125,
+      "lid_speed_mae_rad_s": 0.2573159337043762,
+      "visible_object_xyz_mae_m": 0.006051234435290098,
+      "impulse_mae_Ns": 0.003953341394662857,
+      "collision_steps": 8062,
+      "missed_steps": 297,
+      "noncollision_steps": 44594,
+      "false_alarm_steps": 915,
+      "posterior_accuracy": 0.959890604019165
+    },
+    "test": {
+      "windows": 2040,
+      "clearance_mae_m": 0.005477882921695709,
+      "lid_angle_mae_rad": 0.055005062371492386,
+      "lid_speed_mae_rad_s": 0.25907644629478455,
+      "visible_object_xyz_mae_m": 0.00563526526093483,
+      "impulse_mae_Ns": 0.004173368215560913,
+      "collision_steps": 7000,
+      "missed_steps": 183,
+      "noncollision_steps": 41960,
+      "false_alarm_steps": 1046,
+      "posterior_accuracy": 0.960784375667572
+    },
+    "offline_test": [
+      {
+        "seed": 108,
+        "regime": "fast",
+        "predicted_cost": [
+          1.955216646194458,
+          -0.6192941069602966
+        ],
+        "observed_cost": [
+          1.4382977485656738,
+          -0.6281135082244873
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.03686133399605751,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.1309521198272705,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.100267693400383,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 108,
+        "regime": "slow",
+        "predicted_cost": [
+          -0.7258196473121643,
+          -0.6925342082977295
+        ],
+        "observed_cost": [
+          -0.5923950672149658,
+          -0.6281517744064331
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.02182251401245594,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.011071085929870605,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": false,
+        "episode_peak_impulse": [
+          0.1048770472407341,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 108,
+        "regime": "static",
+        "predicted_cost": [
+          -1.3688820600509644,
+          -0.5934473872184753
+        ],
+        "observed_cost": [
+          -1.2939578294754028,
+          -0.6287435293197632
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "direct",
+        "peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.2701396346092224,
+        "expected_safe_choice": "direct",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "fast",
+        "predicted_cost": [
+          1.9853261709213257,
+          -0.618514358997345
+        ],
+        "observed_cost": [
+          1.4340559244155884,
+          -0.6316630244255066
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.03685448318719864,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.20079147815704346,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.09440229833126068,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "slow",
+        "predicted_cost": [
+          -0.7090408205986023,
+          -0.6933344006538391
+        ],
+        "observed_cost": [
+          -0.5949538946151733,
+          -0.6334649324417114
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.021836547181010246,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.06892973184585571,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": false,
+        "episode_peak_impulse": [
+          0.10521110892295837,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "static",
+        "predicted_cost": [
+          -1.367738127708435,
+          -0.5927315354347229
+        ],
+        "observed_cost": [
+          -1.2978111505508423,
+          -0.6316936016082764
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "direct",
+        "peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.2678380012512207,
+        "expected_safe_choice": "direct",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "256": {
+    "d_z": 256,
+    "warning_clearance": 0.054999999701976776,
+    "updates": 650,
+    "seed": 214,
+    "split_seeds": [
+      [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      [
+        106,
+        107
+      ],
+      [
+        108,
+        109
+      ]
+    ],
+    "warning_occupied_fraction": 0.09592507779598236,
+    "parameters": 1111958,
+    "val": {
+      "windows": 2194,
+      "clearance_mae_m": 0.004820881877094507,
+      "lid_angle_mae_rad": 0.028139464557170868,
+      "lid_speed_mae_rad_s": 0.1927940845489502,
+      "visible_object_xyz_mae_m": 0.0033501610159873962,
+      "impulse_mae_Ns": 0.004590924829244614,
+      "collision_steps": 8062,
+      "missed_steps": 83,
+      "noncollision_steps": 44594,
+      "false_alarm_steps": 441,
+      "posterior_accuracy": 0.964904248714447
+    },
+    "test": {
+      "windows": 2040,
+      "clearance_mae_m": 0.0047754039987921715,
+      "lid_angle_mae_rad": 0.028956037014722824,
+      "lid_speed_mae_rad_s": 0.19537772238254547,
+      "visible_object_xyz_mae_m": 0.0030330861918628216,
+      "impulse_mae_Ns": 0.004537301138043404,
+      "collision_steps": 7000,
+      "missed_steps": 63,
+      "noncollision_steps": 41960,
+      "false_alarm_steps": 699,
+      "posterior_accuracy": 0.9647059440612793
+    },
+    "offline_test": [
+      {
+        "seed": 108,
+        "regime": "fast",
+        "predicted_cost": [
+          1.9913876056671143,
+          -0.7157631516456604
+        ],
+        "observed_cost": [
+          1.4382977485656738,
+          -0.6281135082244873
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.03686133399605751,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.1309521198272705,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.100267693400383,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 108,
+        "regime": "slow",
+        "predicted_cost": [
+          -0.2680726945400238,
+          -0.749200701713562
+        ],
+        "observed_cost": [
+          -0.5923950672149658,
+          -0.6281517744064331
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.02182251401245594,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.011071085929870605,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.1048770472407341,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 108,
+        "regime": "static",
+        "predicted_cost": [
+          -1.343085527420044,
+          -0.6687929034233093
+        ],
+        "observed_cost": [
+          -1.2939578294754028,
+          -0.6287435293197632
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "direct",
+        "peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.2701396346092224,
+        "expected_safe_choice": "direct",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "fast",
+        "predicted_cost": [
+          1.9776926040649414,
+          -0.7143546938896179
+        ],
+        "observed_cost": [
+          1.4340559244155884,
+          -0.6316630244255066
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.03685448318719864,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.20079147815704346,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.09440229833126068,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "slow",
+        "predicted_cost": [
+          -0.2590440809726715,
+          -0.7507262825965881
+        ],
+        "observed_cost": [
+          -0.5949538946151733,
+          -0.6334649324417114
+        ],
+        "predicted_choice": "hold",
+        "observed_choice": "hold",
+        "peak_impulse": [
+          0.021836547181010246,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.06892973184585571,
+        "expected_safe_choice": "hold",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.10521110892295837,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      },
+      {
+        "seed": 109,
+        "regime": "static",
+        "predicted_cost": [
+          -1.342384696006775,
+          -0.6657683849334717
+        ],
+        "observed_cost": [
+          -1.2978111505508423,
+          -0.6316936016082764
+        ],
+        "predicted_choice": "direct",
+        "observed_choice": "direct",
+        "peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "max_prefix_feature_difference": 0.2678380012512207,
+        "expected_safe_choice": "direct",
+        "safe_ranking_pass": true,
+        "episode_peak_impulse": [
+          0.0,
+          0.0
+        ],
+        "episode_success": [
+          true,
+          true
+        ]
+      }
+    ]
+  }
+}

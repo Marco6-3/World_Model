@@ -28,9 +28,10 @@ HOLD_SETTLE_STEPS = 12
 class PackingTask:
     """One simulator/control path for data generation and evaluation."""
 
-    def __init__(self, robot_usd):
+    def __init__(self, robot_usd, history=HISTORY):
         self.env = PackingScene(robot_usd)
         self.controller = WaypointController(self.env)
+        self.history_length = history
 
     def reset(self, regime, seed):
         rng = np.random.default_rng(seed)
@@ -50,7 +51,7 @@ class PackingTask:
             self.env.step()
         self.last_command = np.array([*self.controller.tip(0), *self.controller.tip(1), OPEN_GAP],
                                      dtype=np.float32)
-        self.history = [self.observe()] * HISTORY
+        self.history = [self.observe()] * self.history_length
 
     @property
     def active(self):

@@ -1,0 +1,706 @@
+{
+  "128": [
+    {
+      "seed": 106,
+      "regime": "fast",
+      "predicted_cost": [
+        0.8744656443595886,
+        -0.691752552986145
+      ],
+      "observed_cost": [
+        1.4011110067367554,
+        -0.6006863117218018
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.03682621568441391,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.1991221308708191,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0954076498746872,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 106,
+      "regime": "slow",
+      "predicted_cost": [
+        -1.0054987668991089,
+        -0.709479570388794
+      ],
+      "observed_cost": [
+        -0.6113326549530029,
+        -0.6006768941879272
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.020612334832549095,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.2300075888633728,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": false,
+      "episode_peak_impulse": [
+        0.10619302839040756,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 106,
+      "regime": "static",
+      "predicted_cost": [
+        -1.3916335105895996,
+        -0.7278558015823364
+      ],
+      "observed_cost": [
+        -1.2694156169891357,
+        -0.6017394065856934
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.2706455588340759,
+      "expected_safe_choice": "direct",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "fast",
+      "predicted_cost": [
+        0.8445621728897095,
+        -0.6887238621711731
+      ],
+      "observed_cost": [
+        1.4557185173034668,
+        -0.625754714012146
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.036864135414361954,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.23624631762504578,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.09601204842329025,
+        0.0
+      ],
+      "episode_success": [
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "slow",
+      "predicted_cost": [
+        -1.012381911277771,
+        -0.7107778787612915
+      ],
+      "observed_cost": [
+        -0.5825611352920532,
+        -0.62574702501297
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.021399350836873055,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.00996553897857666,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": false,
+      "episode_peak_impulse": [
+        0.10484353452920914,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "static",
+      "predicted_cost": [
+        -1.3918654918670654,
+        -0.7274070382118225
+      ],
+      "observed_cost": [
+        -1.291553258895874,
+        -0.625747799873352
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.276272177696228,
+      "expected_safe_choice": "direct",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    }
+  ],
+  "4": [
+    {
+      "seed": 106,
+      "regime": "fast",
+      "predicted_cost": [
+        6.231802463531494,
+        1.529478669166565
+      ],
+      "observed_cost": [
+        1.4011110067367554,
+        -0.6006863117218018
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.03682621568441391,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.1991221308708191,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0954076498746872,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 106,
+      "regime": "slow",
+      "predicted_cost": [
+        1.063759446144104,
+        1.7449630498886108
+      ],
+      "observed_cost": [
+        -0.6113326549530029,
+        -0.6006768941879272
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.020612334832549095,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.2300075888633728,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": false,
+      "episode_peak_impulse": [
+        0.10619302839040756,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 106,
+      "regime": "static",
+      "predicted_cost": [
+        1.3621973991394043,
+        1.1224160194396973
+      ],
+      "observed_cost": [
+        -1.2694156169891357,
+        -0.6017394065856934
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.2706455588340759,
+      "expected_safe_choice": "direct",
+      "safe_ranking_pass": false,
+      "episode_peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "fast",
+      "predicted_cost": [
+        5.833454132080078,
+        1.4649502038955688
+      ],
+      "observed_cost": [
+        1.4557185173034668,
+        -0.625754714012146
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.036864135414361954,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.23624631762504578,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.09601204842329025,
+        0.0
+      ],
+      "episode_success": [
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "slow",
+      "predicted_cost": [
+        0.4715358018875122,
+        1.668897271156311
+      ],
+      "observed_cost": [
+        -0.5825611352920532,
+        -0.62574702501297
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.021399350836873055,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.00996553897857666,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": false,
+      "episode_peak_impulse": [
+        0.10484353452920914,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "static",
+      "predicted_cost": [
+        1.337571382522583,
+        1.0961856842041016
+      ],
+      "observed_cost": [
+        -1.291553258895874,
+        -0.625747799873352
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.276272177696228,
+      "expected_safe_choice": "direct",
+      "safe_ranking_pass": false,
+      "episode_peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    }
+  ],
+  "32": [
+    {
+      "seed": 106,
+      "regime": "fast",
+      "predicted_cost": [
+        1.8560220003128052,
+        -0.6144240498542786
+      ],
+      "observed_cost": [
+        1.4011110067367554,
+        -0.6006863117218018
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.03682621568441391,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.1991221308708191,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0954076498746872,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 106,
+      "regime": "slow",
+      "predicted_cost": [
+        -0.7496162056922913,
+        -0.6887298822402954
+      ],
+      "observed_cost": [
+        -0.6113326549530029,
+        -0.6006768941879272
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.020612334832549095,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.2300075888633728,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": false,
+      "episode_peak_impulse": [
+        0.10619302839040756,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 106,
+      "regime": "static",
+      "predicted_cost": [
+        -1.3698344230651855,
+        -0.5914779901504517
+      ],
+      "observed_cost": [
+        -1.2694156169891357,
+        -0.6017394065856934
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.2706455588340759,
+      "expected_safe_choice": "direct",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "fast",
+      "predicted_cost": [
+        1.7911311388015747,
+        -0.6213792562484741
+      ],
+      "observed_cost": [
+        1.4557185173034668,
+        -0.625754714012146
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.036864135414361954,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.23624631762504578,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.09601204842329025,
+        0.0
+      ],
+      "episode_success": [
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "slow",
+      "predicted_cost": [
+        -0.7221981287002563,
+        -0.6927655935287476
+      ],
+      "observed_cost": [
+        -0.5825611352920532,
+        -0.62574702501297
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.021399350836873055,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.00996553897857666,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": false,
+      "episode_peak_impulse": [
+        0.10484353452920914,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "static",
+      "predicted_cost": [
+        -1.3700186014175415,
+        -0.5935972929000854
+      ],
+      "observed_cost": [
+        -1.291553258895874,
+        -0.625747799873352
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.276272177696228,
+      "expected_safe_choice": "direct",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    }
+  ],
+  "256": [
+    {
+      "seed": 106,
+      "regime": "fast",
+      "predicted_cost": [
+        1.841835379600525,
+        -0.7226494550704956
+      ],
+      "observed_cost": [
+        1.4011110067367554,
+        -0.6006863117218018
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.03682621568441391,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.1991221308708191,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0954076498746872,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 106,
+      "regime": "slow",
+      "predicted_cost": [
+        -0.417677104473114,
+        -0.7527588605880737
+      ],
+      "observed_cost": [
+        -0.6113326549530029,
+        -0.6006768941879272
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.020612334832549095,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.2300075888633728,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.10619302839040756,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 106,
+      "regime": "static",
+      "predicted_cost": [
+        -1.3442312479019165,
+        -0.6684252023696899
+      ],
+      "observed_cost": [
+        -1.2694156169891357,
+        -0.6017394065856934
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.2706455588340759,
+      "expected_safe_choice": "direct",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "fast",
+      "predicted_cost": [
+        1.870502233505249,
+        -0.7255656123161316
+      ],
+      "observed_cost": [
+        1.4557185173034668,
+        -0.625754714012146
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.036864135414361954,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.23624631762504578,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.09601204842329025,
+        0.0
+      ],
+      "episode_success": [
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "slow",
+      "predicted_cost": [
+        -0.3648158609867096,
+        -0.7577376961708069
+      ],
+      "observed_cost": [
+        -0.5825611352920532,
+        -0.62574702501297
+      ],
+      "predicted_choice": "hold",
+      "observed_choice": "hold",
+      "peak_impulse": [
+        0.021399350836873055,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.00996553897857666,
+      "expected_safe_choice": "hold",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.10484353452920914,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 107,
+      "regime": "static",
+      "predicted_cost": [
+        -1.3477418422698975,
+        -0.6728035807609558
+      ],
+      "observed_cost": [
+        -1.291553258895874,
+        -0.625747799873352
+      ],
+      "predicted_choice": "direct",
+      "observed_choice": "direct",
+      "peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "max_prefix_feature_difference": 0.276272177696228,
+      "expected_safe_choice": "direct",
+      "safe_ranking_pass": true,
+      "episode_peak_impulse": [
+        0.0,
+        0.0
+      ],
+      "episode_success": [
+        true,
+        true
+      ]
+    }
+  ]
+}

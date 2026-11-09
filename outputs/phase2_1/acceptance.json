@@ -1,0 +1,144 @@
+{
+  "checks": [
+    {
+      "requirement": "GPU 训练完整预算",
+      "passed": true,
+      "observed": {
+        "device": "cuda:0",
+        "flow_updates": 25000,
+        "world_updates": 15000
+      }
+    },
+    {
+      "requirement": "三个 GPC 对照相对 BC 的配对 IoU 增益 95% 区间下界 > 0",
+      "passed": true,
+      "observed": {
+        "GPC-RANK K=16": {
+          "mean": 0.12234229792878677,
+          "ci95": [
+            0.03781292542747312,
+            0.20716190574161586
+          ]
+        },
+        "GPC-OPT": {
+          "mean": 0.10402117447690618,
+          "ci95": [
+            0.044183838673697795,
+            0.16682271005514362
+          ]
+        },
+        "GPC-RANK+OPT": {
+          "mean": 0.14419713103425505,
+          "ci95": [
+            0.0656382275265331,
+            0.22673586907910614
+          ]
+        }
+      }
+    },
+    {
+      "requirement": "BC 平均最终 IoU 0.55–0.75 且成功非零",
+      "passed": true,
+      "observed": {
+        "iou": 0.6809214576841799,
+        "success": 12,
+        "p50_ms": 54.81829999916954
+      }
+    },
+    {
+      "requirement": "世界模型留出坐标 MAE < 5 px",
+      "passed": false,
+      "observed": 9.697263717651367
+    },
+    {
+      "requirement": "Ours 最终 IoU 与成功数均超过指定对照",
+      "passed": false,
+      "observed": {
+        "Ours": {
+          "iou": 0.7662893718075044,
+          "success": 23,
+          "p50_ms": 267.9494499989232
+        },
+        "Behavior Cloning": {
+          "iou": 0.6809214576841799,
+          "success": 12,
+          "p50_ms": 54.81829999916954
+        },
+        "Early In-Flow": {
+          "iou": 0.6668795013388992,
+          "success": 14,
+          "p50_ms": 617.3256999973091
+        },
+        "GPC-RANK K=16": {
+          "iou": 0.8032637556129666,
+          "success": 28,
+          "p50_ms": 90.40929999900982
+        },
+        "GPC-OPT": {
+          "iou": 0.7849426321610862,
+          "success": 21,
+          "p50_ms": 1048.7825000000157
+        }
+      }
+    },
+    {
+      "requirement": "Ours 相对 OPT 与 RANK+OPT 决策 P50 至少快 4 倍",
+      "passed": false,
+      "observed": {
+        "GPC-OPT": 4.335428114993557,
+        "GPC-RANK+OPT": 3.6104936001178567
+      }
+    },
+    {
+      "requirement": "τ=0.7 位于 IoU–P50 延迟帕累托前沿",
+      "passed": false,
+      "observed": {
+        "dominated": true
+      }
+    },
+    {
+      "requirement": "τ=0.7 为最终 IoU 峰值且呈倒 U 趋势",
+      "passed": false,
+      "observed": {
+        "Early In-Flow": 0.6668795013388992,
+        "tau=0.3": 0.6669229233192082,
+        "tau=0.5": 0.7796437418410023,
+        "Ours": 0.7662893718075044,
+        "tau=0.9": 0.823740270542361,
+        "tau=1.0": 0.7917779503133319
+      }
+    },
+    {
+      "requirement": "弹簧盖 32D 严格安全排序 6/6",
+      "passed": false,
+      "observed": "4/6"
+    },
+    {
+      "requirement": "弹簧盖 128D 严格安全排序 6/6",
+      "passed": false,
+      "observed": "4/6"
+    },
+    {
+      "requirement": "弹簧盖 256D 严格安全排序 6/6",
+      "passed": true,
+      "observed": "6/6"
+    },
+    {
+      "requirement": "Ours 常规闭环夹碰 ≤1/9",
+      "passed": false,
+      "observed": "6/9"
+    },
+    {
+      "requirement": "Ours 扰动安全恢复超过 BC/RANK/OPT",
+      "passed": false,
+      "observed": {
+        "BC": 4,
+        "GPC-RANK": 0,
+        "GPC-OPT": 1,
+        "Ours": 1
+      }
+    }
+  ],
+  "all_passed": false,
+  "note": "性能目标均为实测验收，不修改种子、分母或碰撞定义以达成目标。并行负载影响逐回合日志延迟；速度与 Push-T 前沿验收使用结束并行作业后的独立计时。"
+}

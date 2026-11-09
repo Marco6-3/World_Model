@@ -1,0 +1,1594 @@
+{
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "torch": "2.9.0+cu128",
+  "protocol": "Same held-out expert histories; warmed planners; rotating order; synchronized end-to-end calls",
+  "repeats": 20,
+  "summary": {
+    "Behavior Cloning": {
+      "p50_ms": 25.488850002147956,
+      "mean_ms": 26.60356500036869
+    },
+    "GPC-RANK K=16": {
+      "p50_ms": 39.97015000095416,
+      "mean_ms": 41.05259000007209
+    },
+    "GPC-RANK K=64": {
+      "p50_ms": 40.3349000007438,
+      "mean_ms": 41.00748500004556
+    },
+    "GPC-OPT": {
+      "p50_ms": 583.4294000014779,
+      "mean_ms": 588.5763800002678
+    },
+    "GPC-RANK+OPT": {
+      "p50_ms": 485.8731499989517,
+      "mean_ms": 502.2822699998869
+    },
+    "Early In-Flow": {
+      "p50_ms": 341.8145999985427,
+      "mean_ms": 353.2125100000485
+    },
+    "Ours": {
+      "p50_ms": 134.5724999991944,
+      "mean_ms": 138.74014000030002
+    },
+    "tau=0.3": {
+      "p50_ms": 254.0505500001018,
+      "mean_ms": 259.5790499999566
+    },
+    "tau=0.5": {
+      "p50_ms": 190.61954999961017,
+      "mean_ms": 199.51504500004376
+    },
+    "tau=0.9": {
+      "p50_ms": 72.40784999885364,
+      "mean_ms": 75.5928299999141
+    },
+    "tau=1.0": {
+      "p50_ms": 40.78459999982442,
+      "mean_ms": 42.76858500052185
+    }
+  },
+  "rows": [
+    {
+      "method": "Behavior Cloning",
+      "repeat": 0,
+      "ms": 26.26379999855999,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 0,
+      "ms": 42.03340000094613,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 0,
+      "ms": 40.71280000061961,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 0,
+      "ms": 596.0258999984944,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 0,
+      "ms": 502.39000000146916,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 0,
+      "ms": 346.6489000020374,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 0,
+      "ms": 135.12289999925997,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 0,
+      "ms": 277.57520000159275,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 0,
+      "ms": 196.8617999991693,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 0,
+      "ms": 73.36399999985588,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 0,
+      "ms": 42.26050000215764,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 1,
+      "ms": 44.84839999713586,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 1,
+      "ms": 43.05219999878318,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 1,
+      "ms": 633.5472000027949,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 1,
+      "ms": 516.2789999994857,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 1,
+      "ms": 358.2816999987699,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 1,
+      "ms": 137.62109999879613,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 1,
+      "ms": 263.57789999747183,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 1,
+      "ms": 246.55580000035116,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 1,
+      "ms": 97.52120000121067,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 1,
+      "ms": 53.433100001711864,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 1,
+      "ms": 33.78230000089388,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 2,
+      "ms": 48.82789999828674,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 2,
+      "ms": 624.8339000012493,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 2,
+      "ms": 495.23779999799444,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 2,
+      "ms": 339.85739999843645,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 2,
+      "ms": 129.55689999944298,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 2,
+      "ms": 249.59529999978258,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 2,
+      "ms": 235.79550000067684,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 2,
+      "ms": 82.15500000005704,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 2,
+      "ms": 48.05549999946379,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 2,
+      "ms": 26.148400000238325,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 2,
+      "ms": 47.875499996735016,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 3,
+      "ms": 609.5280999979877,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 3,
+      "ms": 483.6022999988927,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 3,
+      "ms": 334.0189999980794,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 3,
+      "ms": 130.8987000011257,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 3,
+      "ms": 255.78529999984312,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 3,
+      "ms": 190.98609999855398,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 3,
+      "ms": 72.31809999939287,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 3,
+      "ms": 40.18189999987953,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 3,
+      "ms": 25.052999997569714,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 3,
+      "ms": 40.9271999997145,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 3,
+      "ms": 41.31509999933769,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 4,
+      "ms": 633.9001999986067,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 4,
+      "ms": 387.0716999990691,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 4,
+      "ms": 134.90839999940363,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 4,
+      "ms": 250.03559999822755,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 4,
+      "ms": 216.3388999979361,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 4,
+      "ms": 101.61750000042957,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 4,
+      "ms": 59.392499999376014,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 4,
+      "ms": 32.9371000007086,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 4,
+      "ms": 40.510599999834085,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 4,
+      "ms": 41.26600000017788,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 4,
+      "ms": 580.5328000024019,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 5,
+      "ms": 343.8879999994242,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 5,
+      "ms": 134.23659999898518,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 5,
+      "ms": 255.90880000163452,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 5,
+      "ms": 187.56690000009257,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 5,
+      "ms": 71.90930000069784,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 5,
+      "ms": 40.36460000133957,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 5,
+      "ms": 24.963200001366204,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 5,
+      "ms": 48.03430000174558,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 5,
+      "ms": 40.418600001430605,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 5,
+      "ms": 590.696699997352,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 5,
+      "ms": 485.3125999979966,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Ours",
+      "repeat": 6,
+      "ms": 132.96030000128667,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 6,
+      "ms": 249.92650000058347,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 6,
+      "ms": 187.7505000011297,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 6,
+      "ms": 71.45189999937429,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 6,
+      "ms": 40.858899999875575,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 6,
+      "ms": 24.841499998728978,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 6,
+      "ms": 39.1927000018768,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 6,
+      "ms": 39.26499999943189,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 6,
+      "ms": 599.0376999980072,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 6,
+      "ms": 484.55550000289804,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 6,
+      "ms": 342.11059999870486,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 7,
+      "ms": 255.09120000060648,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 7,
+      "ms": 189.68909999966854,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 7,
+      "ms": 71.6229999998177,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 7,
+      "ms": 40.338600003451575,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 7,
+      "ms": 24.671900002431357,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 7,
+      "ms": 39.78859999915585,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 7,
+      "ms": 40.23840000081691,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 7,
+      "ms": 588.323500000115,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 7,
+      "ms": 589.2506000018329,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 7,
+      "ms": 406.7008000019996,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 7,
+      "ms": 174.2195000006177,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 8,
+      "ms": 203.7402000023576,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 8,
+      "ms": 74.1225999991002,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 8,
+      "ms": 42.20239999995101,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 8,
+      "ms": 30.931599998439196,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 8,
+      "ms": 39.985700001125224,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 8,
+      "ms": 39.63189999922179,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 8,
+      "ms": 586.3260000005539,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 8,
+      "ms": 482.5223999978334,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 8,
+      "ms": 339.0553999997792,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 8,
+      "ms": 128.6485000018729,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 8,
+      "ms": 245.56980000124895,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 9,
+      "ms": 72.71229999969364,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 9,
+      "ms": 43.24039999846718,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 9,
+      "ms": 27.452000002085697,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 9,
+      "ms": 39.92130000187899,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 9,
+      "ms": 40.251200000057,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 9,
+      "ms": 574.6958000017912,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 9,
+      "ms": 486.4336999999068,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 9,
+      "ms": 403.9044000019203,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 9,
+      "ms": 155.32380000149715,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 9,
+      "ms": 333.23599999857834,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 9,
+      "ms": 224.64460000264808,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 10,
+      "ms": 40.42530000151601,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 10,
+      "ms": 25.59300000211806,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 10,
+      "ms": 40.38609999770415,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 10,
+      "ms": 39.19130000213045,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 10,
+      "ms": 571.670900000754,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 10,
+      "ms": 497.0826999997371,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 10,
+      "ms": 341.5185999983805,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 10,
+      "ms": 131.09320000148728,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 10,
+      "ms": 261.98400000066613,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 10,
+      "ms": 204.3532999996387,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 10,
+      "ms": 71.41450000199256,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 11,
+      "ms": 26.03820000149426,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 11,
+      "ms": 39.956300002813805,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 11,
+      "ms": 41.24070000034408,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 11,
+      "ms": 588.7403999986418,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 11,
+      "ms": 481.2050000000454,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 11,
+      "ms": 333.6600000002363,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 11,
+      "ms": 138.4080999996513,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 11,
+      "ms": 246.20109999887063,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 11,
+      "ms": 190.52490000103717,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 11,
+      "ms": 74.0680999988399,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 11,
+      "ms": 40.93450000073062,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 12,
+      "ms": 39.98399999909452,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 12,
+      "ms": 39.22930000044289,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 12,
+      "ms": 571.3117000013881,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 12,
+      "ms": 484.0165999994497,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 12,
+      "ms": 343.5587000021769,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 12,
+      "ms": 135.10450000103447,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 12,
+      "ms": 253.0098999995971,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 12,
+      "ms": 188.38079999841284,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 12,
+      "ms": 71.97249999808264,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 12,
+      "ms": 39.74169999855803,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 12,
+      "ms": 25.424799998290837,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 13,
+      "ms": 39.98030000002473,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 13,
+      "ms": 571.3705000016489,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 13,
+      "ms": 479.1382000003068,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 13,
+      "ms": 364.89369999981136,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 13,
+      "ms": 139.43180000205757,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 13,
+      "ms": 250.45219999810797,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 13,
+      "ms": 190.99519999872427,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 13,
+      "ms": 72.4975999983144,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 13,
+      "ms": 41.006499999639345,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 13,
+      "ms": 25.521900002786424,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 13,
+      "ms": 39.825899999414105,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 14,
+      "ms": 609.2463999993925,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 14,
+      "ms": 516.4882999997644,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 14,
+      "ms": 332.2641999984626,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 14,
+      "ms": 130.71510000008857,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 14,
+      "ms": 250.73080000220216,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 14,
+      "ms": 190.71419999818318,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 14,
+      "ms": 73.1192999992345,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 14,
+      "ms": 40.4084999972838,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 14,
+      "ms": 25.99039999768138,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 14,
+      "ms": 39.52059999937774,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 14,
+      "ms": 40.41900000083842,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 15,
+      "ms": 489.7157999985211,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 15,
+      "ms": 340.3241000014532,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 15,
+      "ms": 133.72460000027786,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 15,
+      "ms": 244.43129999781377,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 15,
+      "ms": 188.44259999968926,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 15,
+      "ms": 71.6802999995707,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 15,
+      "ms": 40.30300000158604,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 15,
+      "ms": 25.455800001509488,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 15,
+      "ms": 39.421900000888854,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 15,
+      "ms": 39.78619999907096,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 15,
+      "ms": 578.2341000012821,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 16,
+      "ms": 390.65649999974994,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 16,
+      "ms": 160.59279999899445,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 16,
+      "ms": 284.61500000048545,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 16,
+      "ms": 188.9805000027991,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 16,
+      "ms": 72.67090000095777,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 16,
+      "ms": 41.420100002142135,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 16,
+      "ms": 25.31549999912386,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 16,
+      "ms": 39.31400000146823,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 16,
+      "ms": 42.36970000056317,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 16,
+      "ms": 573.3868999996048,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 16,
+      "ms": 479.7418000016478,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Ours",
+      "repeat": 17,
+      "ms": 130.11339999866323,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 17,
+      "ms": 249.89780000032624,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 17,
+      "ms": 189.0903999992588,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 17,
+      "ms": 71.55010000133188,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 17,
+      "ms": 40.03510000256938,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 17,
+      "ms": 25.18920000147773,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 17,
+      "ms": 39.77880000093137,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 17,
+      "ms": 43.17250000167405,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 17,
+      "ms": 573.1450999992376,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 17,
+      "ms": 484.33099999965634,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 17,
+      "ms": 338.4646000013163,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 18,
+      "ms": 257.8286999996635,
+      "calls": 8,
+      "rollouts": 15
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 18,
+      "ms": 189.9411999984295,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 18,
+      "ms": 72.25499999913154,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 18,
+      "ms": 40.058300000964664,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 18,
+      "ms": 25.33190000031027,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 18,
+      "ms": 39.426600000297185,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 18,
+      "ms": 40.196300000388874,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 18,
+      "ms": 579.7409000006155,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 18,
+      "ms": 489.3602000011015,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 18,
+      "ms": 337.13820000048145,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 18,
+      "ms": 149.51660000224365,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.5",
+      "repeat": 19,
+      "ms": 188.94840000211843,
+      "calls": 6,
+      "rollouts": 13
+    },
+    {
+      "method": "tau=0.9",
+      "repeat": 19,
+      "ms": 71.83340000119642,
+      "calls": 2,
+      "rollouts": 9
+    },
+    {
+      "method": "tau=1.0",
+      "repeat": 19,
+      "ms": 40.71029999977327,
+      "calls": 1,
+      "rollouts": 8
+    },
+    {
+      "method": "Behavior Cloning",
+      "repeat": 19,
+      "ms": 25.165800001559546,
+      "calls": 0,
+      "rollouts": 0
+    },
+    {
+      "method": "GPC-RANK K=16",
+      "repeat": 19,
+      "ms": 40.31989999930374,
+      "calls": 1,
+      "rollouts": 16
+    },
+    {
+      "method": "GPC-RANK K=64",
+      "repeat": 19,
+      "ms": 39.58529999727034,
+      "calls": 1,
+      "rollouts": 64
+    },
+    {
+      "method": "GPC-OPT",
+      "repeat": 19,
+      "ms": 571.1331000020436,
+      "calls": 20,
+      "rollouts": 20
+    },
+    {
+      "method": "GPC-RANK+OPT",
+      "repeat": 19,
+      "ms": 485.0817000005918,
+      "calls": 16,
+      "rollouts": 128
+    },
+    {
+      "method": "Early In-Flow",
+      "repeat": 19,
+      "ms": 340.233700000681,
+      "calls": 11,
+      "rollouts": 18
+    },
+    {
+      "method": "Ours",
+      "repeat": 19,
+      "ms": 132.60599999921396,
+      "calls": 4,
+      "rollouts": 11
+    },
+    {
+      "method": "tau=0.3",
+      "repeat": 19,
+      "ms": 256.1286000018299,
+      "calls": 8,
+      "rollouts": 15
+    }
+  ]
+}

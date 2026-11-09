@@ -1,0 +1,8 @@
+{
+  "unique_pusht_episodes": 550,
+  "unique_spring_episodes": 177,
+  "checkpoint_hashes_verified": true,
+  "reports_have_one_synchronized_acceptance_section": true,
+  "regression_tests_passed": 5,
+  "all_empirical_targets_met": false
+}
