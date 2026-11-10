@@ -1,0 +1,2882 @@
+[
+  {
+    "file": "1000_elastic_fast_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_fast_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_fast_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1000_elastic_fast_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_fast_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_fast_1_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_fast_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1000_elastic_fast_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_slow_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_slow_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_slow_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1000_elastic_slow_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_slow_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_slow_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_elastic_slow_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1000_elastic_slow_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_relaxed_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_relaxed_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_relaxed_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1000_relaxed_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_relaxed_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_relaxed_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1000_relaxed_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1000_relaxed_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_fast_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_fast_0_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_fast_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1001_elastic_fast_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_fast_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_fast_1_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_fast_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1001_elastic_fast_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_slow_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_slow_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_slow_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1001_elastic_slow_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_slow_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_slow_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_elastic_slow_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1001_elastic_slow_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_relaxed_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_relaxed_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_relaxed_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1001_relaxed_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_relaxed_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_relaxed_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1001_relaxed_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1001_relaxed_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_fast_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_fast_0_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_fast_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1002_elastic_fast_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_fast_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_fast_1_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_fast_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1002_elastic_fast_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_slow_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_slow_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_slow_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1002_elastic_slow_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_slow_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_slow_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_elastic_slow_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1002_elastic_slow_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_relaxed_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_relaxed_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_relaxed_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1002_relaxed_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_relaxed_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_relaxed_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1002_relaxed_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1002_relaxed_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_fast_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_fast_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_fast_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1003_elastic_fast_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_fast_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_fast_1_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_fast_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1003_elastic_fast_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_slow_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_slow_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_slow_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1003_elastic_slow_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_slow_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_slow_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_elastic_slow_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1003_elastic_slow_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_relaxed_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_relaxed_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_relaxed_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1003_relaxed_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_relaxed_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_relaxed_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1003_relaxed_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1003_relaxed_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_fast_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_fast_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_fast_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1004_elastic_fast_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_fast_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_fast_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_fast_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1004_elastic_fast_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_slow_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_slow_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_slow_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1004_elastic_slow_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_slow_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_slow_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_elastic_slow_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1004_elastic_slow_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_relaxed_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_relaxed_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_relaxed_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1004_relaxed_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_relaxed_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_relaxed_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1004_relaxed_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1004_relaxed_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_fast_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_fast_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_fast_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1005_elastic_fast_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_fast_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_fast_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_fast_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1005_elastic_fast_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_slow_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_slow_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_slow_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1005_elastic_slow_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_slow_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_slow_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_elastic_slow_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1005_elastic_slow_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_relaxed_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_relaxed_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_relaxed_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1005_relaxed_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_relaxed_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_relaxed_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1005_relaxed_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1005_relaxed_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_fast_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_fast_0_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1006_elastic_fast_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_fast_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_fast_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1006_elastic_fast_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_slow_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_slow_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1006_elastic_slow_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_slow_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_slow_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1006_elastic_slow_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_relaxed_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_relaxed_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1006_relaxed_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_relaxed_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_relaxed_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1006_relaxed_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_fast_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_fast_0_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1007_elastic_fast_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_fast_1_direct_insert.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_fast_1_exploration.npz",
+    "previous": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": null,
+      "second_slot_correct": false,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1007_elastic_fast_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_slow_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_slow_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1007_elastic_slow_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_slow_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_slow_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1007_elastic_slow_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_relaxed_0_direct_insert.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_relaxed_0_exploration.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1007_relaxed_0_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 1,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_relaxed_1_direct_insert.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_relaxed_1_exploration.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  },
+  {
+    "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": true,
+      "safe_recovery": true
+    }
+  },
+  {
+    "file": "1007_relaxed_1_spread_and_hold.npz",
+    "previous": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    },
+    "measured": {
+      "second_slot": 0,
+      "second_slot_correct": true,
+      "withdraw_reopen": false,
+      "safe_recovery": false
+    }
+  }
+]

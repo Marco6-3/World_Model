@@ -21,6 +21,9 @@ outputs/**/seed*/
 outputs/**/source_snapshot/
 outputs/**/evaluation_source/
 outputs/**/final_source/
+outputs/**/pre_c1_sources/
+outputs/**/previous_reports/
+outputs/stage_c_bag_pre_c1_*/
 
 # OS / IDE files
 .DS_Store

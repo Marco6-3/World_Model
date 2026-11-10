@@ -1,0 +1,71 @@
+{
+  "selection": "predeclared paired case from protocol.json, identical to bag_report.figure",
+  "case": {
+    "mode": "elastic_fast",
+    "order": 0,
+    "seed": 2000,
+    "perturbed": true,
+    "methods": [
+      "BC H4",
+      "GPC-OPT",
+      "Ours tau=0.9"
+    ]
+  },
+  "traces": {
+    "BC H4": {
+      "file": "seed2000/traces/2000_elastic_fast_0_1_0.npz",
+      "sha256": "6bd057a61dd7f3455682e91a39c94a88f11b243f2fe9e7cae66333637beb3163"
+    },
+    "GPC-OPT": {
+      "file": "seed2000/traces/2000_elastic_fast_0_1_3.npz",
+      "sha256": "546499338b8f0d3ba2281e1614b1571edd41a9711b9ea945a8a4d34c241dff28"
+    },
+    "Ours tau=0.9": {
+      "file": "seed2000/traces/2000_elastic_fast_0_1_7.npz",
+      "sha256": "7278bc83ce4c67d9ab7bb0d0167e3bcf443e3713de0a799bba4e78ee087ba91c"
+    }
+  },
+  "panel_d": [
+    {
+      "method": "BC H4",
+      "safe_recovery": 5,
+      "n": 18
+    },
+    {
+      "method": "Joint-FM",
+      "safe_recovery": 3,
+      "n": 18
+    },
+    {
+      "method": "GPC-RANK",
+      "safe_recovery": 17,
+      "n": 18
+    },
+    {
+      "method": "GPC-OPT",
+      "safe_recovery": 14,
+      "n": 18
+    },
+    {
+      "method": "Ours Short-MLP H4",
+      "safe_recovery": 1,
+      "n": 18
+    },
+    {
+      "method": "Ours 4D-WM",
+      "safe_recovery": 18,
+      "n": 18
+    },
+    {
+      "method": "Ours tau=0.7",
+      "safe_recovery": 17,
+      "n": 18
+    },
+    {
+      "method": "Ours tau=0.9",
+      "safe_recovery": 17,
+      "n": 18
+    }
+  ],
+  "ci": "Wilson score 95% interval over perturbed episodes"
+}

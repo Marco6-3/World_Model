@@ -1,0 +1,39 @@
+{
+  "selection": "predeclared paired case, no outcome-based selection",
+  "cases": [
+    {
+      "method": "BC H4",
+      "trace_file": "seed2000/traces/2000_elastic_fast_0_1_0.npz",
+      "trace_sha256": "6bd057a61dd7f3455682e91a39c94a88f11b243f2fe9e7cae66333637beb3163",
+      "origin_control_tick": 456,
+      "slip_triggered": true,
+      "success": true,
+      "collision": true,
+      "safe_recovery": false
+    },
+    {
+      "method": "GPC-OPT",
+      "trace_file": "seed2000/traces/2000_elastic_fast_0_1_3.npz",
+      "trace_sha256": "546499338b8f0d3ba2281e1614b1571edd41a9711b9ea945a8a4d34c241dff28",
+      "origin_control_tick": 450,
+      "slip_triggered": true,
+      "success": false,
+      "collision": true,
+      "safe_recovery": false
+    },
+    {
+      "method": "Ours tau=0.9",
+      "trace_file": "seed2000/traces/2000_elastic_fast_0_1_7.npz",
+      "trace_sha256": "7278bc83ce4c67d9ab7bb0d0167e3bcf443e3713de0a799bba4e78ee087ba91c",
+      "origin_control_tick": 265,
+      "slip_triggered": true,
+      "success": true,
+      "collision": false,
+      "safe_recovery": true
+    }
+  ],
+  "png_pixels": [
+    4680,
+    3120
+  ]
+}

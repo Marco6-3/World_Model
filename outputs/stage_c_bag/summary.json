@@ -1,0 +1,235 @@
+{
+  "methods": {
+    "BC H4": {
+      "normal": {
+        "n": 18,
+        "success": 8,
+        "collision": 8,
+        "second_slot_correct": 9,
+        "p50_ms": 21.544799999901443
+      },
+      "recovery": {
+        "n": 18,
+        "triggered": 18,
+        "effective": 18,
+        "success": 8,
+        "safe_recovery": 5
+      }
+    },
+    "Joint-FM": {
+      "normal": {
+        "n": 18,
+        "success": 6,
+        "collision": 3,
+        "second_slot_correct": 11,
+        "p50_ms": 32.17304999998305
+      },
+      "recovery": {
+        "n": 18,
+        "triggered": 14,
+        "effective": 14,
+        "success": 5,
+        "safe_recovery": 3
+      }
+    },
+    "GPC-RANK": {
+      "normal": {
+        "n": 18,
+        "success": 18,
+        "collision": 0,
+        "second_slot_correct": 18,
+        "p50_ms": 50.76189999977032
+      },
+      "recovery": {
+        "n": 18,
+        "triggered": 18,
+        "effective": 18,
+        "success": 18,
+        "safe_recovery": 17
+      }
+    },
+    "GPC-OPT": {
+      "normal": {
+        "n": 18,
+        "success": 18,
+        "collision": 0,
+        "second_slot_correct": 18,
+        "p50_ms": 835.9918000001016
+      },
+      "recovery": {
+        "n": 18,
+        "triggered": 17,
+        "effective": 17,
+        "success": 16,
+        "safe_recovery": 14
+      }
+    },
+    "Ours Short-MLP H4": {
+      "normal": {
+        "n": 18,
+        "success": 3,
+        "collision": 5,
+        "second_slot_correct": 9,
+        "p50_ms": 152.877499999704
+      },
+      "recovery": {
+        "n": 18,
+        "triggered": 18,
+        "effective": 18,
+        "success": 1,
+        "safe_recovery": 1
+      }
+    },
+    "Ours 4D-WM": {
+      "normal": {
+        "n": 18,
+        "success": 18,
+        "collision": 0,
+        "second_slot_correct": 18,
+        "p50_ms": 79.34460000024046
+      },
+      "recovery": {
+        "n": 18,
+        "triggered": 18,
+        "effective": 18,
+        "success": 18,
+        "safe_recovery": 18
+      }
+    },
+    "Ours tau=0.7": {
+      "normal": {
+        "n": 18,
+        "success": 18,
+        "collision": 0,
+        "second_slot_correct": 18,
+        "p50_ms": 163.3855999998559
+      },
+      "recovery": {
+        "n": 18,
+        "triggered": 18,
+        "effective": 18,
+        "success": 17,
+        "safe_recovery": 17
+      }
+    },
+    "Ours tau=0.9": {
+      "normal": {
+        "n": 18,
+        "success": 18,
+        "collision": 0,
+        "second_slot_correct": 18,
+        "p50_ms": 88.70630000001256
+      },
+      "recovery": {
+        "n": 18,
+        "triggered": 18,
+        "effective": 18,
+        "success": 17,
+        "safe_recovery": 17
+      }
+    }
+  },
+  "recovery_differences": {
+    "Ours tau=0.7": {
+      "BC H4": {
+        "mean": 0.6666666666666666,
+        "ci95": [
+          0.5,
+          0.8333333333333334
+        ],
+        "seed_clusters": 3
+      },
+      "Joint-FM": {
+        "mean": 0.7777777777777778,
+        "ci95": [
+          0.6666666666666666,
+          0.8333333333333334
+        ],
+        "seed_clusters": 3
+      },
+      "GPC-RANK": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "seed_clusters": 3
+      },
+      "GPC-OPT": {
+        "mean": 0.16666666666666666,
+        "ci95": [
+          -0.16666666666666666,
+          0.6666666666666666
+        ],
+        "seed_clusters": 3
+      },
+      "Ours Short-MLP H4": {
+        "mean": 0.888888888888889,
+        "ci95": [
+          0.8333333333333334,
+          1.0
+        ],
+        "seed_clusters": 3
+      },
+      "Ours 4D-WM": {
+        "mean": -0.05555555555555555,
+        "ci95": [
+          -0.16666666666666666,
+          0.0
+        ],
+        "seed_clusters": 3
+      }
+    },
+    "Ours tau=0.9": {
+      "BC H4": {
+        "mean": 0.6666666666666666,
+        "ci95": [
+          0.5,
+          0.8333333333333334
+        ],
+        "seed_clusters": 3
+      },
+      "Joint-FM": {
+        "mean": 0.7777777777777778,
+        "ci95": [
+          0.6666666666666666,
+          0.8333333333333334
+        ],
+        "seed_clusters": 3
+      },
+      "GPC-RANK": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "seed_clusters": 3
+      },
+      "GPC-OPT": {
+        "mean": 0.16666666666666666,
+        "ci95": [
+          -0.16666666666666666,
+          0.6666666666666666
+        ],
+        "seed_clusters": 3
+      },
+      "Ours Short-MLP H4": {
+        "mean": 0.888888888888889,
+        "ci95": [
+          0.8333333333333334,
+          1.0
+        ],
+        "seed_clusters": 3
+      },
+      "Ours 4D-WM": {
+        "mean": -0.05555555555555555,
+        "ci95": [
+          -0.16666666666666666,
+          0.0
+        ],
+        "seed_clusters": 3
+      }
+    }
+  },
+  "total_episodes": 288
+}

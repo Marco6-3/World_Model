@@ -1,8 +1,10 @@
 # Causal World-Model Guided Flow Matching for Transient-Condition Manipulation
 
-> **面向易失效操作条件（Transient / Fragile Preconditions）的动作条件因果世界模型与后阶段流匹配引导框架**  
-> **Simulation Backend**: IsaacLab / PhysX (Bimanual ALOHA)  
-> **Current Milestone**: Phase 1 Quantitative Mechanism Benchmark Completed (`v1` $\to$ `v4`) | Advancing to Phase 2 (Single-Video Task Prompting) & Phase 3 (Flagship Deformable Bag-Packing Demo)
+> **面向易失效操作条件（Transient / Fragile Preconditions）的统一 256D Mamba 世界模型与晚阶段流内因果引导框架**  
+> **Simulation & GPU Backend**: IsaacLab 5.1 / PhysX + PyTorch 2.9 CUDA (RTX 5060)  
+> **Current Milestone**: Simulation Trilogy Completed (`Stage A: Push-T` + `Stage B: Spring-Lid` + `Stage C.1: Bimanual Dynamic Bag-Packing`) | Advancing to `Stage D: Single-Arm Real-Robot Experiments` ([`docs/StageD_Real_Robot_Roadmap.md`](docs/StageD_Real_Robot_Roadmap.md))
+
+![Stage C.1 Flagship Bimanual Dynamic Bag Packing](outputs/stage_c_bag/bag_packing_demo.png)
 
 ---
 
@@ -156,22 +158,25 @@ $py = 'C:\isaacsim_env\Scripts\python.exe'
 
 ---
 
-## 5. 后续研究展望与论文路线图 (Future Outlook & Paper Roadmap)
+## 5. 最新阶段成果（Stage A / B / C.1）与 Stage D 单臂真机规划
 
-> **最新完整架构设计与三阶段实验规划文档**：请参见 [`docs/Phase2_Unified_Mamba_GPC_Roadmap.md`](docs/Phase2_Unified_Mamba_GPC_Roadmap.md)（包含 **统一双向时序 Mamba 世界模型 + 两层解耦升维 ($D_z=128$) + 正面对标 Harvard GPC (IEEE RA-L 2026) 的公开数据集与旗舰动态装包实验规划**）。
+> **最新项目状态总结与单臂真机冲击顶刊实验规划**：请参见 [`docs/StageD_Real_Robot_Roadmap.md`](docs/StageD_Real_Robot_Roadmap.md)  
+> **统一 Mamba 架构设计与 Harvard GPC 对标路线图**：请参见 [`docs/Phase2_Unified_Mamba_GPC_Roadmap.md`](docs/Phase2_Unified_Mamba_GPC_Roadmap.md)  
+> **Stage C.1 双臂动态弹性袋口收纳完整实验报告**：请参见 [`outputs/StageC_Bag_Packing_实验报告.md`](outputs/StageC_Bag_Packing_实验报告.md)
 
-基于 Phase 1 机理台架所验证的核心数学机制与发现的控制边界，后续研究将沿以下三个递进阶段推进，最终形成完整的顶会论文：
+### Stage C.1 旗舰动态弹性袋口多物品收纳核心实测结果
 
-### Phase 1.5：闭环重接触自适应与滚动时域精调 (Closed-Loop Re-Contact Refinement)
-- **非饱和终端屏障校准**：将 `v3` 的非饱和预警净空（$16\text{--}22\text{ mm}$）与 `v4` 的强区分度权重结合，避免梯度在宽净空区过早饱和；
-- **自适应执行步长（Adaptive Receding-Horizon Commit）**：当后验检测到高速回弹（$\hat{\omega}_{\text{lid}}$ 较大）时，自动将动作块执行前缀从 `COMMIT = 8` 缩短至 `2~4` 步，消除松手探查窗口与重接触扶盖之间的闭环相位滞后。
+在消除物品身份捷径（固定 `ItemA -> ItemB` 顺序、`pre_entry` 居中于 `x=0`、第一阶段入袋遮挡后清空槽位指令）并统一 `forced_finger_release_v2` 滑脱物理后，`Ours (256D Mamba-Past/Future + In-Flow Guidance)` 取得全面突破：
 
-### Phase 2：单段演示视频任务提示与闭盖遮挡记忆验证 (Single-Video Prompting & Occlusion Memory)
-- **接入测试时单段视频编码器 $V_{\text{demo}} \to \{z_k, \mathcal{C}_k\}_{k=1}^K$**：替换 Phase 1 中给定的阶段编号 `stage`，从单段人类或机器人成功演示视频中自动提取**装入物品目标、先后顺序约束（如“先放物品 A、再放物品 B” vs. “先放 B、再放 A”）**以及各阶段的维持条件 $\mathcal{C}_k = (P_k, I_k, Q_k)$；
-- **遮挡记忆消融实验**：在不透明容器长时闭盖遮挡下，定量对比完整信念 $b_t = (o_{t-L:t}, \hat{c}_t, \hat{\xi}_t)$ 与 `Goal-Image Only`（仅看最终闭盖图像）及 `Fixed-Window History`（无持久化容积状态 $\hat{c}_t$）基线在顺序遵循率与防重复抓放上的显著差异。
+1. **常规双物品闭环与遮挡二次分槽（Table C1）**：
+   - **`Ours (τ=0.7 & τ=0.9)`**：双物品装包成功 **`18/18 (100%)`**，遮挡二次分槽正确率 **`18/18 (100%)`**，夹碰 **`0/18 (0%)`**；
+   - **`BC H4` 与 `Ours Short-MLP H4`（4 帧短历史消融）**：因无法跨长周期记住已入袋遮挡物品所在槽位，二次分槽正确率双双退化至 **`9/18 (50.0%)`**（离线回放读出 `48.8%` vs. `Full 256D` `95.3%`），装包成功率仅 **`8/18` 与 `3/18`**。
+2. **中途袋口滑脱（`Collar-Slip`）紧急撤回重撑恢复（Table C2）**：
+   - **`Ours (τ=0.7 & τ=0.9)`**：实测撤回并重撑 **`18/18 (100%)`**，撤离前袋口擦碰 **`0/18 (0%)`**，全回合严苛零碰撞**安全恢复率达 `17/18 (94.4%)`**！
+   - 大幅超越 **`BC H4` (`5/18`, `+66.7%`)**、**`Joint-FM` (`3/18`, `+77.8%`)**、**`Ours Short-MLP H4` (`1/18`, `+88.9%`)** 以及 **`GPC-OPT` (`14/18`, `+16.7%`)**；
+   - **`Ours τ=0.9`** 闭环决策 P50 耗时仅 **`88.55 ms`**（独立 GPU 计时 `104.19 ms`），比 `GPC-OPT`（闭环 `834.43 ms`、独立 `966.91 ms`）**快 9.4 倍**。
 
-### Phase 3：旗舰高难度 Demo —— 双臂多物品收纳进易塌陷软包/背包 (Flagship Bag-Packing Demo)
-- **从铰接刚体盒跃迁至柔性/半刚性包袋收纳（Deformable / Collapsible Bag Packing）**：
-  将我们在机理台架上验证成熟的 **$\tau_{\text{start}} = 0.7$ 后阶段因果世界模型引导** 迁移至最具视觉冲击力与实用价值的旗舰场景——**双臂将多件日常物品（如耳机盒、书本、水杯）按演示要求装入易塌陷或带弹性包口的背包/收纳袋中**。
-- **视觉/点云包口有效孔径预测（Visual Aperture Clearance World Model）**：
-  将世界模型预测的标量盒口净空 $d_{\text{clear}}$ 推广为从深度图/点云提取的**包口三维有效通行孔径（Effective Aperture Clearance）**，使机器人在装包过程中能够预判“松开副手是否会导致软包袋口塌缩卡住书本”，从而自主涌现出**“单手撑包口 + 另一手插物”、“袋口塌缩时及时抽回并双手重新撑开包口”**的高水平双臂灵巧协同行为。
+### Stage D：下一阶段单臂真实机械臂实验规划 (`docs/StageD_Real_Robot_Roadmap.md`)
+- 利用实验室**单臂真实机械臂**在不透明双槽弹性/回弹收纳容器上开展**真实墙钟时间（Wall-Clock Time，物理不暂停）**闭环实验：
+  1. **实验 R1（真实遮挡双物品连续分槽）**：验证 `256D Mamba-Past` 跨越 5~8 秒抓取长周期的真实遮挡槽位记忆（`100%` vs. `BC H4` `50%` 叠压卡死）；
+  2. **实验 R2（真实墙钟时间中途回弹紧急撤回）**：正面暴露 `GPC-OPT` 因 `~900 ms` 规划延迟在真实不暂停物理世界中来不及撤回而夹碰的致命缺陷，展示 `Ours (< 100 ms)` 的毫秒级实时避障恢复与二次装入能力。

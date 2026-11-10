@@ -1,0 +1,84 @@
+{
+  "created_at": "2026-11-10T19:02:33.504946",
+  "training_seeds": [
+    1000,
+    1001,
+    1002,
+    1003
+  ],
+  "validation_seeds": [
+    1004,
+    1005
+  ],
+  "heldout_dynamics_seeds": [
+    1006,
+    1007
+  ],
+  "closed_loop_seeds": [
+    2000,
+    2001,
+    2002
+  ],
+  "modes": [
+    "relaxed",
+    "elastic_slow",
+    "elastic_fast"
+  ],
+  "orders": [
+    "A-left then B-right",
+    "A-right then B-left"
+  ],
+  "dataset_episodes": 192,
+  "evaluation_episodes": 288,
+  "past_dim": 256,
+  "future_dim": 256,
+  "flow_history": 4,
+  "world_tokens": 64,
+  "world_span_frames": 444,
+  "prediction_steps": 24,
+  "commit_steps": 6,
+  "insertion_budget_steps": 216,
+  "flow_updates": 5000,
+  "world_updates_per_variant": 3500,
+  "collision_threshold_Ns": 0.004,
+  "prior_256_safe_ranking": 6,
+  "figure_case": {
+    "mode": "elastic_fast",
+    "order": 0,
+    "seed": 2000,
+    "perturbed": true,
+    "methods": [
+      "BC H4",
+      "GPC-OPT",
+      "Ours tau=0.9"
+    ]
+  },
+  "limitations": [
+    "Rigid-body prismatic bag collar and rigid shell proxy, not cloth FEM",
+    "Compliant rear-handle attachment uses measured left-tip position and a bounded physical force",
+    "Shared scripted pickup, release and final closure; learned insertion and emergency response",
+    "Physics pauses while planning; wall-clock real-time safety is not established",
+    "Physics may retain small history-dependent differences in H4; chance-level short-memory performance is tested, not mathematically assumed"
+  ],
+  "shared_early_replan_aperture_drop_m": 0.006,
+  "control_protocol_frozen_at": "2026-11-10T19:28:39.906927",
+  "perturbation_version": "forced_finger_release_v2",
+  "perturbation_fix_at": "2026-11-09T21:31:11.250543+08:00",
+  "training_data_version": "stage_c1_forced_finger_release_v2",
+  "version": "stage_c1",
+  "history_formula_note": "Spec formula produces 67 tokens; use 60 spaced plus last 4 consecutive, 444-frame inclusive span",
+  "slot_hint": "Ground-truth one-hot for flow training only; ShortPast predicts BC/Joint/Short, MambaPast predicts GPC/Full/Four at evaluation",
+  "guidance": "0.5 * 10 / remaining flow steps; same emergency priors for all searches with >=8 particles",
+  "original_archive": "outputs/stage_c_bag_pre_c1_20261110",
+  "source_sha256": {
+    "bag_scene.py": "d95e9603be066d5dfd709b155ee79dbf009d620b79d80f2215658544b5fd0bb1",
+    "bag_common.py": "312668bfdc8d73fc37af05ab429d5798fae673bb5598f1a15781e521f1be2658",
+    "bag_learning.py": "ba2ede2c6c20b1b315919feb1ecd37b2260a1fa8759c9fd8c62a40b6db9e0758",
+    "bag_audit.py": "4089361eef4f77cbb2e44e764dd20497e885539cb1cf8c03e4e307bc99338f1b",
+    "bag_report.py": "bd0deebc721da9758fef9788b808a1a3559c4d0016afa7c65902c5646a4c442c",
+    "inference.py": "0ad61f61e95c429518199ab25a827189f48273385d63aad4886bbcf334c280a5"
+  },
+  "slot_readout_scope": "Second-entry handoff, not later expert-action-conditioned replay",
+  "collection_execution": "Two disjoint seed ranges in independent simulators; training begins after complete dataset checks",
+  "calibration_source": "Reused unchanged passive collar dynamics calibration from pre-C.1 archive"
+}
