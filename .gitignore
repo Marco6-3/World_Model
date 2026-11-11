@@ -24,9 +24,15 @@ outputs/**/final_source/
 outputs/**/pre_c1_sources/
 outputs/**/previous_reports/
 outputs/stage_c_bag_pre_c1_*/
+outputs/stage_c_bag_pre_c2_*/
+outputs/**/c2_seed*/
 
 # OS / IDE files
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# Preserved local Stage C.2 development harness and planner snapshot
+outputs/stage_c_bag/c2_dev.py
+outputs/stage_c_bag/planner_v4_before_recent_collapse.py

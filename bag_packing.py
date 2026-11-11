@@ -29,7 +29,7 @@ def dump(path, data):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("command", choices=("smoke", "calibrate", "collect", "fit", "evaluate", "report"))
+    p.add_argument("command", choices=("smoke", "calibrate", "collect", "fit", "evaluate", "probe", "report"))
     p.add_argument("--out", type=Path, default=OUT)
     p.add_argument("--robot-usd", type=Path, default=ASSET)
     p.add_argument("--model-root", type=Path)
@@ -92,6 +92,9 @@ def main():
             dump(args.out / f"smoke_{args.scheme}_{args.order}.json", rows)
         elif args.command == "collect":
             collect(task, args)
+        elif args.command == "probe":
+            from bag_probe import physical_probe
+            physical_probe(task,args)
         else:
             evaluate(task, args)
     except Exception:

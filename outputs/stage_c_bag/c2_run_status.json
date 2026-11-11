@@ -1,0 +1,51 @@
+{
+  "status": "completed_with_failed_acceptance",
+  "protocol_version": "stage_c2",
+  "technical_checks_passed": true,
+  "hard_acceptance_passed": false,
+  "failed_targets": [
+    {
+      "target": "Ours tau=0.7 GPC-OPT latency / Ours >=8",
+      "actual": 4.251606394999901,
+      "passed": false
+    },
+    {
+      "target": "Ours tau=0.9 no insertion budget exhaustion (hover check)",
+      "actual": 1,
+      "passed": false
+    },
+    {
+      "target": "Ours tau=0.9 GPC-OPT latency / Ours >=8",
+      "actual": 6.9778118850638755,
+      "passed": false
+    },
+    {
+      "target": "BC H4 packing <=9/18",
+      "actual": 12,
+      "passed": false
+    },
+    {
+      "target": "full slots >=98%",
+      "actual": 0.9534883720930233,
+      "passed": false
+    },
+    {
+      "target": "full held-out conformal coverage >=90%",
+      "actual": 0.8748971223831177,
+      "passed": false
+    }
+  ],
+  "matrix_episodes": 288,
+  "physical_probe_episodes": 96,
+  "predictive_probe_rows": 96,
+  "original_dataset_hashes_unchanged": 192,
+  "checked_report_links": 25,
+  "unit_tests": 17,
+  "paper_png_size": [
+    3615,
+    2506
+  ],
+  "completed_at": "2026-11-11T07:18:39.822358+00:00",
+  "git_diff_check_passed": true,
+  "svg_xml_valid": true
+}

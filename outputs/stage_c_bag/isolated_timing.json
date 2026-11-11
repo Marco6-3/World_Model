@@ -1,6 +1,18 @@
 {
   "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
   "torch": "2.9.0+cu128",
+  "checkpoint_hashes": {
+    "flows.pt": "bb2213ddd1bd2f265d8f40c1d0900025cb659f0e8be1cd1f731a195f2235358e",
+    "four.pt": "6e3c6e45d555eac6375bdb20a35890ab077498f979e7f6d714e6d49a725372c3",
+    "full.pt": "9875098eec61ad38958b87fddaacc1eb6c61c01db029fa9753b34bd5345f9808",
+    "short.pt": "da07a6e04e3dd5fb8b454eaf89d9349c977b282b56f8f3341411cbd269f4e774"
+  },
+  "planner_source_hashes": {
+    "bag_scene.py": "3cc3f0395d10ac7398b712b0c4c38c8bbdb69c590c76d4cd4dde6813ed3a0248",
+    "bag_learning.py": "9474aa32936e1b2878adcfadd63ca95c94baeb193e20f7754ec2710301beeec1",
+    "bag_common.py": "312668bfdc8d73fc37af05ab429d5798fae673bb5598f1a15781e521f1be2658",
+    "mamba_wm.py": "d6a5ee84d03e08726a08404aa7a064d62c8472f7ba497fb8be640b459ae95256"
+  },
   "protocol": "12 identical held-out second-entry histories per method; warm-up; rotating order; synchronized wall clock",
   "histories": [
     {
@@ -68,516 +80,516 @@
     {
       "method": "BC H4",
       "history_index": 0,
-      "ms": 43.65479999978561
+      "ms": 19.446899999820744
     },
     {
       "method": "Joint-FM",
       "history_index": 0,
-      "ms": 45.81270000016957
+      "ms": 33.05259999979171
     },
     {
       "method": "GPC-RANK",
       "history_index": 0,
-      "ms": 78.60509999954957
+      "ms": 34.53540000009525
     },
     {
       "method": "GPC-OPT",
       "history_index": 0,
-      "ms": 1090.8348000002661
+      "ms": 776.8752000010863
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 0,
-      "ms": 190.82299999990937
+      "ms": 172.22929999843473
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 0,
-      "ms": 116.88070000036532
+      "ms": 84.61030000034953
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 0,
-      "ms": 234.08870000002935
+      "ms": 180.59469999934663
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 0,
-      "ms": 113.92439999963244
+      "ms": 111.35610000019369
     },
     {
       "method": "Joint-FM",
       "history_index": 1,
-      "ms": 46.87420000027487
+      "ms": 32.9050999989704
     },
     {
       "method": "GPC-RANK",
       "history_index": 1,
-      "ms": 56.398199999421195
+      "ms": 33.83079999912297
     },
     {
       "method": "GPC-OPT",
       "history_index": 1,
-      "ms": 1105.4340000000593
+      "ms": 773.6933999985922
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 1,
-      "ms": 210.19840000008116
+      "ms": 172.03080000035698
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 1,
-      "ms": 112.486799999715
+      "ms": 83.52639999975509
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 1,
-      "ms": 195.47400000010384
+      "ms": 181.182300000728
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 1,
-      "ms": 102.08659999989322
+      "ms": 110.34639999888896
     },
     {
       "method": "BC H4",
       "history_index": 1,
-      "ms": 24.8953000000256
+      "ms": 19.83980000113661
     },
     {
       "method": "GPC-RANK",
       "history_index": 2,
-      "ms": 56.03279999922961
+      "ms": 34.353399998508394
     },
     {
       "method": "GPC-OPT",
       "history_index": 2,
-      "ms": 1144.5034999997006
+      "ms": 773.0114000005415
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 2,
-      "ms": 207.5352000001658
+      "ms": 171.93419999966864
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 2,
-      "ms": 95.98629999982222
+      "ms": 84.56239999941317
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 2,
-      "ms": 252.20569999964937
+      "ms": 182.22099999911734
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 2,
-      "ms": 107.18519999954879
+      "ms": 112.47670000011567
     },
     {
       "method": "BC H4",
       "history_index": 2,
-      "ms": 24.205699999583885
+      "ms": 19.64389999920968
     },
     {
       "method": "Joint-FM",
       "history_index": 2,
-      "ms": 36.68440000001283
+      "ms": 32.54460000061954
     },
     {
       "method": "GPC-OPT",
       "history_index": 3,
-      "ms": 1056.1884000007922
+      "ms": 776.528700000199
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 3,
-      "ms": 181.6780999997718
+      "ms": 173.43649999929767
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 3,
-      "ms": 104.81379999964702
+      "ms": 83.01039999969362
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 3,
-      "ms": 216.4572000001499
+      "ms": 182.12080000012065
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 3,
-      "ms": 106.6026000007696
+      "ms": 111.8239999996149
     },
     {
       "method": "BC H4",
       "history_index": 3,
-      "ms": 27.94499999981781
+      "ms": 20.33320000009553
     },
     {
       "method": "Joint-FM",
       "history_index": 3,
-      "ms": 40.07369999999355
+      "ms": 34.98880000006466
     },
     {
       "method": "GPC-RANK",
       "history_index": 3,
-      "ms": 76.20930000030057
+      "ms": 35.289400000692694
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 4,
-      "ms": 196.41520000004675
+      "ms": 173.83060000065598
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 4,
-      "ms": 99.668599999859
+      "ms": 83.3996000001207
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 4,
-      "ms": 239.76500000026135
+      "ms": 182.5859999989916
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 4,
-      "ms": 109.17130000052566
+      "ms": 110.94990000128746
     },
     {
       "method": "BC H4",
       "history_index": 4,
-      "ms": 30.06920000007085
+      "ms": 19.75749999837717
     },
     {
       "method": "Joint-FM",
       "history_index": 4,
-      "ms": 39.96729999926174
+      "ms": 32.928200000242214
     },
     {
       "method": "GPC-RANK",
       "history_index": 4,
-      "ms": 58.258800000658084
+      "ms": 33.71480000168958
     },
     {
       "method": "GPC-OPT",
       "history_index": 4,
-      "ms": 1076.2090999996872
+      "ms": 773.1476000008115
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 5,
-      "ms": 116.317899999558
+      "ms": 85.95229999991716
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 5,
-      "ms": 216.71300000070914
+      "ms": 182.17949999962002
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 5,
-      "ms": 114.42139999962819
+      "ms": 109.89209999934246
     },
     {
       "method": "BC H4",
       "history_index": 5,
-      "ms": 24.520099999790546
+      "ms": 19.908599999325816
     },
     {
       "method": "Joint-FM",
       "history_index": 5,
-      "ms": 34.77099999963684
+      "ms": 33.15389999988838
     },
     {
       "method": "GPC-RANK",
       "history_index": 5,
-      "ms": 58.61490000006597
+      "ms": 34.502700000302866
     },
     {
       "method": "GPC-OPT",
       "history_index": 5,
-      "ms": 972.8123999993841
+      "ms": 778.5174000000552
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 5,
-      "ms": 183.8121000000683
+      "ms": 173.29270000118413
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 6,
-      "ms": 191.23900000067806
+      "ms": 184.13890000010724
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 6,
-      "ms": 103.60099999979866
+      "ms": 111.18100000021514
     },
     {
       "method": "BC H4",
       "history_index": 6,
-      "ms": 24.118799999996554
+      "ms": 19.816300000456977
     },
     {
       "method": "Joint-FM",
       "history_index": 6,
-      "ms": 34.68689999954222
+      "ms": 33.128499999293126
     },
     {
       "method": "GPC-RANK",
       "history_index": 6,
-      "ms": 56.107400000655616
+      "ms": 34.39340000113589
     },
     {
       "method": "GPC-OPT",
       "history_index": 6,
-      "ms": 951.2580999999045
+      "ms": 776.685599999837
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 6,
-      "ms": 176.36190000030183
+      "ms": 171.49959999915154
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 6,
-      "ms": 88.18620000056399
+      "ms": 84.86559999983001
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 7,
-      "ms": 100.4984000001059
+      "ms": 110.69669999960752
     },
     {
       "method": "BC H4",
       "history_index": 7,
-      "ms": 24.42629999950441
+      "ms": 19.559700000172597
     },
     {
       "method": "Joint-FM",
       "history_index": 7,
-      "ms": 35.24049999941781
+      "ms": 33.10659999988275
     },
     {
       "method": "GPC-RANK",
       "history_index": 7,
-      "ms": 55.38379999961762
+      "ms": 34.05200000088371
     },
     {
       "method": "GPC-OPT",
       "history_index": 7,
-      "ms": 955.8770000003278
+      "ms": 777.0541999998386
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 7,
-      "ms": 179.14990000008402
+      "ms": 174.4564000000537
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 7,
-      "ms": 89.92059999945923
+      "ms": 84.88240000042424
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 7,
-      "ms": 186.30420000044978
+      "ms": 186.03559999974095
     },
     {
       "method": "BC H4",
       "history_index": 8,
-      "ms": 24.860800000169547
+      "ms": 21.376500000769738
     },
     {
       "method": "Joint-FM",
       "history_index": 8,
-      "ms": 34.707600000729144
+      "ms": 33.4352999998373
     },
     {
       "method": "GPC-RANK",
       "history_index": 8,
-      "ms": 55.6125000002794
+      "ms": 34.45429999919725
     },
     {
       "method": "GPC-OPT",
       "history_index": 8,
-      "ms": 949.8026999999638
+      "ms": 792.4038999990444
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 8,
-      "ms": 181.2737999998717
+      "ms": 175.83899999954156
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 8,
-      "ms": 88.90950000022713
+      "ms": 84.91239999966638
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 8,
-      "ms": 190.23569999990286
+      "ms": 185.3092999990622
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 8,
-      "ms": 101.25599999992119
+      "ms": 111.87930000050983
     },
     {
       "method": "Joint-FM",
       "history_index": 9,
-      "ms": 35.43739999986428
+      "ms": 33.70549999999639
     },
     {
       "method": "GPC-RANK",
       "history_index": 9,
-      "ms": 56.34420000023965
+      "ms": 35.134399999151356
     },
     {
       "method": "GPC-OPT",
       "history_index": 9,
-      "ms": 957.7515000000858
+      "ms": 788.0571000005148
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 9,
-      "ms": 192.586800000754
+      "ms": 173.4732000004442
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 9,
-      "ms": 89.15309999974852
+      "ms": 84.23869999933231
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 9,
-      "ms": 189.35940000028495
+      "ms": 182.96270000064396
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 9,
-      "ms": 101.9412999994529
+      "ms": 113.06019999938144
     },
     {
       "method": "BC H4",
       "history_index": 9,
-      "ms": 24.483900000632275
+      "ms": 19.76449999892793
     },
     {
       "method": "GPC-RANK",
       "history_index": 10,
-      "ms": 54.91130000064004
+      "ms": 36.13969999969413
     },
     {
       "method": "GPC-OPT",
       "history_index": 10,
-      "ms": 954.7788999998374
+      "ms": 807.8757999992376
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 10,
-      "ms": 174.91429999972752
+      "ms": 178.30359999970824
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 10,
-      "ms": 89.35179999934917
+      "ms": 83.7033000007068
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 10,
-      "ms": 188.78700000004756
+      "ms": 184.17539999973087
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 10,
-      "ms": 104.78169999987585
+      "ms": 113.34580000038841
     },
     {
       "method": "BC H4",
       "history_index": 10,
-      "ms": 24.37480000025971
+      "ms": 19.504300000335206
     },
     {
       "method": "Joint-FM",
       "history_index": 10,
-      "ms": 34.207900000183145
+      "ms": 32.33899999941059
     },
     {
       "method": "GPC-OPT",
       "history_index": 11,
-      "ms": 961.0127999994802
+      "ms": 794.4267999992007
     },
     {
       "method": "Ours Short-MLP H4",
       "history_index": 11,
-      "ms": 177.45240000022022
+      "ms": 175.0226999993174
     },
     {
       "method": "Ours 4D-WM",
       "history_index": 11,
-      "ms": 96.28189999966708
+      "ms": 84.2661999995471
     },
     {
       "method": "Ours tau=0.7",
       "history_index": 11,
-      "ms": 190.73200000002544
+      "ms": 182.90630000046804
     },
     {
       "method": "Ours tau=0.9",
       "history_index": 11,
-      "ms": 100.48439999991388
+      "ms": 111.33970000082627
     },
     {
       "method": "BC H4",
       "history_index": 11,
-      "ms": 24.415400000179943
+      "ms": 19.250600000304985
     },
     {
       "method": "Joint-FM",
       "history_index": 11,
-      "ms": 34.84220000063942
+      "ms": 34.222299998873495
     },
     {
       "method": "GPC-RANK",
       "history_index": 11,
-      "ms": 55.28859999958513
+      "ms": 35.008699998797965
     }
   ],
   "summary": {
     "BC H4": {
-      "p50_ms": 24.50200000021141,
-      "mean_ms": 26.830841666651395
+      "p50_ms": 19.76099999865255,
+      "mean_ms": 19.850149999911082
     },
     "Joint-FM": {
-      "p50_ms": 35.338949999641045,
-      "mean_ms": 37.775483333310454
+      "p50_ms": 33.117549999587936,
+      "mean_ms": 33.29253333307255
     },
     "GPC-RANK": {
-      "p50_ms": 56.225800000447634,
-      "mean_ms": 59.81390833335354
+      "p50_ms": 34.478499999750056,
+      "mean_ms": 34.617416666606005
     },
     "GPC-OPT": {
-      "p50_ms": 966.9125999994321,
-      "mean_ms": 1014.7052666666241
+      "p50_ms": 776.9647000004625,
+      "mean_ms": 782.3564249999132
     },
     "Ours Short-MLP H4": {
-      "p50_ms": 182.74509999992006,
-      "mean_ms": 187.68342500008353
+      "p50_ms": 173.45484999987093,
+      "mean_ms": 173.7790499998179
     },
     "Ours 4D-WM": {
-      "p50_ms": 96.13409999974465,
-      "mean_ms": 98.99643333316514
+      "p50_ms": 84.41429999948014,
+      "mean_ms": 84.32749999989635
     },
     "Ours tau=0.7": {
-      "p50_ms": 193.35650000039095,
-      "mean_ms": 207.6134083335243
+      "p50_ms": 182.74614999972982,
+      "mean_ms": 183.03437499980646
     },
     "Ours tau=0.9": {
-      "p50_ms": 104.19134999983726,
-      "mean_ms": 105.49619166658886
+      "p50_ms": 111.34790000050998,
+      "mean_ms": 111.52899166669765
     }
   }
 }

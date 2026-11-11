@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from bag_packing import METHODS, dump
 from bag_common import history_indices
-from bag_learning import load_models, decide
+from bag_learning import load_models, decide, clean_observations
 
 
 def measure(out):
@@ -21,7 +21,8 @@ def measure(out):
         with np.load(path) as raw:
             metadata=json.loads(raw['metadata'].item())
             t=metadata['learn_ranges'][1][0]
-            histories.append(raw['observations'][history_indices(t)])
+            obs,_,_=clean_observations(raw['observations'],raw['action'],metadata)
+            histories.append(obs[history_indices(t)])
             sources.append({'file':path.name,'control_tick':t,'sha256':sha256(path.read_bytes()).hexdigest()})
     assert len(histories)==12
     for method in METHODS:decide(models,histories[0],method,torch.Generator().manual_seed(9100))
@@ -37,6 +38,9 @@ def measure(out):
         print(f'Isolated bag timing {i+1}/12',flush=True)
     summary={m:{'p50_ms':float(np.median([r['ms'] for r in rows if r['method']==m])),
                 'mean_ms':float(np.mean([r['ms'] for r in rows if r['method']==m]))} for m in METHODS}
-    dump(out/'isolated_timing.json',dict(device=torch.cuda.get_device_name(),torch=str(torch.__version__),
+    hashes={p.name:sha256(p.read_bytes()).hexdigest() for p in (out/'trained').glob('*.pt')}
+    source_hashes={name:sha256((Path(__file__).resolve().parent/name).read_bytes()).hexdigest()
+                   for name in ('bag_scene.py','bag_learning.py','bag_common.py','mamba_wm.py')}
+    dump(out/'isolated_timing.json',dict(device=torch.cuda.get_device_name(),torch=str(torch.__version__),checkpoint_hashes=hashes,planner_source_hashes=source_hashes,
          protocol='12 identical held-out second-entry histories per method; warm-up; rotating order; synchronized wall clock',
          histories=sources,rows=rows,summary=summary))

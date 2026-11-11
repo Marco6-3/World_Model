@@ -1,0 +1,56 @@
+{
+  "model": "full",
+  "q_m": 0.01049826480448246,
+  "rows": [
+    {
+      "group": "mode",
+      "label": "relaxed",
+      "windows": 810,
+      "coverage": 0.9222222566604614,
+      "score_p90_m": 0.008842620067298412
+    },
+    {
+      "group": "mode",
+      "label": "elastic_slow",
+      "windows": 810,
+      "coverage": 0.8333333730697632,
+      "score_p90_m": 0.015705183148384094
+    },
+    {
+      "group": "mode",
+      "label": "elastic_fast",
+      "windows": 810,
+      "coverage": 0.869135856628418,
+      "score_p90_m": 0.013125767931342125
+    },
+    {
+      "group": "seed",
+      "label": "1006",
+      "windows": 1212,
+      "coverage": 0.9224422574043274,
+      "score_p90_m": 0.008972379378974438
+    },
+    {
+      "group": "seed",
+      "label": "1007",
+      "windows": 1218,
+      "coverage": 0.8275862336158752,
+      "score_p90_m": 0.016825063154101372
+    },
+    {
+      "group": "recovery",
+      "label": "other",
+      "windows": 1842,
+      "coverage": 0.850162923336029,
+      "score_p90_m": 0.014657104387879372
+    },
+    {
+      "group": "recovery",
+      "label": "recovery",
+      "windows": 588,
+      "coverage": 0.9523809552192688,
+      "score_p90_m": 0.0055179777555167675
+    }
+  ],
+  "note": "Post-hoc held-out diagnosis only. No test data used to change the frozen calibration quantile."
+}

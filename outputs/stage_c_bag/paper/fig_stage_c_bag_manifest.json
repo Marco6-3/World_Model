@@ -1,4 +1,5 @@
 {
+  "protocol_version": "stage_c2",
   "selection": "predeclared paired case from protocol.json, identical to bag_report.figure",
   "case": {
     "mode": "elastic_fast",
@@ -13,59 +14,67 @@
   },
   "traces": {
     "BC H4": {
-      "file": "seed2000/traces/2000_elastic_fast_0_1_0.npz",
-      "sha256": "6bd057a61dd7f3455682e91a39c94a88f11b243f2fe9e7cae66333637beb3163"
+      "file": "c2_seed2000_final/traces/2000_elastic_fast_0_1_0.npz",
+      "sha256": "0726d07aa0c1d0a45b797a264893edb620abe8bb8c03bebc25f2250cd6c9d2c6"
     },
     "GPC-OPT": {
-      "file": "seed2000/traces/2000_elastic_fast_0_1_3.npz",
-      "sha256": "546499338b8f0d3ba2281e1614b1571edd41a9711b9ea945a8a4d34c241dff28"
+      "file": "c2_seed2000_final/traces/2000_elastic_fast_0_1_3.npz",
+      "sha256": "0e3247d27cdbd9d6b5bb7615f8f76fdabe0e22f5c9c635d6625b792788c92a93"
     },
     "Ours tau=0.9": {
-      "file": "seed2000/traces/2000_elastic_fast_0_1_7.npz",
-      "sha256": "7278bc83ce4c67d9ab7bb0d0167e3bcf443e3713de0a799bba4e78ee087ba91c"
+      "file": "c2_seed2000_final/traces/2000_elastic_fast_0_1_7.npz",
+      "sha256": "5c29e63f23872f0ecc32ad496e720ea7becb4472e862025b397803b8a1839ccb"
     }
   },
   "panel_d": [
     {
       "method": "BC H4",
-      "safe_recovery": 5,
-      "n": 18
+      "safe_recovery": 0,
+      "n": 18,
+      "safe_recoveries_with_timeout": 0
     },
     {
       "method": "Joint-FM",
-      "safe_recovery": 3,
-      "n": 18
+      "safe_recovery": 0,
+      "n": 18,
+      "safe_recoveries_with_timeout": 0
     },
     {
       "method": "GPC-RANK",
-      "safe_recovery": 17,
-      "n": 18
+      "safe_recovery": 0,
+      "n": 18,
+      "safe_recoveries_with_timeout": 0
     },
     {
       "method": "GPC-OPT",
-      "safe_recovery": 14,
-      "n": 18
+      "safe_recovery": 1,
+      "n": 18,
+      "safe_recoveries_with_timeout": 1
     },
     {
       "method": "Ours Short-MLP H4",
-      "safe_recovery": 1,
-      "n": 18
+      "safe_recovery": 0,
+      "n": 18,
+      "safe_recoveries_with_timeout": 0
     },
     {
       "method": "Ours 4D-WM",
-      "safe_recovery": 18,
-      "n": 18
+      "safe_recovery": 0,
+      "n": 18,
+      "safe_recoveries_with_timeout": 0
     },
     {
       "method": "Ours tau=0.7",
-      "safe_recovery": 17,
-      "n": 18
+      "safe_recovery": 18,
+      "n": 18,
+      "safe_recoveries_with_timeout": 0
     },
     {
       "method": "Ours tau=0.9",
-      "safe_recovery": 17,
-      "n": 18
+      "safe_recovery": 18,
+      "n": 18,
+      "safe_recoveries_with_timeout": 1
     }
   ],
-  "ci": "Wilson score 95% interval over perturbed episodes"
+  "ci": "Descriptive episode-wise Wilson 95% intervals; seed clustering ignored. See paired cluster bootstrap in report."
 }

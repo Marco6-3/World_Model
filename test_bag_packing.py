@@ -1,10 +1,14 @@
 """Regression tests for causal history, occlusion, architecture and risk gradients."""
 import unittest
+from unittest.mock import patch
+from pathlib import Path
+from tempfile import TemporaryDirectory
+import json
 import bag_packing
 import numpy as np
 import torch
 from bag_common import history_indices, visible_contents, measure_trace, effective_clearance, slot_pos, SIZE, FLOOR
-from bag_learning import BagWorld, safety_risk
+from bag_learning import BagWorld, safety_risk, clean_observations, calibrate_conformal, load_windows, flow_descent
 
 
 class BagTests(unittest.TestCase):
@@ -30,6 +34,96 @@ class BagTests(unittest.TestCase):
         self.assertEqual(full.past.embed.out_features,256)
         self.assertEqual(full.initialize.out_features,256)
         self.assertEqual(four.initialize.out_features,4)
+        self.assertEqual(four.g_state[0].in_features,4)
+        self.assertEqual(four.g_safe[0].in_features,4)
+
+    def test_fault_command_imputation_preserves_sensors_and_later_commands(self):
+        obs=np.arange(24*39,dtype=np.float32).reshape(24,39)
+        obs[:,-2]=.008;obs[4:13,-2]=.038;obs[16:,-2]=.032
+        action=np.zeros((23,8),np.float32);action[:,6]=.008;action[3:12,6]=.038;action[15:,6]=.032
+        clean,a,n=clean_observations(obs,action,{'events':[{'t':3,'event':'collar_slip'}]})
+        self.assertEqual(n,9)
+        np.testing.assert_array_equal(clean[:,:5],obs[:,:5])
+        np.testing.assert_allclose(clean[4:13,-2],.008)
+        np.testing.assert_array_equal(clean[16:,-2],obs[16:,-2])
+        np.testing.assert_allclose(a[3:12,6],.008)
+        self.assertAlmostEqual(float(obs[4,-2]),.038,places=6)
+
+    def test_conformal_uses_finite_sample_order_statistic_and_frozen_test(self):
+        model=torch.nn.Module();model.world=torch.nn.Module()
+        model.world.register_buffer('conformal_q',torch.tensor(0.))
+        scores=torch.arange(1,10,dtype=torch.float32)/1000
+        heldout=torch.tensor([.001,.009,.010])
+        with patch('bag_learning.clearance_scores',side_effect=[(scores,scores),(heldout,heldout)]):
+            result=calibrate_conformal(model,{}, {})
+        self.assertEqual(result['quantile_rank'],9)
+        self.assertAlmostEqual(result['conformal_q_m'],.009,places=6)
+        self.assertAlmostEqual(result['conformal_coverage'],2/3,places=6)
+
+    def test_reopened_safe_collar_risk_attracts_downward_insertion(self):
+        state=torch.tensor([.028,0.,.4,0.]).repeat(1,24,1)
+        action=torch.zeros(1,24,8);action[...,5]=.245;action.requires_grad_(True)
+        grad,=torch.autograd.grad(safety_risk(state,action,.008).sum(),action)
+        self.assertTrue((grad[...,5]>0).all())
+        action=torch.zeros(1,24,8,requires_grad=True)
+        grad,=torch.autograd.grad(safety_risk(state,action,.008,emergency=True).sum(),action)
+        self.assertTrue((grad[...,5]<0).all())
+
+    def test_negative_schemes_never_supervise_flow_but_keep_world_windows(self):
+        with TemporaryDirectory() as folder:
+            root=Path(folder);(root/'dataset').mkdir()
+            for scheme in ('direct_insert','premature_release','spread_and_hold'):
+                meta=dict(success=True,collision=False,method=scheme,events=[],
+                          mode='relaxed',order=0,seed=1000,learn_ranges=[[0,40],[40,80]])
+                stage=np.r_[np.zeros(40),np.ones(40)]
+                np.savez(root/'dataset'/f'1000_{scheme}.npz',metadata=json.dumps(meta),
+                         observations=np.zeros((81,39),np.float32),action=np.zeros((80,8),np.float32),
+                         state=np.zeros((80,4),np.float32),truth=np.zeros((80,10),np.float32),
+                         expert=np.ones(80,dtype=bool),learn=np.ones(80,dtype=bool),stage=stage)
+                if scheme!='spread_and_hold':
+                    data,_=load_windows(root,[1000]);self.assertFalse(data['expert'].any())
+            data,files=load_windows(root,[1000])
+            self.assertTrue(data['expert'].any());self.assertEqual(len(files),3)
+
+    def test_audit_accepts_early_collapse_without_slip_event(self):
+        from bag_audit import audit
+        with TemporaryDirectory() as folder:
+            frames=np.zeros((6,20));frames[:,1]=[.01,.03,.12,.12,.12,.02]
+            poses=np.zeros((6,2,7));poses[:,:,3]=1
+            poses[:,0,:3]=[-.048,0,.16];poses[1:3,0,2]=.20;poses[3:,0,:3]=slot_pos(0,0)
+            poses[:,1,:3]=[.048,.22,.20];poses[4,1,:3]=[.048,0,.13];poses[5,1,:3]=slot_pos(1,1)
+            np.savez(Path(folder)/'trace.npz',frames=frames,poses=poses,
+                     stage=[0,0,0,0,1,1],learn=np.ones(6,dtype=bool),attached=np.ones(6,dtype=bool))
+            row=dict(trace_file='trace.npz',success=True,collision=False,perturbed=True,
+                     events=[],learn_ranges=[[0,4],[4,6]],committed_steps=[1]*6,
+                     method='Ours tau=0.7',seed=2000,mode='relaxed',order=0)
+            result=audit(Path(folder),{'episodes':[row]},write=False)['episodes'][0]
+            self.assertTrue(result['safe_recovery'])
+            self.assertEqual(result['recovery_measurement']['recovery_start_source'],'measured_collapse_below_15mm')
+
+    def test_recovery_thinning_keeps_all_world_windows(self):
+        with TemporaryDirectory() as folder:
+            root=Path(folder);(root/'dataset').mkdir()
+            meta=dict(success=True,collision=False,method='slip_withdraw_reopen',
+                      events=[dict(t=20,event='collar_slip'),dict(t=90,event='resume_entry')],
+                      mode='relaxed',order=0,seed=1000,learn_ranges=[[0,140],[140,188]])
+            np.savez(root/'dataset'/'1000_slip.npz',metadata=json.dumps(meta),
+                     observations=np.zeros((189,39),np.float32),action=np.zeros((188,8),np.float32),
+                     state=np.zeros((188,4),np.float32),truth=np.zeros((188,10),np.float32),
+                     expert=np.ones(188,dtype=bool),learn=np.ones(188,dtype=bool),
+                     stage=np.r_[np.zeros(140),np.ones(48)])
+            scarce,files=load_windows(root,[1000])
+            with patch('bag_learning.RECOVERY_FRACTION',1.):full,_=load_windows(root,[1000])
+            self.assertEqual(len(scarce['obs']),len(full['obs']))
+            self.assertLess(int(scarce['expert'].sum()),int(full['expert'].sum()))
+            self.assertEqual(files[0]['retained_recovery_windows'],int(files[0]['recovery_windows']*.15))
+            a,_=load_windows(root,[1000]);torch.testing.assert_close(a['expert'],scarce['expert'])
+
+    def test_flow_guidance_preserves_direction_under_horizon_scaling(self):
+        g=torch.randn(2,24,8)
+        torch.testing.assert_close(flow_descent(g),flow_descent(g/24))
+        torch.testing.assert_close(flow_descent(g).flatten(1).norm(dim=1),torch.full((2,),3.))
+        self.assertTrue(torch.isfinite(flow_descent(torch.zeros_like(g))).all())
 
     def test_c1_item_geometry_independent_of_slot_assignment(self):
         for item in (0,1):

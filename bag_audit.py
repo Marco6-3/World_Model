@@ -13,6 +13,16 @@ def vertical_extent(poses,item):
     return np.abs(row)@(SIZE[item]/2)
 
 
+def recovery_start(row,frames,stage,learn):
+    """Use events when present; also detect early physical collar collapse."""
+    slips=[int(e['t']) for e in row['events'] if e['event']=='collar_slip']
+    if slips:return slips[0],'collar_slip'
+    if row.get('perturbed',False) or row.get('slip_episode',False):
+        collapsed=np.flatnonzero((stage==0)&learn&(frames[:,1]<.015))
+        if len(collapsed):return int(collapsed[0]),'measured_collapse_below_15mm'
+    return None,None
+
+
 def audit(out,data,*,write=True):
     out=Path(out);records=[]
     keys=('second_slot','second_slot_correct','withdraw_reopen','safe_recovery')
@@ -39,7 +49,8 @@ def audit(out,data,*,write=True):
             previous=poses[i,first,:3]
             occluded=bool(previous[2]<OCCLUDE_Z and abs(previous[0])<.095 and abs(previous[1])<.08)
             if occluded:occupied=int(previous[0]>0)
-        slips=[e['t'] for e in row['events'] if e['event']=='collar_slip']
+        start,start_source=recovery_start(row,frames,stage,learn)
+        slips=[start] if start is not None else []
         withdraw=reopen=None;collapsed=False
         if slips:
             for i in range(int(slips[0]),len(frames)):
@@ -68,8 +79,9 @@ def audit(out,data,*,write=True):
                    second_slot_correct=bool(chosen is not None and occupied is not None and chosen!=occupied),
                    withdraw_reopen=recovered,safe_recovery=bool(recovered and row['success'] and not row['collision']),
                    recovery_measurement=dict(second_slot=chosen,occupied_slot=occupied,withdraw_tick=withdraw,
+                                             recovery_start_tick=start,recovery_start_source=start_source,
                                              reopen_tick=reopen,withdraw_reopen=recovered),
-                   measurement_version='stage_c1_oriented_pose_and_actual_occupied_slot',
+                   measurement_version='stage_c2_oriented_pose_event_or_physical_collapse',
                    first_replan_after_slip_tick=first_replan,collision_before_first_reaction=pre_reaction,
                    collar_grazing_before_withdrawal=grazing,collar_peak_before_withdrawal_Ns=early_peak,
                    trace_sha256=sha256(path.read_bytes()).hexdigest())

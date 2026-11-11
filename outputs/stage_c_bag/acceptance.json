@@ -1,7 +1,7 @@
 {
   "checks": [
     {
-      "target": "Ours tau=0.7 normal success >=17/18",
+      "target": "Ours tau=0.7 normal success 18/18",
       "actual": 18,
       "passed": true
     },
@@ -16,22 +16,27 @@
       "passed": true
     },
     {
-      "target": "Ours tau=0.7 safe recovery >=12/18",
-      "actual": 17,
+      "target": "Ours tau=0.7 safe recovery >=17/18",
+      "actual": 18,
       "passed": true
     },
     {
       "target": "Ours tau=0.7 safe recovery > every baseline",
-      "actual": -1,
+      "actual": 17,
+      "passed": true
+    },
+    {
+      "target": "Ours tau=0.7 no insertion budget exhaustion (hover check)",
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "target": "Ours tau=0.7 GPC-OPT latency / Ours >=8",
+      "actual": 4.251606394999901,
       "passed": false
     },
     {
-      "target": "Ours tau=0.7 isolated P50 90-180 ms",
-      "actual": 193.35650000039095,
-      "passed": false
-    },
-    {
-      "target": "Ours tau=0.9 normal success >=17/18",
+      "target": "Ours tau=0.9 normal success 18/18",
       "actual": 18,
       "passed": true
     },
@@ -46,19 +51,24 @@
       "passed": true
     },
     {
-      "target": "Ours tau=0.9 safe recovery >=12/18",
-      "actual": 17,
+      "target": "Ours tau=0.9 safe recovery >=17/18",
+      "actual": 18,
       "passed": true
     },
     {
       "target": "Ours tau=0.9 safe recovery > every baseline",
-      "actual": -1,
+      "actual": 17,
+      "passed": true
+    },
+    {
+      "target": "Ours tau=0.9 no insertion budget exhaustion (hover check)",
+      "actual": 1,
       "passed": false
     },
     {
-      "target": "Ours tau=0.9 isolated P50 90-180 ms",
-      "actual": 104.19134999983726,
-      "passed": true
+      "target": "Ours tau=0.9 GPC-OPT latency / Ours >=8",
+      "actual": 6.9778118850638755,
+      "passed": false
     },
     {
       "target": "BC H4 second slot approximately 9/18 (+/-1)",
@@ -66,9 +76,9 @@
       "passed": true
     },
     {
-      "target": "BC H4 packing <=10/18",
-      "actual": 8,
-      "passed": true
+      "target": "BC H4 packing <=9/18",
+      "actual": 12,
+      "passed": false
     },
     {
       "target": "Ours Short-MLP H4 second slot approximately 9/18 (+/-1)",
@@ -76,18 +86,43 @@
       "passed": true
     },
     {
-      "target": "Ours Short-MLP H4 packing <=10/18",
+      "target": "Ours Short-MLP H4 packing <=9/18",
       "actual": 3,
       "passed": true
     },
     {
+      "target": "GPC-RANK safe recovery <=11/18",
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "target": "Ours 4D-WM safe recovery <=12/18",
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "target": "BC H4 safe recovery <=6/18",
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "target": "Joint-FM safe recovery <=6/18",
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "target": "Ours Short-MLP H4 safe recovery <=6/18",
+      "actual": 0,
+      "passed": true
+    },
+    {
       "target": "full clearance MAE <5 mm",
-      "actual": 4.589485004544258,
+      "actual": 4.575719591230154,
       "passed": true
     },
     {
       "target": "full mode accuracy >90%",
-      "actual": 0.9761316872427983,
+      "actual": 0.977366255144033,
       "passed": true
     },
     {
@@ -96,13 +131,28 @@
       "passed": false
     },
     {
+      "target": "full held-out conformal coverage >=90%",
+      "actual": 0.8748971223831177,
+      "passed": false
+    },
+    {
       "target": "short slots 45%-55%",
       "actual": 0.4883720930232558,
       "passed": true
     },
     {
-      "target": "four clearance MAE >7 mm",
-      "actual": 10.836616158485413,
+      "target": "short held-out conformal coverage >=90%",
+      "actual": 0.9090535044670105,
+      "passed": true
+    },
+    {
+      "target": "four clearance MAE >10 mm",
+      "actual": 10.838932357728481,
+      "passed": true
+    },
+    {
+      "target": "four held-out conformal coverage >=90%",
+      "actual": 0.9024691581726074,
       "passed": true
     }
   ],

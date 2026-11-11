@@ -1,0 +1,1137 @@
+{
+  "protocol_version": "stage_c2",
+  "sources": [
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "sha256": "74aac3b862e1e6fd594fd4cdf3e2580092320fa4289165d41a659428d3f6022f",
+      "tick": 261
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "sha256": "c71d6906eaf41c292bd6fe969bcc4e4d4b9bddd07ec69155b5d9a69b322c140a",
+      "tick": 261
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "sha256": "ee7d320cc092999ade400ee466b5579dbffebdd2a814061c05e351903ad64f58",
+      "tick": 261
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "sha256": "0e90d4225267741176e3ddc0c3b56161eed8cd034c4d1cf749913577c03cc0b8",
+      "tick": 261
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "sha256": "e85b42308b467a3168b498fd53d5af57c9abe04f6f16b25c12d2936ce1c97fa9",
+      "tick": 261
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "sha256": "afebee4a4c17c19309762cc9a99302a6da0654625f9817f46839eb6422712f9e",
+      "tick": 261
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "sha256": "b90317ef84587514ef7126f4dc03f4a34644f7df8baacbcd8ecbd0d26605afa7",
+      "tick": 266
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "sha256": "b328b14d09f7e2900d3f9ab2619c8a08be5c0249eabfb0c1d10c3e84f3380993",
+      "tick": 266
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "sha256": "310ec2ef058baebc464b4a2685586345cd736f9aa4e9c8ffc999edbde0d85b4e",
+      "tick": 266
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "sha256": "0c96724febd2011b3dd182065f03d8c5c18685b7e13d0f2e1403390e0e9562b3",
+      "tick": 266
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "sha256": "a8e14fba4a097784bbc958fbd5eff45440c05d17b87472dc720ea3617302ec36",
+      "tick": 266
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "sha256": "2d49401a60c4a9d59a5d73dbc731aaeed714ced9156560fa3b7ec260aca82503",
+      "tick": 266
+    }
+  ],
+  "rows": [
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.007721538655459881,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24655337631702423,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.006379876751452684,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.00599760003387928,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.004039577208459377,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24955925345420837,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0055938540026545525,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.004358071368187666,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.2499416023492813,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0059861307963728905,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.008365651592612267,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.010480095632374287,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24837204813957214,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.006608801893889904,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.008503802120685577,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.007649814710021019,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.00818166695535183,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0074737537652254105,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.006548539735376835,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0030837911181151867,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.015657484531402588,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24567654728889465,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.005660319235175848,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.007636822760105133,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0038927430287003517,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.00709239998832345,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.004289945587515831,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.00519715528935194,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.2477181851863861,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.005005218554288149,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.011613481678068638,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24726778268814087,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0006473371759057045,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.01173570565879345,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.2488706111907959,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.005352548789232969,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.008036947809159756,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2484743595123291,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": 0.0015888065099716187,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0017535099759697914,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": 0.0007226197049021721,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.008587009273469448,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24540409445762634,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.002006036229431629,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0033670864067971706,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0014849407598376274,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0027569392696022987,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0014255940914154053,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24994271993637085,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.003576131071895361,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0015509901568293571,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24958935379981995,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.006504576187580824,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24693208932876587,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": 0.0016795964911580086,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0025471458211541176,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0013130838051438332,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0030258633196353912,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24814453721046448,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": 0.0014888904988765717,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": 0.001685229130089283,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": 0.002247180789709091,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.011305260471999645,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.22323688864707947,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.011801261454820633,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.1982753574848175,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.011510592885315418,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24049004912376404,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.008317996747791767,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2454477697610855,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.011495659127831459,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24018998444080353,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.00876757875084877,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24160179495811462,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.010898405686020851,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.23965203762054443,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.0085625434294343,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.021602656692266464,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.23593881726264954,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.011701392941176891,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24858924746513367,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.021994665265083313,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24507714807987213,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.014763112179934978,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2466316819190979,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.013951767235994339,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.242406964302063,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.010831009596586227,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0125413928180933,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.25,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.010874931700527668,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.01853375881910324,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.21993547677993774,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.013379871845245361,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24881455302238464,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.022043555974960327,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.23806700110435486,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.011718200519680977,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24283230304718018,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.01917126402258873,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2387818694114685,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.01117747463285923,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.249686598777771,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.015478610061109066,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.23808050155639648,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.009572186507284641,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.027193637564778328,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2343311607837677,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.01141894981265068,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.027546923607587814,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24335797131061554,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.021908435970544815,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24227693676948547,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.027643665671348572,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24332195520401,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.016441626474261284,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.0204708743840456,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2402893453836441,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.014791321940720081,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.01321190595626831,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.21885868906974792,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.008076981641352177,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.017626874148845673,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.237155944108963,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.007846822962164879,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.014883949421346188,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2382834553718567,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.007521703839302063,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.24904218316078186,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.02100381627678871,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2372666597366333,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.006498836446553469,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.02298014611005783,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.23380586504936218,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 2,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.010233242996037006,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24950513243675232,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.02436269074678421,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24283809959888458,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 4,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.01937909796833992,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2453334927558899,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.024493131786584854,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.24287474155426025,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 8,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.013984331861138344,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "GPC-RANK",
+      "min_clear_lb_m": -0.01852676086127758,
+      "commanded_withdrawal": false,
+      "max_right_z_m": 0.2398957908153534,
+      "tau_actual": 1.0,
+      "guidance": 0.45,
+      "emergency": true
+    },
+    {
+      "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
+      "particles": 16,
+      "method": "Ours tau=0.7",
+      "min_clear_lb_m": -0.010181953199207783,
+      "commanded_withdrawal": true,
+      "max_right_z_m": 0.25,
+      "tau_actual": 0.7,
+      "guidance": 6.0,
+      "emergency": true
+    }
+  ],
+  "checkpoint_hashes": {
+    "flows.pt": "bb2213ddd1bd2f265d8f40c1d0900025cb659f0e8be1cd1f731a195f2235358e",
+    "four.pt": "6e3c6e45d555eac6375bdb20a35890ab077498f979e7f6d714e6d49a725372c3",
+    "full.pt": "9875098eec61ad38958b87fddaacc1eb6c61c01db029fa9753b34bd5345f9808",
+    "short.pt": "da07a6e04e3dd5fb8b454eaf89d9349c977b282b56f8f3341411cbd269f4e774"
+  },
+  "planner_source_hashes": {
+    "bag_scene.py": "3cc3f0395d10ac7398b712b0c4c38c8bbdb69c590c76d4cd4dde6813ed3a0248",
+    "bag_learning.py": "9474aa32936e1b2878adcfadd63ca95c94baeb193e20f7754ec2710301beeec1",
+    "bag_common.py": "312668bfdc8d73fc37af05ab429d5798fae673bb5598f1a15781e521f1be2658",
+    "mamba_wm.py": "d6a5ee84d03e08726a08404aa7a064d62c8472f7ba497fb8be640b459ae95256"
+  },
+  "protocol": "Paired seeds, same full world model and K; all 12 held-out first post-slip observations. Predicted bounds and command withdrawal are proxies, not physical success.",
+  "recovery_fraction": 0.15
+}

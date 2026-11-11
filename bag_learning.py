@@ -12,13 +12,15 @@ from bag_packing import MODES, dump
 from bag_common import OBS_DIM, ACTION_DIM, HISTORY, HORIZON, history_indices, THRESHOLD, measure_trace, effective_clearance
 from mamba_wm import UnifiedMambaWorldModel
 from learn import flow_loss, temporal_noise, safety_loss
-from inference import flow_search, Search
+from inference import Search, clipped_descent, flow_search
 
 ACTION_MEAN = [-.048,-.14,.165,0.,.06,.14,.018,.018]
 ACTION_STD = [.06,.08,.06,.07,.13,.10,.014,.014]
 STATE_SCALE = [.10,1.,1.,.05]
 GEO_SCALE = [.15,1.,.10,.25,.25,.10,.25,.25,1.,1.]
 SPLITS = ([1000,1001,1002,1003],[1004,1005],[1006,1007])
+RECOVERY_FRACTION = .15
+PARTICLES = 16
 
 
 class Residual(nn.Module):
@@ -75,6 +77,7 @@ class BagWorld(UnifiedMambaWorldModel):
     def __init__(self,kind='full'):
         super().__init__(OBS_DIM,8,10,d_z=4 if kind=='four' else 256,belief_dim=256,context_dim=3)
         self.kind=kind
+        self.register_buffer('conformal_q',torch.zeros(()))
         if kind=='short':self.past=ShortPast()
         if kind=='four':self.future=FourFuture()
         self.slots=nn.Linear(256,2)
@@ -92,32 +95,98 @@ class Models(nn.Module):
     def physical(self,a):return a*self.asd+self.am
 
 
+def clean_observations(observations, actions, metadata):
+    """Impute only the nine forced-release frames in frozen v2 recordings.
+
+    v2 overwrote the command before recording it, so its original value cannot
+    be recovered. Hold the pre-fault command; never change the physical sensors.
+    Explicit withdrawal/regrasp commands outside that interval remain intact.
+    """
+    obs=observations.copy(); action=actions.copy(); corrected=0
+    for event in metadata['events']:
+        if event['event']!='collar_slip':continue
+        start=int(event['t']);stop=min(start+9,len(action))
+        command=float(obs[start,-2])
+        action[start:stop,6]=command
+        obs[start+1:stop+1,-2]=command
+        corrected+=stop-start
+    return obs,action,corrected
+
+
 def load_windows(out,seeds):
     items=[];file_stats=[]
     for path in sorted((out/'dataset').glob('*.npz')):
         if int(path.name.split('_')[0]) not in seeds:continue
         with np.load(path,allow_pickle=False) as data:
             metadata=json.loads(data['metadata'].item())
-            obs=data['observations'];action=data['action'];states=data['state'];truth=data['truth']
+            obs,action,corrected=clean_observations(data['observations'],data['action'],metadata)
+            states=data['state'];truth=data['truth']
             expert=data['expert'];learn=data['learn'];stage=data['stage']
             file_stats.append(dict(file=path.name,sha256=sha256(path.read_bytes()).hexdigest(),
                                    success=metadata['success'],collision=metadata['collision'],
-                                   mode=metadata['mode'],order=metadata['order'],scheme=metadata['method']))
+                                   mode=metadata['mode'],order=metadata['order'],scheme=metadata['method'],
+                                   imputed_command_frames=corrected))
             handoff=int(metadata['learn_ranges'][1][0])
             times=np.unique(np.r_[np.flatnonzero(learn)[::3],handoff])
+            scheme=metadata['method']
+            slips=[int(e['t']) for e in metadata['events'] if e['event']=='collar_slip']
+            resumes=[int(e['t'])+24 for e in metadata['events'] if e['event']=='resume_entry']
+            recovery_start=slips[0] if slips else len(action)
+            recovery_stop=resumes[0] if resumes else recovery_start
+            recovery_times=[int(t) for t in times if t<recovery_stop and t+HORIZON>recovery_start]
+            # Fixed, outcome-independent sampling, shared by Flow and Joint-FM.
+            sample_rng=np.random.default_rng(int(sha256(path.name.encode()).hexdigest()[:8],16))
+            retained=set(sample_rng.choice(recovery_times,int(np.floor(len(recovery_times)*RECOVERY_FRACTION)),replace=False).tolist())
+            file_stats[-1].update(recovery_windows=len(recovery_times),retained_recovery_windows=len(retained))
             for t in times:
                 ix=np.minimum(np.arange(t,t+HORIZON),len(action)-1)
                 hist=obs[history_indices(t)]
                 mask=expert[ix] & learn[ix] & (stage[ix]==stage[t]) & bool(metadata["success"])
+                if scheme not in ('spread_and_hold','slip_withdraw_reopen'):mask[:]=False
+                recovery=bool(t in recovery_times)
+                if scheme=='slip_withdraw_reopen' and recovery and int(t) not in retained:mask[:]=False
                 # Once a demonstrated suffix fails, it cannot be reintroduced as expert supervision.
                 mask=np.logical_and.accumulate(mask)
                 items.append(dict(obs=hist,action=action[ix],state=states[ix],geo=truth[ix],
                                   slots=truth[max(0,t-1),-2:],expert=mask,stage=stage[t],
                                   second_entry=bool(t==handoff),
+                                  recovery=recovery,retained_recovery=bool(int(t) in retained),
                                   hint=np.eye(2,dtype=np.float32)[int(metadata['order']) if stage[t]==0 else 1-int(metadata['order'])],
                                   mode=MODES.index(metadata['mode']),seed=metadata['seed']))
     if not items:raise ValueError(f'No bag data for {seeds}')
     return {k:torch.as_tensor(np.asarray([r[k] for r in items])) for k in items[0]},file_stats
+
+
+@torch.no_grad()
+def clearance_scores(model,data):
+    """Simultaneous horizon scores under the inferred dynamics posterior."""
+    scores=[];errors=[]
+    for ix in torch.arange(len(data['obs']),device=model.mean.device).split(32):
+        obs=model.encode(data['obs'][ix]);a=model.actions(data['action'][ix])
+        stage=F.one_hot(data['stage'][ix].long(),3).float()
+        b,logits=model.world.encode(obs);n=len(ix)
+        z=model.world.latent(b.repeat_interleave(3,0),stage.repeat_interleave(3,0),
+                            a.repeat_interleave(3,0),torch.eye(3,device=obs.device).repeat(n,1))
+        clear=(model.world.decode_safety(z)[...,0]*model.ss[0]).reshape(n,3,HORIZON)
+        predicted=(clear*logits.softmax(-1)[...,None]).sum(1)
+        error=predicted-data['state'][ix,:,0]
+        scores.append(error.max(-1).values);errors.append(error.abs().flatten())
+    return torch.cat(scores),torch.cat(errors)
+
+
+@torch.no_grad()
+def calibrate_conformal(model,val,test,alpha=.10):
+    scores,_=clearance_scores(model,val);n=len(scores)
+    rank=int(np.ceil((n+1)*(1-alpha)))
+    if rank>n:raise ValueError('Insufficient calibration windows for finite split conformal quantile')
+    q=scores.sort().values[rank-1].clamp_min(0)
+    model.world.conformal_q.copy_(q)
+    heldout,errors=clearance_scores(model,test)
+    return dict(alpha=alpha,nominal_coverage=1-alpha,calibration_windows=n,quantile_rank=rank,
+                conformal_q_m=float(q),validation_coverage=float((scores<=q).float().mean()),
+                conformal_coverage=float((heldout<=q).float().mean()),test_windows=len(heldout),
+                clearance_mae_m=float(errors.mean()),score='max over all 24 steps of posterior-mean predicted minus measured clearance',
+                scope='Empirical held-out simultaneous-window coverage; overlapping windows are dependent, no unconditional episode guarantee')
 
 
 def transfer_future(world):
@@ -159,39 +228,7 @@ def validate(model,data):
 
 
 def fit(args):
-    # Recompute outcome metadata from recorded geometry before freezing dataset hashes.
-    audits=[]
-    for path in sorted((args.out/'dataset').glob('*.npz')):
-        with np.load(path,allow_pickle=False) as raw:
-            arrays={k:raw[k] for k in raw.files}
-        metadata=json.loads(arrays['metadata'].item())
-        horizontal=arrays.get('horizontal_clearance',arrays['state'][:,0].copy())
-        arrays['horizontal_clearance']=horizontal.copy()
-        for t,frame in enumerate(arrays['frames']):
-            item=0 if arrays['stage'][t]==0 else 1
-            clear=effective_clearance(horizontal[t],frame[8+3*item:11+3*item],frame[5:8],item)
-            arrays['state'][t,0]=clear;arrays['frames'][t,14]=clear
-        metadata['clearance_definition']='3D lower-bound: XY oriented-envelope margin plus vertical object bounding sphere and 12 mm tip proxy'
-        from bag_audit import vertical_extent
-        from bag_common import COLLAR_Z
-        for item in (0,1):
-            extent=vertical_extent(arrays['poses'],item);pos=arrays['poses'][:,item,:3]
-            occupied=(pos[:,2]-extent<COLLAR_Z+.045)&(pos[:,2]+extent>COLLAR_Z-.018)&(np.abs(pos[:,1])<.10)
-            mask=arrays['stage']==item
-            arrays['state'][mask,1]=occupied[mask];arrays['frames'][mask,15]=occupied[mask]
-        slips=[e['t'] for e in metadata['events'] if e['event']=='collar_slip']
-        measurement=measure_trace(arrays['frames'],arrays['stage'],arrays['learn'],arrays['attached'],
-                                  metadata['order'],slips[0] if slips else None)
-        previous={k:metadata.get(k) for k in ('second_slot','second_slot_correct','withdraw_reopen','safe_recovery')}
-        metadata.update(measurement)
-        metadata['safe_recovery']=bool(measurement['withdraw_reopen'] and metadata['success'] and not metadata['collision'])
-        metadata['measurement_version']='stage_c1_physical_entry_and_same_item_recovery'
-        arrays['metadata']=json.dumps(metadata)
-        temporary=path.with_suffix('.tmp')
-        with temporary.open('wb') as stream:np.savez_compressed(stream,**arrays)
-        temporary.replace(path)
-        audits.append(dict(file=path.name,previous=previous,measured={k:metadata[k] for k in previous}))
-    dump(args.out/'dataset_measurement_audit.json',audits)
+    # Frozen C.1 physical traces stay byte-identical; clean command leakage in memory.
     train_info=[load_windows(args.out,seeds) for seeds in SPLITS]
     data=[{k:v.to(args.device) for k,v in part.items()} for part,_ in train_info]
     train,val,test=data
@@ -219,7 +256,8 @@ def fit(args):
     torch.save(common,folder/'flows.pt')
     report=dict(device=args.device,torch=str(torch.__version__),gpu=torch.cuda.get_device_name(),
                 split_seeds=SPLITS,flow_updates=args.flow_steps,world_updates=args.world_steps,
-                expert_windows=len(expert_ix),files=[f for _,files in train_info for f in files],models={})
+                protocol_version='stage_c2',python=sys.executable,recovery_fraction=RECOVERY_FRACTION,
+                world_windows=len(train['obs']),expert_windows=len(expert_ix),files=[f for _,files in train_info for f in files],models={})
     for kind in ('full','short','four'):
         torch.manual_seed(731)
         model=Models(kind).to(args.device);model.load_state_dict(common,strict=False)
@@ -245,10 +283,12 @@ def fit(args):
         model.eval()
         report['models'][kind]=dict(past_dimension=256,future_dimension=4 if kind=='four' else 256,
              parameters=sum(p.numel() for p in model.world.parameters()),transfer=transfer,
-             validation=validate(model,val),heldout=validate(model,test))
+             validation=validate(model,val),heldout=validate(model,test),
+             conformal=calibrate_conformal(model,val,test))
         torch.save(model.state_dict(),folder/f'{kind}.pt')
         dump(args.out/'training.json',report)
     memory_probe(args.out,train_info)
+    guidance_vs_ranking_probe(args.out)
 
 
 def load_models(out,device):
@@ -260,25 +300,47 @@ def load_models(out,device):
     return result
 
 
-def safety_risk(state,action):
+def safety_risk(state,action,conformal_q=0.,*,emergency=False):
     clear,occupied,progress,impulse=state.unbind(-1)
-    pinch=4500.*occupied*F.relu(.028-clear).square()+80.*impulse
-    safe_gate=torch.sigmoid((clear-.018)/.004)
-    withdraw=(1-safe_gate)*(action[...,5]-.18)*1.2
-    cost=(pinch-.18*safe_gate*progress-withdraw).mean(-1)
-    closing=F.relu((clear[:,-12]-clear[:,-1])/12)
-    projected=clear[:,-1]-closing*24*(1-progress[:,-1].clamp(0,1))
-    return cost+2800*F.relu(.035-projected).square()
+    clear_lb=clear-conformal_q
+    pinch=4500.*occupied*F.relu(.028-clear_lb).square()+80.*impulse
+    safe_gate=torch.sigmoid((clear_lb-.018)/.0005)
+    # Aperture collapse disables downward attraction until the collar reopens.
+    if emergency:safe_gate=safe_gate*0
+    withdraw=4.*(1-safe_gate)*F.relu(.240-action[...,5])
+    insert=.35*safe_gate*(action[...,5]-.055)
+    # The linear term has a shallow holding equilibrium under a strong flow
+    # prior. A smooth metric-scaled attraction removes that equilibrium once
+    # the conformal gate opens. Stop-gradient on its gate prevents reducing
+    # predicted clearance merely to switch off the progress potential.
+    insert=insert+.35*safe_gate.detach()*((action[...,5]-.055)/.10).square()
+    cost=(pinch-.18*safe_gate*progress+withdraw+insert).mean(-1)
+    closing=F.relu((clear_lb[:,-12]-clear_lb[:,-1])/12)
+    projected=clear_lb[:,-1]-closing*24*(1-progress[:,-1].clamp(0,1))
+    terminal_margin=.035 if emergency else .018
+    return cost+2800*F.relu(terminal_margin-projected).square()
 
 
-def decide(models,history,method,rng):
-    kind='short' if method in ('BC H4','Joint-FM','Ours Short-MLP H4') else 'four' if method=='Ours 4D-WM' else 'full'
+def flow_descent(gradient):
+    """Normalize the risk direction so a horizon mean cannot erase guidance.
+
+    A clipped-only gradient of the 0.35 insertion potential is O(1/H), far
+    smaller than the learned holding velocity. Preserve its direction and use
+    the adaptive gain for its magnitude, identically for all in-flow variants.
+    """
+    norm=gradient.flatten(1).norm(dim=1).view(-1,1,1)
+    return 3.*gradient/norm.clamp_min(1e-8)
+
+
+def decide(models,history,method,rng,*,particles=None,world_kind=None,diagnostics=False):
+    kind=world_kind or ('short' if method in ('BC H4','Joint-FM','GPC-RANK','GPC-OPT','Ours Short-MLP H4') else 'four' if method=='Ours 4D-WM' else 'full')
     model=models[kind];joint=method=='Joint-FM'
-    configs={'BC H4':Search(1),'Joint-FM':Search(1,tau_start=.7),'GPC-RANK':Search(16),
-             'GPC-OPT':Search(1,20),'Ours Short-MLP H4':Search(8,tau_start=.7),
-             'Ours 4D-WM':Search(8,tau_start=.7),'Ours tau=0.7':Search(8,tau_start=.7),
-             'Ours tau=0.9':Search(8,tau_start=.9)}
+    configs={'BC H4':Search(1),'Joint-FM':Search(1,tau_start=.7),'GPC-RANK':Search(PARTICLES),
+             'GPC-OPT':Search(1,20),'Ours Short-MLP H4':Search(PARTICLES,tau_start=.7),
+             'Ours 4D-WM':Search(PARTICLES,tau_start=.7),'Ours tau=0.7':Search(PARTICLES,tau_start=.7),
+             'Ours tau=0.9':Search(PARTICLES,tau_start=.9)}
     config=configs[method]
+    if particles is not None:config=Search(particles,config.opt_steps,config.tau_start)
     raw=torch.as_tensor(history,dtype=torch.float32,device=model.mean.device)[None]
     obs=model.encode(raw);stage=raw[:,-1,25:28]
     flow=model.joint if joint else model.flow
@@ -289,22 +351,23 @@ def decide(models,history,method,rng):
         hint=(1-slots)[None] if int(stage.argmax())==1 else raw[:,-1,28:30]
         hint=hint/hint.sum(-1,keepdim=True).clamp_min(1e-6)
     emergency=bool(raw[0,-1,4]<.085 or raw[0,-1,4]-raw[0,-2,4]<-.006)
+    # A collapse after an observed open collar remains a recovery state until
+    # insertion resumes. Initial closed frames before the first spread do not
+    # trigger it. This uses aperture history only, never simulator fault events.
+    aperture=raw[0,:,4]
+    opened=(aperture>.095).int().cummax(0).values.bool()
+    recovering=bool(((aperture<.070)&opened).any() and raw[0,-1,10]>.170)
     if config.particles>1 and int(stage.argmax())==1:
         noise[:config.particles//2,:,3]-=.35
         noise[config.particles//2:,:,3]+=.35
-    if emergency and config.particles>=8:
-        # Shared, observation-only candidate priors for every multi-particle planner.
-        noise[:2,:,5]+=1.2
-        noise[:2,:,4]-=.4
-        noise[:2,:,6]+=.5
-        noise[2:4,:,1]-=.5
-        noise[2:4,:,6]-=.5
     def field(x,t):return flow(x,x.new_full((len(x),1),t),obs.expand(len(x),-1,-1),hint.expand(len(x),-1))
     def project(x):
         action=model.physical(x[...,:8])
         low=action.new_tensor([-.09,-.23,.08,-.09,-.06,.04,.006,.006])
         high=action.new_tensor([.02,-.04,.24,.09,.25,.25,.038,.038])
         action=torch.maximum(low,torch.minimum(high,action))
+        if not emergency:
+            action=torch.cat((action[...,:6],action[...,6:7].clamp(0.,.012),action[...,7:]),-1)
         previous=raw[:,-1,-8:-2].expand(len(x),-1);steps=[]
         for a in action.unbind(1):
             delta=(a[:,:6]-previous).reshape(-1,2,3)
@@ -312,29 +375,113 @@ def decide(models,history,method,rng):
             steps.append(torch.cat((previous,a[:,6:]),-1))
         normalized=model.actions(torch.stack(steps,1))
         return torch.cat((normalized,x[...,8:]),-1) if joint else normalized
+    def predict(x):
+        n=len(x)
+        z=model.world.latent(belief.expand(n*3,-1),stage.expand(n*3,-1),
+                            x[...,:8].repeat_interleave(3,0),torch.eye(3,device=x.device).repeat(n,1))
+        return model.world.decode_safety(z)*model.ss
     def risk(x):
         nonlocal belief,prob,slots
         physical=model.physical(x[...,:8])
-        if joint:return safety_risk(x[...,8:]*model.ss,physical)
+        if joint:return safety_risk(x[...,8:]*model.ss,physical,emergency=emergency)
         if belief is None:
             with torch.no_grad():
                 belief,logits=model.world.encode(obs);prob=logits.softmax(-1)[0]
                 slots=model.world.slots(belief).sigmoid()[0]
         n=len(x)
-        z=model.world.latent(belief.expand(n*3,-1),stage.expand(n*3,-1),
-                            x.repeat_interleave(3,0),torch.eye(3,device=x.device).repeat(n,1))
-        safety=model.world.decode_safety(z)*model.ss
-        base=safety_risk(safety,physical.repeat_interleave(3,0)).reshape(n,3)@prob
+        safety=predict(x)
+        base=safety_risk(safety,physical.repeat_interleave(3,0),model.world.conformal_q,emergency=emergency).reshape(n,3)@prob
         pos=physical[...,3]
         occupied_overlap=slots[0]*torch.exp(-((pos+.048)/.025).square())+slots[1]*torch.exp(-((pos-.048)/.025).square())
         target=.048*(slots[0]-slots[1]) if int(stage.argmax())==1 else (.048 if raw[0,-1,29]>.5 else -.048)
-        return base+35*(pos-target).square().mean(-1)+4*occupied_overlap[:,-8:].mean(-1)
-    remaining=max(1,10-round(config.tau_start*10))
-    guidance=.5*10/remaining
-    if emergency and config.tau_start<1:guidance=max(guidance,1.2 if config.tau_start==.7 else 2.5)
-    result=flow_search(noise,field,risk,project,config,opt_lr=.08,guidance=guidance)
+        cost=base+35*(pos-target).square().mean(-1)+4*occupied_overlap[:,-8:].mean(-1)
+        if emergency:
+            # Smooth, observation-only regrasp potential, shared by ALL WM
+            # planners. Closing a nearby handle must not wait for a rare flow
+            # sample; the model's future clearance still supplies causal risk.
+            handle=raw.new_tensor([-.048,0.,.175]);handle[1]=raw[0,-1,0]-.100
+            near=torch.sigmoid((.026-(raw[0,-1,5:8]-handle).norm())/.004)
+            gap=.032*(1-near)+.008*near
+            holding=near*torch.sigmoid((.016-raw[0,-1,-2])/.002)
+            target_y=handle[1]*(1-holding)-.185*holding
+            cost+=2000*(physical[...,6]-gap).square().mean(-1)
+            cost+=.5*((physical[...,1]-target_y)/.060).square().mean(-1)
+        return cost
+    # Inspect the posterior-predictive conformal bound at tau=.7 for both
+    # nominal intervention times. Dangerous states bring tau=.9 forward to .7.
+    x=noise;start=round(config.tau_start*10);guidance=.45
+    intervention_min=None;adaptive=False
+    for index in range(10):
+        tau=index/10
+        if index==7 and start<10:
+            with torch.no_grad():
+                endpoint=x+.3*field(x,.7)
+                if joint:bounds=endpoint[...,8]*model.ss[0]
+                else:
+                    safety=predict(endpoint).reshape(len(x),3,HORIZON,4)
+                    bounds=(safety[...,0]*prob[None,:,None]).sum(1)-model.world.conformal_q
+                best=int(risk(endpoint).argmin())
+                intervention_min=float(bounds[best].min())
+                adaptive=emergency or intervention_min<.018
+                if adaptive:start=7;guidance=6.
+                elif recovering:start=7
+        if index==start and len(x)>1:
+            with torch.no_grad():x=x[risk(x+(1-tau)*field(x,tau)).argmin().reshape(1)]
+        if index>=start:
+            with torch.enable_grad():
+                current=x.detach().requires_grad_(True)
+                velocity=field(current,tau)
+                endpoint=current+(1-tau)*velocity
+                grad,=torch.autograd.grad(risk(endpoint).sum(),current)
+            with torch.no_grad():x=current+(velocity-guidance*flow_descent(grad))/10
+        else:
+            with torch.no_grad():x=x+field(x,tau)/10
+    with torch.no_grad():x=project(x)
+    for _ in range(config.opt_steps):
+        with torch.enable_grad():
+            current=x.detach().requires_grad_(True)
+            grad,=torch.autograd.grad(risk(current).sum(),current)
+        with torch.no_grad():x=project(current-.08*grad)
+    if len(x)>1:
+        with torch.no_grad():x=x[risk(x).argmin().reshape(1)]
+    result=x[0]
     prediction=int(slots.argmax()) if slots is not None else None
-    return model.physical(result[...,:8]).cpu().numpy(),dict(predicted_occupied_slot=prediction)
+    details=dict(predicted_occupied_slot=prediction,particles=config.particles,world_kind=kind,
+                 emergency=emergency,recovering=recovering,adaptive_intervention=bool(adaptive or recovering),tau_actual=start/10,
+                 guidance=guidance,intervention_min_clear_lb_m=intervention_min)
+    if diagnostics:
+        with torch.no_grad():
+            safety=predict(x).reshape(1,3,HORIZON,4)
+            details['min_clear_lb_m']=float(((safety[...,0]*prob[None,:,None]).sum(1)-model.world.conformal_q).min())
+    return model.physical(result[...,:8]).cpu().numpy(),details
+
+
+def guidance_vs_ranking_probe(out):
+    """Paired frozen handoff predictions; physical withdrawal is measured separately."""
+    models=load_models(out,'cuda');rows=[];sources=[]
+    for path in sorted((out/'dataset').glob('*slip_withdraw_reopen.npz')):
+        if int(path.name.split('_')[0]) not in SPLITS[2]:continue
+        with np.load(path,allow_pickle=False) as data:
+            meta=json.loads(data['metadata'].item())
+            obs,_,_=clean_observations(data['observations'],data['action'],meta)
+            slips=[int(e['t']) for e in meta['events'] if e['event']=='collar_slip']
+            if not slips:continue
+            t=slips[0]+1;hist=obs[history_indices(t)]
+        sources.append(dict(file=path.name,sha256=sha256(path.read_bytes()).hexdigest(),tick=t))
+        for k in (2,4,8,16):
+            for method in ('GPC-RANK','Ours tau=0.7'):
+                action,details=decide(models,hist,method,torch.Generator().manual_seed(16000+meta['seed']),
+                                      particles=k,world_kind='full',diagnostics=True)
+                rows.append(dict(file=path.name,particles=k,method=method,
+                                 min_clear_lb_m=details['min_clear_lb_m'],
+                                 commanded_withdrawal=bool(action[-1,5]>=.240),
+                                 max_right_z_m=float(action[:,5].max()),**{key:details[key] for key in ('tau_actual','guidance','emergency')}))
+    dump(out/'guidance_probe.json',dict(protocol_version='stage_c2',sources=sources,rows=rows,
+         checkpoint_hashes={p.name:sha256(p.read_bytes()).hexdigest() for p in (out/'trained').glob('*.pt')},
+         planner_source_hashes={name:sha256((Path(__file__).resolve().parent/name).read_bytes()).hexdigest()
+                               for name in ('bag_scene.py','bag_learning.py','bag_common.py','mamba_wm.py')},
+         protocol='Paired seeds, same full world model and K; all 12 held-out first post-slip observations. Predicted bounds and command withdrawal are proxies, not physical success.',
+         recovery_fraction=RECOVERY_FRACTION))
 
 
 def memory_probe(out,train_info):

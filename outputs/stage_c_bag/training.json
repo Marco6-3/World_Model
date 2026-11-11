@@ -20,7 +20,11 @@
   ],
   "flow_updates": 5000,
   "world_updates": 3500,
-  "expert_windows": 2897,
+  "protocol_version": "stage_c2",
+  "python": "C:\\isaacsim_env\\Scripts\\python.exe",
+  "recovery_fraction": 0.15,
+  "world_windows": 4848,
+  "expert_windows": 1650,
   "files": [
     {
       "file": "1000_elastic_fast_0_direct_insert.npz",
@@ -29,7 +33,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_fast_0_exploration.npz",
@@ -38,7 +45,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_fast_0_slip_withdraw_reopen.npz",
@@ -47,7 +57,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1000_elastic_fast_0_spread_and_hold.npz",
@@ -56,7 +69,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_fast_1_direct_insert.npz",
@@ -65,7 +81,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_fast_1_exploration.npz",
@@ -74,7 +93,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_fast_1_slip_withdraw_reopen.npz",
@@ -83,7 +105,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1000_elastic_fast_1_spread_and_hold.npz",
@@ -92,7 +117,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_slow_0_direct_insert.npz",
@@ -101,7 +129,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_slow_0_exploration.npz",
@@ -110,7 +141,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_slow_0_slip_withdraw_reopen.npz",
@@ -119,7 +153,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1000_elastic_slow_0_spread_and_hold.npz",
@@ -128,7 +165,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_slow_1_direct_insert.npz",
@@ -137,7 +177,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_slow_1_exploration.npz",
@@ -146,7 +189,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_elastic_slow_1_slip_withdraw_reopen.npz",
@@ -155,7 +201,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1000_elastic_slow_1_spread_and_hold.npz",
@@ -164,7 +213,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_relaxed_0_direct_insert.npz",
@@ -173,7 +225,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_relaxed_0_exploration.npz",
@@ -182,7 +237,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_relaxed_0_slip_withdraw_reopen.npz",
@@ -191,7 +249,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1000_relaxed_0_spread_and_hold.npz",
@@ -200,7 +261,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_relaxed_1_direct_insert.npz",
@@ -209,7 +273,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_relaxed_1_exploration.npz",
@@ -218,7 +285,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1000_relaxed_1_slip_withdraw_reopen.npz",
@@ -227,7 +297,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1000_relaxed_1_spread_and_hold.npz",
@@ -236,7 +309,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_fast_0_direct_insert.npz",
@@ -245,7 +321,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_fast_0_exploration.npz",
@@ -254,7 +333,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_fast_0_slip_withdraw_reopen.npz",
@@ -263,7 +345,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1001_elastic_fast_0_spread_and_hold.npz",
@@ -272,7 +357,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_fast_1_direct_insert.npz",
@@ -281,7 +369,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_fast_1_exploration.npz",
@@ -290,7 +381,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_fast_1_slip_withdraw_reopen.npz",
@@ -299,7 +393,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1001_elastic_fast_1_spread_and_hold.npz",
@@ -308,7 +405,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_slow_0_direct_insert.npz",
@@ -317,7 +417,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_slow_0_exploration.npz",
@@ -326,7 +429,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_slow_0_slip_withdraw_reopen.npz",
@@ -335,7 +441,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1001_elastic_slow_0_spread_and_hold.npz",
@@ -344,7 +453,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_slow_1_direct_insert.npz",
@@ -353,7 +465,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_slow_1_exploration.npz",
@@ -362,7 +477,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_elastic_slow_1_slip_withdraw_reopen.npz",
@@ -371,7 +489,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1001_elastic_slow_1_spread_and_hold.npz",
@@ -380,7 +501,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_relaxed_0_direct_insert.npz",
@@ -389,7 +513,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_relaxed_0_exploration.npz",
@@ -398,7 +525,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_relaxed_0_slip_withdraw_reopen.npz",
@@ -407,7 +537,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1001_relaxed_0_spread_and_hold.npz",
@@ -416,7 +549,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_relaxed_1_direct_insert.npz",
@@ -425,7 +561,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_relaxed_1_exploration.npz",
@@ -434,7 +573,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1001_relaxed_1_slip_withdraw_reopen.npz",
@@ -443,7 +585,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1001_relaxed_1_spread_and_hold.npz",
@@ -452,7 +597,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_fast_0_direct_insert.npz",
@@ -461,7 +609,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_fast_0_exploration.npz",
@@ -470,7 +621,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_fast_0_slip_withdraw_reopen.npz",
@@ -479,7 +633,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1002_elastic_fast_0_spread_and_hold.npz",
@@ -488,7 +645,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_fast_1_direct_insert.npz",
@@ -497,7 +657,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_fast_1_exploration.npz",
@@ -506,7 +669,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_fast_1_slip_withdraw_reopen.npz",
@@ -515,7 +681,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1002_elastic_fast_1_spread_and_hold.npz",
@@ -524,7 +693,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_slow_0_direct_insert.npz",
@@ -533,7 +705,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_slow_0_exploration.npz",
@@ -542,7 +717,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_slow_0_slip_withdraw_reopen.npz",
@@ -551,7 +729,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1002_elastic_slow_0_spread_and_hold.npz",
@@ -560,7 +741,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_slow_1_direct_insert.npz",
@@ -569,7 +753,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_slow_1_exploration.npz",
@@ -578,7 +765,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_elastic_slow_1_slip_withdraw_reopen.npz",
@@ -587,7 +777,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1002_elastic_slow_1_spread_and_hold.npz",
@@ -596,7 +789,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_relaxed_0_direct_insert.npz",
@@ -605,7 +801,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_relaxed_0_exploration.npz",
@@ -614,7 +813,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_relaxed_0_slip_withdraw_reopen.npz",
@@ -623,7 +825,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1002_relaxed_0_spread_and_hold.npz",
@@ -632,7 +837,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_relaxed_1_direct_insert.npz",
@@ -641,7 +849,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_relaxed_1_exploration.npz",
@@ -650,7 +861,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1002_relaxed_1_slip_withdraw_reopen.npz",
@@ -659,7 +873,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1002_relaxed_1_spread_and_hold.npz",
@@ -668,7 +885,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_fast_0_direct_insert.npz",
@@ -677,7 +897,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_fast_0_exploration.npz",
@@ -686,7 +909,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_fast_0_slip_withdraw_reopen.npz",
@@ -695,7 +921,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1003_elastic_fast_0_spread_and_hold.npz",
@@ -704,7 +933,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_fast_1_direct_insert.npz",
@@ -713,7 +945,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_fast_1_exploration.npz",
@@ -722,7 +957,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_fast_1_slip_withdraw_reopen.npz",
@@ -731,7 +969,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1003_elastic_fast_1_spread_and_hold.npz",
@@ -740,7 +981,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_slow_0_direct_insert.npz",
@@ -749,7 +993,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_slow_0_exploration.npz",
@@ -758,7 +1005,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_slow_0_slip_withdraw_reopen.npz",
@@ -767,7 +1017,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1003_elastic_slow_0_spread_and_hold.npz",
@@ -776,7 +1029,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_slow_1_direct_insert.npz",
@@ -785,7 +1041,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_slow_1_exploration.npz",
@@ -794,7 +1053,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_elastic_slow_1_slip_withdraw_reopen.npz",
@@ -803,7 +1065,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1003_elastic_slow_1_spread_and_hold.npz",
@@ -812,7 +1077,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_relaxed_0_direct_insert.npz",
@@ -821,7 +1089,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_relaxed_0_exploration.npz",
@@ -830,7 +1101,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_relaxed_0_slip_withdraw_reopen.npz",
@@ -839,7 +1113,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1003_relaxed_0_spread_and_hold.npz",
@@ -848,7 +1125,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_relaxed_1_direct_insert.npz",
@@ -857,7 +1137,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_relaxed_1_exploration.npz",
@@ -866,7 +1149,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1003_relaxed_1_slip_withdraw_reopen.npz",
@@ -875,7 +1161,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1003_relaxed_1_spread_and_hold.npz",
@@ -884,7 +1173,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_fast_0_direct_insert.npz",
@@ -893,7 +1185,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_fast_0_exploration.npz",
@@ -902,7 +1197,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_fast_0_slip_withdraw_reopen.npz",
@@ -911,7 +1209,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1004_elastic_fast_0_spread_and_hold.npz",
@@ -920,7 +1221,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_fast_1_direct_insert.npz",
@@ -929,7 +1233,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_fast_1_exploration.npz",
@@ -938,7 +1245,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_fast_1_slip_withdraw_reopen.npz",
@@ -947,7 +1257,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1004_elastic_fast_1_spread_and_hold.npz",
@@ -956,7 +1269,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_slow_0_direct_insert.npz",
@@ -965,7 +1281,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_slow_0_exploration.npz",
@@ -974,7 +1293,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_slow_0_slip_withdraw_reopen.npz",
@@ -983,7 +1305,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1004_elastic_slow_0_spread_and_hold.npz",
@@ -992,7 +1317,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_slow_1_direct_insert.npz",
@@ -1001,7 +1329,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_slow_1_exploration.npz",
@@ -1010,7 +1341,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_elastic_slow_1_slip_withdraw_reopen.npz",
@@ -1019,7 +1353,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1004_elastic_slow_1_spread_and_hold.npz",
@@ -1028,7 +1365,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_relaxed_0_direct_insert.npz",
@@ -1037,7 +1377,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_relaxed_0_exploration.npz",
@@ -1046,7 +1389,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_relaxed_0_slip_withdraw_reopen.npz",
@@ -1055,7 +1401,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1004_relaxed_0_spread_and_hold.npz",
@@ -1064,7 +1413,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_relaxed_1_direct_insert.npz",
@@ -1073,7 +1425,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_relaxed_1_exploration.npz",
@@ -1082,7 +1437,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1004_relaxed_1_slip_withdraw_reopen.npz",
@@ -1091,7 +1449,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1004_relaxed_1_spread_and_hold.npz",
@@ -1100,7 +1461,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_fast_0_direct_insert.npz",
@@ -1109,7 +1473,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_fast_0_exploration.npz",
@@ -1118,7 +1485,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_fast_0_slip_withdraw_reopen.npz",
@@ -1127,7 +1497,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1005_elastic_fast_0_spread_and_hold.npz",
@@ -1136,7 +1509,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_fast_1_direct_insert.npz",
@@ -1145,7 +1521,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_fast_1_exploration.npz",
@@ -1154,7 +1533,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_fast_1_slip_withdraw_reopen.npz",
@@ -1163,7 +1545,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1005_elastic_fast_1_spread_and_hold.npz",
@@ -1172,7 +1557,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_slow_0_direct_insert.npz",
@@ -1181,7 +1569,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_slow_0_exploration.npz",
@@ -1190,7 +1581,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_slow_0_slip_withdraw_reopen.npz",
@@ -1199,7 +1593,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1005_elastic_slow_0_spread_and_hold.npz",
@@ -1208,7 +1605,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_slow_1_direct_insert.npz",
@@ -1217,7 +1617,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_slow_1_exploration.npz",
@@ -1226,7 +1629,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_elastic_slow_1_slip_withdraw_reopen.npz",
@@ -1235,7 +1641,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1005_elastic_slow_1_spread_and_hold.npz",
@@ -1244,7 +1653,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_relaxed_0_direct_insert.npz",
@@ -1253,7 +1665,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_relaxed_0_exploration.npz",
@@ -1262,7 +1677,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_relaxed_0_slip_withdraw_reopen.npz",
@@ -1271,7 +1689,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1005_relaxed_0_spread_and_hold.npz",
@@ -1280,7 +1701,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_relaxed_1_direct_insert.npz",
@@ -1289,7 +1713,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_relaxed_1_exploration.npz",
@@ -1298,7 +1725,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1005_relaxed_1_slip_withdraw_reopen.npz",
@@ -1307,7 +1737,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1005_relaxed_1_spread_and_hold.npz",
@@ -1316,7 +1749,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_fast_0_direct_insert.npz",
@@ -1325,7 +1761,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_fast_0_exploration.npz",
@@ -1334,7 +1773,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_fast_0_slip_withdraw_reopen.npz",
@@ -1343,7 +1785,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1006_elastic_fast_0_spread_and_hold.npz",
@@ -1352,7 +1797,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_fast_1_direct_insert.npz",
@@ -1361,7 +1809,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_fast_1_exploration.npz",
@@ -1370,7 +1821,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_fast_1_slip_withdraw_reopen.npz",
@@ -1379,7 +1833,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1006_elastic_fast_1_spread_and_hold.npz",
@@ -1388,7 +1845,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_slow_0_direct_insert.npz",
@@ -1397,7 +1857,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_slow_0_exploration.npz",
@@ -1406,7 +1869,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_slow_0_slip_withdraw_reopen.npz",
@@ -1415,7 +1881,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1006_elastic_slow_0_spread_and_hold.npz",
@@ -1424,7 +1893,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_slow_1_direct_insert.npz",
@@ -1433,7 +1905,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_slow_1_exploration.npz",
@@ -1442,7 +1917,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_elastic_slow_1_slip_withdraw_reopen.npz",
@@ -1451,7 +1929,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1006_elastic_slow_1_spread_and_hold.npz",
@@ -1460,7 +1941,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_relaxed_0_direct_insert.npz",
@@ -1469,7 +1953,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_relaxed_0_exploration.npz",
@@ -1478,7 +1965,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_relaxed_0_slip_withdraw_reopen.npz",
@@ -1487,7 +1977,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1006_relaxed_0_spread_and_hold.npz",
@@ -1496,7 +1989,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_relaxed_1_direct_insert.npz",
@@ -1505,7 +2001,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_relaxed_1_exploration.npz",
@@ -1514,7 +2013,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1006_relaxed_1_slip_withdraw_reopen.npz",
@@ -1523,7 +2025,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 47,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1006_relaxed_1_spread_and_hold.npz",
@@ -1532,7 +2037,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_fast_0_direct_insert.npz",
@@ -1541,7 +2049,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_fast_0_exploration.npz",
@@ -1550,7 +2061,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_fast_0_slip_withdraw_reopen.npz",
@@ -1559,7 +2073,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1007_elastic_fast_0_spread_and_hold.npz",
@@ -1568,7 +2085,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_fast_1_direct_insert.npz",
@@ -1577,7 +2097,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_fast_1_exploration.npz",
@@ -1586,7 +2109,10 @@
       "collision": true,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_fast_1_slip_withdraw_reopen.npz",
@@ -1595,7 +2121,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1007_elastic_fast_1_spread_and_hold.npz",
@@ -1604,7 +2133,10 @@
       "collision": false,
       "mode": "elastic_fast",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_slow_0_direct_insert.npz",
@@ -1613,7 +2145,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_slow_0_exploration.npz",
@@ -1622,7 +2157,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_slow_0_slip_withdraw_reopen.npz",
@@ -1631,7 +2169,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1007_elastic_slow_0_spread_and_hold.npz",
@@ -1640,7 +2181,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_slow_1_direct_insert.npz",
@@ -1649,7 +2193,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_slow_1_exploration.npz",
@@ -1658,7 +2205,10 @@
       "collision": true,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_elastic_slow_1_slip_withdraw_reopen.npz",
@@ -1667,7 +2217,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1007_elastic_slow_1_spread_and_hold.npz",
@@ -1676,7 +2229,10 @@
       "collision": false,
       "mode": "elastic_slow",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_relaxed_0_direct_insert.npz",
@@ -1685,7 +2241,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_relaxed_0_exploration.npz",
@@ -1694,7 +2253,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_relaxed_0_slip_withdraw_reopen.npz",
@@ -1703,7 +2265,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1007_relaxed_0_spread_and_hold.npz",
@@ -1712,7 +2277,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 0,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_relaxed_1_direct_insert.npz",
@@ -1721,7 +2289,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "direct_insert"
+      "scheme": "direct_insert",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_relaxed_1_exploration.npz",
@@ -1730,7 +2301,10 @@
       "collision": true,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "exploration"
+      "scheme": "exploration",
+      "imputed_command_frames": 9,
+      "recovery_windows": 2,
+      "retained_recovery_windows": 0
     },
     {
       "file": "1007_relaxed_1_slip_withdraw_reopen.npz",
@@ -1739,7 +2313,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "slip_withdraw_reopen"
+      "scheme": "slip_withdraw_reopen",
+      "imputed_command_frames": 9,
+      "recovery_windows": 49,
+      "retained_recovery_windows": 7
     },
     {
       "file": "1007_relaxed_1_spread_and_hold.npz",
@@ -1748,7 +2325,10 @@
       "collision": false,
       "mode": "relaxed",
       "order": 1,
-      "scheme": "spread_and_hold"
+      "scheme": "spread_and_hold",
+      "imputed_command_frames": 0,
+      "recovery_windows": 0,
+      "retained_recovery_windows": 0
     }
   ],
   "models": {
@@ -1780,32 +2360,45 @@
       "validation": {
         "windows": 2436,
         "safety_mae": [
-          0.005511256400495768,
-          0.02503157965838909,
-          0.05402873456478119,
-          0.015248706564307213
+          0.005581849720329046,
+          0.02430029585957527,
+          0.05458403751254082,
+          0.01569121889770031
         ],
         "occupied_slot_accuracy": 1.0,
         "occupied_slot_windows": 44,
-        "mode_accuracy": 0.9683908045977011,
+        "mode_accuracy": 0.9716748768472906,
         "occupied_slot_scope": "second-entry handoff, before target-dependent learned actions",
-        "all_occupied_replay_accuracy": 0.9700996677740864,
+        "all_occupied_replay_accuracy": 0.9756367663344407,
         "all_occupied_replay_windows": 903
       },
       "heldout": {
         "windows": 2430,
         "safety_mae": [
-          0.004589485004544258,
-          0.025999335572123528,
-          0.05505013465881348,
-          0.011569105088710785
+          0.004575719591230154,
+          0.02557091787457466,
+          0.05573645234107971,
+          0.012018284760415554
         ],
         "occupied_slot_accuracy": 0.9534883720930233,
         "occupied_slot_windows": 43,
-        "mode_accuracy": 0.9761316872427983,
+        "mode_accuracy": 0.977366255144033,
         "occupied_slot_scope": "second-entry handoff, before target-dependent learned actions",
-        "all_occupied_replay_accuracy": 0.9245714285714286,
+        "all_occupied_replay_accuracy": 0.912,
         "all_occupied_replay_windows": 875
+      },
+      "conformal": {
+        "alpha": 0.1,
+        "nominal_coverage": 0.9,
+        "calibration_windows": 2436,
+        "quantile_rank": 2194,
+        "conformal_q_m": 0.01049826480448246,
+        "validation_coverage": 0.9006568193435669,
+        "conformal_coverage": 0.8748971223831177,
+        "test_windows": 2430,
+        "clearance_mae_m": 0.004569669254124165,
+        "score": "max over all 24 steps of posterior-mean predicted minus measured clearance",
+        "scope": "Empirical held-out simultaneous-window coverage; overlapping windows are dependent, no unconditional episode guarantee"
       }
     },
     "short": {
@@ -1836,32 +2429,45 @@
       "validation": {
         "windows": 2436,
         "safety_mae": [
-          0.0059468699619174,
-          0.029713401570916176,
-          0.0667242482304573,
-          0.013187974691390991
+          0.0063113858923316,
+          0.027532164007425308,
+          0.06972428411245346,
+          0.013680243864655495
         ],
         "occupied_slot_accuracy": 0.5681818181818182,
         "occupied_slot_windows": 44,
         "mode_accuracy": 0.7036124794745484,
         "occupied_slot_scope": "second-entry handoff, before target-dependent learned actions",
-        "all_occupied_replay_accuracy": 0.902547065337763,
+        "all_occupied_replay_accuracy": 0.9058693244739756,
         "all_occupied_replay_windows": 903
       },
       "heldout": {
         "windows": 2430,
         "safety_mae": [
-          0.004704735707491636,
-          0.036441754549741745,
-          0.07045741379261017,
-          0.0114616509526968
+          0.004901560489088297,
+          0.034178171306848526,
+          0.06906649470329285,
+          0.011502142064273357
         ],
         "occupied_slot_accuracy": 0.4883720930232558,
         "occupied_slot_windows": 43,
-        "mode_accuracy": 0.7411522633744856,
+        "mode_accuracy": 0.7366255144032922,
         "occupied_slot_scope": "second-entry handoff, before target-dependent learned actions",
-        "all_occupied_replay_accuracy": 0.8822857142857143,
+        "all_occupied_replay_accuracy": 0.8868571428571429,
         "all_occupied_replay_windows": 875
+      },
+      "conformal": {
+        "alpha": 0.1,
+        "nominal_coverage": 0.9,
+        "calibration_windows": 2436,
+        "quantile_rank": 2194,
+        "conformal_q_m": 0.011042965576052666,
+        "validation_coverage": 0.9006568193435669,
+        "conformal_coverage": 0.9090535044670105,
+        "test_windows": 2430,
+        "clearance_mae_m": 0.004945121705532074,
+        "score": "max over all 24 steps of posterior-mean predicted minus measured clearance",
+        "scope": "Empirical held-out simultaneous-window coverage; overlapping windows are dependent, no unconditional episode guarantee"
       }
     },
     "four": {
@@ -1872,32 +2478,45 @@
       "validation": {
         "windows": 2436,
         "safety_mae": [
-          0.012782557867467403,
-          0.21742141246795654,
-          0.2166130393743515,
-          0.05995035916566849
+          0.012514353729784489,
+          0.21823017299175262,
+          0.22271157801151276,
+          0.06063853204250336
         ],
         "occupied_slot_accuracy": 1.0,
         "occupied_slot_windows": 44,
-        "mode_accuracy": 0.9889162561576355,
+        "mode_accuracy": 0.9905582922824302,
         "occupied_slot_scope": "second-entry handoff, before target-dependent learned actions",
-        "all_occupied_replay_accuracy": 0.9944629014396457,
+        "all_occupied_replay_accuracy": 0.9767441860465116,
         "all_occupied_replay_windows": 903
       },
       "heldout": {
         "windows": 2430,
         "safety_mae": [
-          0.010836616158485413,
-          0.1881471872329712,
-          0.20835985243320465,
-          0.05315496399998665
+          0.010838932357728481,
+          0.1916077584028244,
+          0.2131734937429428,
+          0.0540597103536129
         ],
-        "occupied_slot_accuracy": 0.9534883720930233,
+        "occupied_slot_accuracy": 0.9302325581395349,
         "occupied_slot_windows": 43,
-        "mode_accuracy": 0.991358024691358,
+        "mode_accuracy": 0.9880658436213992,
         "occupied_slot_scope": "second-entry handoff, before target-dependent learned actions",
-        "all_occupied_replay_accuracy": 0.9154285714285715,
+        "all_occupied_replay_accuracy": 0.9371428571428572,
         "all_occupied_replay_windows": 875
+      },
+      "conformal": {
+        "alpha": 0.1,
+        "nominal_coverage": 0.9,
+        "calibration_windows": 2436,
+        "quantile_rank": 2194,
+        "conformal_q_m": 0.024887606501579285,
+        "validation_coverage": 0.9006568193435669,
+        "conformal_coverage": 0.9024691581726074,
+        "test_windows": 2430,
+        "clearance_mae_m": 0.010844645090401173,
+        "score": "max over all 24 steps of posterior-mean predicted minus measured clearance",
+        "scope": "Empirical held-out simultaneous-window coverage; overlapping windows are dependent, no unconditional episode guarantee"
       }
     }
   }

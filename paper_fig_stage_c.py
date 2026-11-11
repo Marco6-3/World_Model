@@ -1,4 +1,4 @@
-"""Publication-style (CoRL / RSS / ICRA / RA-L) figure for Stage C.1 bag packing.
+"""Publication-style (CoRL / RSS / ICRA / RA-L) figure for Stage C.2 bag packing.
 
 Reads exactly the same predeclared paired case and traces as ``bag_report.figure``
 (no outcome-based selection) and writes to ``outputs/stage_c_bag/paper/`` so the
@@ -43,8 +43,8 @@ METHOD_STYLE = {
     'GPC-OPT':           dict(label='GPC-Opt (M=20)',     color='#3E6FB0'),
     'Ours Short-MLP H4': dict(label='Ours w/ Short-MLP',  color='#F2B49B'),
     'Ours 4D-WM':        dict(label='Ours w/ 4D-WM',      color='#EE9A7A'),
-    'Ours tau=0.7':      dict(label='Ours (τ=0.7)',       color='#E8775A'),
-    'Ours tau=0.9':      dict(label='Ours (τ=0.9)',       color='#D1432B'),
+    'Ours tau=0.7':      dict(label='Ours (τmax=0.7)',       color='#E8775A'),
+    'Ours tau=0.9':      dict(label='Ours (τmax=0.9)',       color='#D1432B'),
 }
 # scene entity colours (independent of method colours)
 ENT = dict(left='#7A7A7A', right='#2B2B2B', A='#E9A23B', B='#2A9D8F',
@@ -110,8 +110,11 @@ def badge(ax, y, text, good):
                         ec=OK if good else BAD, lw=.5))
 
 
-def main():
+def main(out=OUT):
+    global OUT,DST
+    OUT=Path(out);DST=OUT/'paper'
     data = json.loads((OUT / 'results.json').read_text(encoding='utf-8'))
+    if data.get('protocol_version')!='stage_c2':raise ValueError('Audited C.2 results required')
     case = json.loads((OUT / 'protocol.json').read_text())['figure_case']
     dt = data['control_dt']
     rows, traces = [], []
@@ -127,7 +130,7 @@ def main():
     hi = np.maximum(np.array([.11, .26, .28]), pts.max(0) + .02)
 
     fig = plt.figure(figsize=(TEXT_W, 4.2))
-    outer = fig.add_gridspec(2, 1, height_ratios=[1.3, 1], hspace=.22, top=.92)
+    outer = fig.add_gridspec(2, 1, height_ratios=[1.3, 1], hspace=.22, top=.92,bottom=.17)
     top = outer[0].subgridspec(1, 3, wspace=-.05)
     bot = outer[1].subgridspec(1, 3, wspace=.62, width_ratios=[1, 1, 1.0])
 
@@ -214,17 +217,18 @@ def main():
 
     # ------------------------------------------------------ (d) full-matrix safe recovery
     names = [m for m in METHOD_STYLE if any(e['method'] == m for e in data['episodes'])]
-    stats = []
+    stats = [];timeouts={}
     for m in names:
         pop = [e for e in data['episodes'] if e['method'] == m and e['perturbed']]
         k = sum(bool(e['safe_recovery']) for e in pop); stats.append((m, k, len(pop)))
+        timeouts[m]=sum(e['safe_recovery'] and any(e['insertion_budget_exhausted']) for e in pop)
     y = np.arange(len(stats))[::-1]
     for yi, (m, k, n) in zip(y, stats):
         st = METHOD_STYLE[m]; p = k / n; l, h = wilson(k, n)
         axd.barh(yi, p*100, height=.68, color=st['color'], lw=0)
         axd.errorbar(p*100, yi, xerr=[[100*(p-l)], [100*(h-p)]], fmt='none', ecolor='#333333',
                      elinewidth=.6, capsize=1.5, capthick=.6)
-        axd.text(min(h*100, 100) + 2, yi, f'{k}/{n}', va='center', fontsize=5.5,
+        axd.text(min(h*100, 100) + 2, yi, f'{k}/{n}'+('*' if timeouts[m] else ''), va='center', fontsize=5.5,
                  fontweight='bold' if m == 'Ours tau=0.9' else 'normal')
     axd.set_yticks(y, [METHOD_STYLE[m]['label'] for m, _, _ in stats])
     for lab, (m, _, _) in zip(axd.get_yticklabels(), stats):
@@ -239,15 +243,22 @@ def main():
                 fontweight='bold', va='bottom')
 
     DST.mkdir(parents=True, exist_ok=True)
+    fig.text(.5,.015,'Stage C.2 | GPC-Opt did not trigger a slip in panels a-c; its time origin is insertion start.\n'
+             'Wilson intervals are descriptive (3 seed clusters). * Includes insertion timeout; strict counts in report.',
+             ha='center',va='bottom',fontsize=5.5,color='#555555')
     for ext in ('pdf', 'png', 'svg'):
-        fig.savefig(DST / f'fig_stage_c_bag.{ext}')
+        exported=DST/f'fig_stage_c_bag.{ext}'
+        fig.savefig(exported)
+        if ext=='svg':
+            exported.write_text('\n'.join(line.rstrip() for line in exported.read_text(encoding='utf-8').splitlines())+'\n',encoding='utf-8')
     plt.close(fig)
     (DST / 'fig_stage_c_bag_manifest.json').write_text(json.dumps(dict(
+        protocol_version=data['protocol_version'],
         selection='predeclared paired case from protocol.json, identical to bag_report.figure',
         case=case, traces={r['method']: dict(file=r['trace_file'],
                            sha256=sha256((OUT / r['trace_file']).read_bytes()).hexdigest()) for r in rows},
-        panel_d=[dict(method=m, safe_recovery=k, n=n) for m, k, n in stats],
-        ci='Wilson score 95% interval over perturbed episodes'), indent=2), encoding='utf-8')
+        panel_d=[dict(method=m, safe_recovery=k, n=n,safe_recoveries_with_timeout=timeouts[m]) for m, k, n in stats],
+        ci='Descriptive episode-wise Wilson 95% intervals; seed clustering ignored. See paired cluster bootstrap in report.'), indent=2), encoding='utf-8')
     print('written to', DST.resolve())
 
 

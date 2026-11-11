@@ -182,13 +182,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -203,13 +203,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -224,13 +224,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -244,14 +244,14 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -287,13 +287,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -389,14 +389,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -410,14 +410,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -557,16 +557,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -578,16 +578,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -623,13 +623,13 @@
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -851,14 +851,14 @@
         true
       ],
       "online": {
-        "second_slot": null,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": null,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": false
       }
@@ -872,15 +872,15 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -896,13 +896,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -914,14 +914,14 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -959,13 +959,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -1040,14 +1040,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -1061,14 +1061,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -1082,14 +1082,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -1187,15 +1187,15 @@
         true
       ],
       "online": {
-        "second_slot": null,
+        "second_slot": 1,
         "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": null,
+        "second_slot": 1,
         "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -1208,15 +1208,15 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -1229,16 +1229,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -1250,14 +1250,14 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -1295,13 +1295,13 @@
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -1376,14 +1376,14 @@
         false
       ],
       "online": {
-        "second_slot": null,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": null,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -1525,13 +1525,13 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -1544,15 +1544,15 @@
         true
       ],
       "online": {
-        "second_slot": null,
-        "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": null,
-        "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -1568,13 +1568,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -1586,14 +1586,14 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -1610,13 +1610,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -1631,39 +1631,18 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
       "key": [
         "Ours tau=0.7",
-        "elastic_fast",
-        0,
-        2000,
-        true
-      ],
-      "online": {
-        "second_slot": 1,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      },
-      "audited": {
-        "second_slot": 1,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      }
-    },
-    {
-      "key": [
-        "Ours tau=0.9",
         "elastic_fast",
         0,
         2000,
@@ -1684,6 +1663,27 @@
     },
     {
       "key": [
+        "Ours tau=0.9",
+        "elastic_fast",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
         "BC H4",
         "elastic_fast",
         1,
@@ -1712,13 +1712,13 @@
         false
       ],
       "online": {
-        "second_slot": null,
+        "second_slot": 1,
         "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": null,
+        "second_slot": 1,
         "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
@@ -1727,48 +1727,6 @@
     {
       "key": [
         "GPC-RANK",
-        "elastic_fast",
-        1,
-        2000,
-        false
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
-        "safe_recovery": false
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
-        "safe_recovery": false
-      }
-    },
-    {
-      "key": [
-        "GPC-OPT",
-        "elastic_fast",
-        1,
-        2000,
-        false
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
-        "safe_recovery": false
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
-        "safe_recovery": false
-      }
-    },
-    {
-      "key": [
-        "Ours Short-MLP H4",
         "elastic_fast",
         1,
         2000,
@@ -1789,6 +1747,48 @@
     },
     {
       "key": [
+        "GPC-OPT",
+        "elastic_fast",
+        1,
+        2000,
+        false
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours Short-MLP H4",
+        "elastic_fast",
+        1,
+        2000,
+        false
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
         "Ours 4D-WM",
         "elastic_fast",
         1,
@@ -1861,13 +1861,13 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -1880,15 +1880,15 @@
         true
       ],
       "online": {
-        "second_slot": null,
+        "second_slot": 1,
         "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": null,
+        "second_slot": 1,
         "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -1901,42 +1901,21 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
       "key": [
         "GPC-OPT",
-        "elastic_fast",
-        1,
-        2000,
-        true
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
-        "safe_recovery": false
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
-        "safe_recovery": false
-      }
-    },
-    {
-      "key": [
-        "Ours Short-MLP H4",
         "elastic_fast",
         1,
         2000,
@@ -1957,7 +1936,49 @@
     },
     {
       "key": [
+        "Ours Short-MLP H4",
+        "elastic_fast",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
         "Ours 4D-WM",
+        "elastic_fast",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
         "elastic_fast",
         1,
         2000,
@@ -1978,27 +1999,6 @@
     },
     {
       "key": [
-        "Ours tau=0.7",
-        "elastic_fast",
-        1,
-        2000,
-        true
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      }
-    },
-    {
-      "key": [
         "Ours tau=0.9",
         "elastic_fast",
         1,
@@ -2198,13 +2198,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -2216,14 +2216,14 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": false
       }
@@ -2240,13 +2240,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -2303,13 +2303,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -2405,14 +2405,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -2426,14 +2426,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -2552,15 +2552,15 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
         "safe_recovery": false
       }
     },
@@ -2573,16 +2573,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -2594,16 +2594,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -2638,14 +2638,14 @@
       "online": {
         "second_slot": 0,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 0,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -2870,13 +2870,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -2888,15 +2888,15 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
-        "withdraw_reopen": true,
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
         "safe_recovery": false
       }
     },
@@ -2912,13 +2912,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -2933,13 +2933,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -2975,13 +2975,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -3056,14 +3056,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -3077,14 +3077,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -3098,14 +3098,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -3224,14 +3224,14 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
         "safe_recovery": false
       }
@@ -3245,16 +3245,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -3266,16 +3266,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -3311,13 +3311,13 @@
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -3542,13 +3542,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -3560,15 +3560,15 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
-        "withdraw_reopen": true,
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
         "safe_recovery": false
       }
     },
@@ -3584,13 +3584,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -3605,13 +3605,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -3646,14 +3646,14 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -3728,14 +3728,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -3749,14 +3749,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -3770,14 +3770,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -3896,63 +3896,21 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
       "key": [
         "GPC-RANK",
-        "elastic_fast",
-        1,
-        2001,
-        true
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      }
-    },
-    {
-      "key": [
-        "GPC-OPT",
-        "elastic_fast",
-        1,
-        2001,
-        true
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      }
-    },
-    {
-      "key": [
-        "Ours Short-MLP H4",
         "elastic_fast",
         1,
         2001,
@@ -3973,7 +3931,70 @@
     },
     {
       "key": [
+        "GPC-OPT",
+        "elastic_fast",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours Short-MLP H4",
+        "elastic_fast",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
         "Ours 4D-WM",
+        "elastic_fast",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
         "elastic_fast",
         1,
         2001,
@@ -3994,27 +4015,6 @@
     },
     {
       "key": [
-        "Ours tau=0.7",
-        "elastic_fast",
-        1,
-        2001,
-        true
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      }
-    },
-    {
-      "key": [
         "Ours tau=0.9",
         "elastic_fast",
         1,
@@ -4214,13 +4214,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -4232,14 +4232,14 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": false
       }
@@ -4256,13 +4256,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -4276,14 +4276,14 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -4319,13 +4319,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -4421,14 +4421,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -4442,14 +4442,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -4589,21 +4589,84 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": false,
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
     {
       "key": [
         "GPC-OPT",
+        "relaxed",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours Short-MLP H4",
+        "relaxed",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours 4D-WM",
+        "relaxed",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
         "relaxed",
         1,
         2002,
@@ -4624,69 +4687,6 @@
     },
     {
       "key": [
-        "Ours Short-MLP H4",
-        "relaxed",
-        1,
-        2002,
-        true
-      ],
-      "online": {
-        "second_slot": 1,
-        "second_slot_correct": false,
-        "withdraw_reopen": true,
-        "safe_recovery": false
-      },
-      "audited": {
-        "second_slot": 1,
-        "second_slot_correct": false,
-        "withdraw_reopen": true,
-        "safe_recovery": false
-      }
-    },
-    {
-      "key": [
-        "Ours 4D-WM",
-        "relaxed",
-        1,
-        2002,
-        true
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      }
-    },
-    {
-      "key": [
-        "Ours tau=0.7",
-        "relaxed",
-        1,
-        2002,
-        true
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
-      }
-    },
-    {
-      "key": [
         "Ours tau=0.9",
         "relaxed",
         1,
@@ -4906,13 +4906,13 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -4928,13 +4928,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -4948,14 +4948,14 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -4991,13 +4991,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -5093,14 +5093,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -5114,14 +5114,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -5242,13 +5242,13 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": false,
-        "withdraw_reopen": false,
+        "withdraw_reopen": true,
         "safe_recovery": false
       }
     },
@@ -5261,16 +5261,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -5282,16 +5282,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -5327,13 +5327,13 @@
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -5600,13 +5600,13 @@
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -5620,14 +5620,14 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -5662,6 +5662,27 @@
       "online": {
         "second_slot": 1,
         "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_fast",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
         "safe_recovery": true
       },
@@ -5674,27 +5695,6 @@
     },
     {
       "key": [
-        "Ours tau=0.7",
-        "elastic_fast",
-        0,
-        2002,
-        true
-      ],
-      "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
-        "withdraw_reopen": true,
-        "safe_recovery": false
-      },
-      "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
-        "withdraw_reopen": true,
-        "safe_recovery": false
-      }
-    },
-    {
-      "key": [
         "Ours tau=0.9",
         "elastic_fast",
         0,
@@ -5702,16 +5702,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": false
+        "safe_recovery": true
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": false,
+        "second_slot": 1,
+        "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": false
+        "safe_recovery": true
       }
     },
     {
@@ -5765,14 +5765,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -5786,14 +5786,14 @@
         false
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": false,
         "safe_recovery": false
       }
@@ -5915,13 +5915,13 @@
         "second_slot": 1,
         "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 1,
         "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -5933,16 +5933,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
+        "second_slot": 1,
+        "second_slot_correct": false,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {
@@ -5954,16 +5954,16 @@
         true
       ],
       "online": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
       },
       "audited": {
-        "second_slot": 0,
-        "second_slot_correct": true,
-        "withdraw_reopen": true,
-        "safe_recovery": true
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
       }
     },
     {
@@ -5999,13 +5999,13 @@
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       },
       "audited": {
         "second_slot": 0,
         "second_slot_correct": true,
         "withdraw_reopen": true,
-        "safe_recovery": true
+        "safe_recovery": false
       }
     },
     {

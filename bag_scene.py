@@ -242,7 +242,8 @@ class BagTask:
             self.events.append(dict(t=self.tick,event="collar_slip"))
         maxima=np.zeros(2);peak_total=0.
         before=self.observations[-1].copy()
-        if self.env.slip_remaining>0:action[6]=.038
+        # BagScene applies the physical finger fault. The policy command remains
+        # intact in last_action and recorded observations (no fault flag leak).
         for _ in range(4):
             self.env.step(self.controller.action(action[:3],action[3:6],action[6],action[7]),action[6])
             impulses=self.env.impulses()
@@ -354,7 +355,7 @@ class BagTask:
         slot_correct=measurement["second_slot_correct"]
         recovered=measurement["withdraw_reopen"]
         minimum_aperture=float(np.asarray(self.frames)[self.slip_tick:self.slip_tick+30,1].min()) if self.slip_tick is not None else None
-        return dict(protocol_version='stage_c1',perturbation_version='forced_finger_release_v2',mode=self.mode,order=self.order,seed=self.seed,method=method,success=bool(success),
+        return dict(protocol_version='stage_c2',perturbation_version='forced_finger_release_v2',mode=self.mode,order=self.order,seed=self.seed,method=method,success=bool(success),
                     placed=[self.placed(i) for i in (0,1)],final_aperture_m=self.env.aperture,
                     peak_impulse_Ns=impulse,collision=bool(impulse>=THRESHOLD),
                     second_slot=self.second_slot,second_slot_correct=bool(slot_correct),
@@ -396,6 +397,9 @@ def evaluate(task,args):
     done={(r['method'],r['mode'],r['order'],r['seed'],r['perturbed']) for r in prior}
     hashes={p.name:sha256(p.read_bytes()).hexdigest() for p in (model_root/'trained').glob('*.pt')}
     if any(r['checkpoint_hashes']!=hashes for r in prior):raise ValueError('Checkpoint changed; choose a new evaluation directory')
+    source_hashes={name:sha256((Path(__file__).resolve().parent/name).read_bytes()).hexdigest()
+                   for name in ('bag_scene.py','bag_learning.py','bag_common.py','mamba_wm.py')}
+    if any(r.get('planner_source_hashes')!=source_hashes for r in prior):raise ValueError('Planner source changed; choose a new evaluation directory')
     with journal.open('a',encoding='utf-8') as stream:
         for seed in seeds:
             for mode in args.modes:
@@ -406,7 +410,7 @@ def evaluate(task,args):
                             if key in done:continue
                             task.reset(mode,order,seed)
                             rng=torch.Generator().manual_seed(seed+12000)
-                            latency=[];probes=[];budgets=[];commits=[];interrupts=0
+                            latency=[];probes=[];planning=[];budgets=[];commits=[];interrupts=0
                             for phase,item in enumerate(task.sequence):
                                 task.phase=phase;task.active=item;task.observations[-1]=task.observe()
                                 task.spread([0,.22,.215],.032);task.pickup(item)
@@ -415,6 +419,7 @@ def evaluate(task,args):
                                     begin=perf_counter()
                                     actions,diagnostic=decide(models,task.history(),method,rng)
                                     latency.append((perf_counter()-begin)*1000)
+                                    planning.append(dict(t=task.tick,**diagnostic))
                                     if phase==1:probes.append(diagnostic)
                                     executed=0
                                     for action in actions[:min(6,216-(task.tick-start))]:
@@ -431,8 +436,8 @@ def evaluate(task,args):
                                 task.learn_ranges.append((start,task.tick));task.end_item()
                             task.phase=2;task.close()
                             result=task.summary(method)
-                            result.update(perturbed=perturbed,execution_context=args.execution_context,perturbation_version="forced_finger_release_v2" if perturbed else "none",decision_ms=latency,slot_predictions=probes,insertion_budget_exhausted=budgets,committed_steps=commits,aperture_interrupts=interrupts,
-                                          checkpoint_hashes=hashes,device=args.device,torch=str(torch.__version__))
+                            result.update(perturbed=perturbed,execution_context=args.execution_context,perturbation_version="forced_finger_release_v2" if perturbed else "none",decision_ms=latency,slot_predictions=probes,planning_diagnostics=planning,insertion_budget_exhausted=budgets,committed_steps=commits,aperture_interrupts=interrupts,
+                                          checkpoint_hashes=hashes,planner_source_hashes=source_hashes,device=args.device,torch=str(torch.__version__))
                             name=f"{seed}_{mode}_{order}_{int(perturbed)}_{METHODS.index(method)}.npz"
                             result['trace_file']='traces/'+name
                             task.save(args.out/result['trace_file'],result)
@@ -442,4 +447,4 @@ def evaluate(task,args):
     dump(args.out/'results.json',dict(seeds=seeds,modes=list(args.modes),methods=list(args.methods),episodes=rows,
                                     physics='IsaacLab/PhysX rigid prismatic-collar proxy',control_dt=CONTROL_DT,
                                     collision_threshold_Ns=THRESHOLD,history_tokens=HISTORY,history_span_steps=444,
-                                    identity_slot_shortcut=False,protocol_version='stage_c1'))
+                                    identity_slot_shortcut=False,protocol_version='stage_c2'))

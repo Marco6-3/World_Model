@@ -1,10 +1,10 @@
 # Causal World-Model Guided Flow Matching for Transient-Condition Manipulation
 
-> **面向易失效操作条件（Transient / Fragile Preconditions）的统一 256D Mamba 世界模型与晚阶段流内因果引导框架**  
+> **面向易失效操作条件（Transient / Fragile Preconditions）的统一 256D Mamba 世界模型与保形风险自适应流内因果引导框架**  
 > **Simulation & GPU Backend**: IsaacLab 5.1 / PhysX + PyTorch 2.9 CUDA (RTX 5060)  
-> **Current Milestone**: Simulation Trilogy Completed (`Stage A: Push-T` + `Stage B: Spring-Lid` + `Stage C.1: Bimanual Dynamic Bag-Packing`) | Advancing to `Stage D: Single-Arm Real-Robot Experiments` ([`docs/StageD_Real_Robot_Roadmap.md`](docs/StageD_Real_Robot_Roadmap.md))
+> **Current Milestone**: Simulation Trilogy Completed (`Stage A: Push-T` + `Stage B: Spring-Lid` + `Stage C.2: Bimanual Dynamic Bag-Packing with Split Conformal Guidance`) | Advancing to `Stage D: Single-Arm Real-Robot Experiments` ([`docs/StageD_Real_Robot_Roadmap.md`](docs/StageD_Real_Robot_Roadmap.md))
 
-![Stage C.1 Flagship Bimanual Dynamic Bag Packing](outputs/stage_c_bag/bag_packing_demo.png)
+![Stage C.2 Flagship Bimanual Dynamic Bag Packing](outputs/stage_c_bag/paper/fig_stage_c_bag.png)
 
 ---
 
@@ -158,23 +158,30 @@ $py = 'C:\isaacsim_env\Scripts\python.exe'
 
 ---
 
-## 5. 最新阶段成果（Stage A / B / C.1）与 Stage D 单臂真机规划
+## 5. 最新阶段成果（Stage A / B / C.2）与 Stage D 单臂真机规划
 
 > **最新项目状态总结与单臂真机冲击顶刊实验规划**：请参见 [`docs/StageD_Real_Robot_Roadmap.md`](docs/StageD_Real_Robot_Roadmap.md)  
-> **统一 Mamba 架构设计与 Harvard GPC 对标路线图**：请参见 [`docs/Phase2_Unified_Mamba_GPC_Roadmap.md`](docs/Phase2_Unified_Mamba_GPC_Roadmap.md)  
-> **Stage C.1 双臂动态弹性袋口收纳完整实验报告**：请参见 [`outputs/StageC_Bag_Packing_实验报告.md`](outputs/StageC_Bag_Packing_实验报告.md)
+> **Stage C.2 保形校准与稀缺先验流内引导升级规范**：请参见 [`docs/StageC_2_Conformal_and_Guidance_Spec.md`](docs/StageC_2_Conformal_and_Guidance_Spec.md)  
+> **Stage C.2 双臂动态弹性袋口收纳完整实验报告**：请参见 [`outputs/StageC_Bag_Packing_实验报告.md`](outputs/StageC_Bag_Packing_实验报告.md)
 
-### Stage C.1 旗舰动态弹性袋口多物品收纳核心实测结果
+### Stage C.2 旗舰动态弹性袋口多物品收纳核心实测结果
 
-在消除物品身份捷径（固定 `ItemA -> ItemB` 顺序、`pre_entry` 居中于 `x=0`、第一阶段入袋遮挡后清空槽位指令）并统一 `forced_finger_release_v2` 滑脱物理后，`Ours (256D Mamba-Past/Future + In-Flow Guidance)` 取得全面突破：
+在 Stage C.2 中，我们移除了手工撤回噪声外挂与滑脱动作覆盖信号，构建了贴合真实机器人数据分布的 **15% 稀缺恢复示教先验（Scarce Recovery Prior）**，并引入 **90% 分裂保形净空下界校准（Split Conformal Clearance Calibration, $\underline{d}_{\text{clear}} = \hat{d}_{\text{clear}} - \hat{q}_{0.90}$）与风险自适应流内因果引导**，正面击穿包括 `GPC-RANK`、`GPC-OPT` 与 `4D-WM` 在内的全部基线：
 
 1. **常规双物品闭环与遮挡二次分槽（Table C1）**：
-   - **`Ours (τ=0.7 & τ=0.9)`**：双物品装包成功 **`18/18 (100%)`**，遮挡二次分槽正确率 **`18/18 (100%)`**，夹碰 **`0/18 (0%)`**；
-   - **`BC H4` 与 `Ours Short-MLP H4`（4 帧短历史消融）**：因无法跨长周期记住已入袋遮挡物品所在槽位，二次分槽正确率双双退化至 **`9/18 (50.0%)`**（离线回放读出 `48.8%` vs. `Full 256D` `95.3%`），装包成功率仅 **`8/18` 与 `3/18`**。
-2. **中途袋口滑脱（`Collar-Slip`）紧急撤回重撑恢复（Table C2）**：
-   - **`Ours (τ=0.7 & τ=0.9)`**：实测撤回并重撑 **`18/18 (100%)`**，撤离前袋口擦碰 **`0/18 (0%)`**，全回合严苛零碰撞**安全恢复率达 `17/18 (94.4%)`**！
-   - 大幅超越 **`BC H4` (`5/18`, `+66.7%`)**、**`Joint-FM` (`3/18`, `+77.8%`)**、**`Ours Short-MLP H4` (`1/18`, `+88.9%`)** 以及 **`GPC-OPT` (`14/18`, `+16.7%`)**；
-   - **`Ours τ=0.9`** 闭环决策 P50 耗时仅 **`88.55 ms`**（独立 GPU 计时 `104.19 ms`），比 `GPC-OPT`（闭环 `834.43 ms`、独立 `966.91 ms`）**快 9.4 倍**。
+   - **`Ours (256D, τ=0.7 & τ=0.9)`**：双物品装包成功 **`18/18 (100%)`**，遮挡二次分槽正确率 **`18/18 (100%)`**，夹碰 **`0/18 (0%)`**；
+   - **所有短历史基线（`BC H4`, `Joint-FM`, `GPC-RANK`, `GPC-OPT`, `Ours Short-MLP H4`）**：因无法跨长周期记住已入袋遮挡物品所在槽位，二次分槽正确率全部退化至 **`9/18 (50.0%，纯随机盲猜)`**（离线遮挡读出 `48.8%` vs. `Full 256D` `95.3%`）。
+2. **中途袋口滑脱（`Collar-Slip`）紧急撤回重撑恢复（Table C2 —— 核心胜负手）**：
+   - **`Ours (256D, τ=0.7)`**：触发滑脱 `18/18`，双物品装包 **`18/18 (100%)`**，撤离前袋口擦碰 **`0/18 (0%)`**，全回合零碰撞**安全恢复率达 `18/18 (100%)`**，且**无超时安全恢复率同样达 `18/18 (100%)`（0 预算耗尽）**！
+   - **`Ours (256D, τ=0.9)`**：全回合零碰撞**安全恢复率达 `18/18 (100%)`**（无超时 `17/18`），独立 GPU 规划 P50 耗时仅 **`111.35 ms`**，比 `GPC-OPT`（`776.96 ms`）**快 7.0 倍**！
+   - **全面击败所有基线**：
+     - **`GPC-RANK (K=16)`**：安全恢复率 **`0/18 (0%)`**（12/18 撤离擦碰、10/18 超时）；
+     - **`Ours 4D-WM (K=16)`**：因 4 维瓶颈净空误差高达 `10.84 mm`（保形分位数 $\hat{q}_{0.90} = 24.89\text{ mm}$ vs. `Full 256D` `4.57 mm` / $\hat{q}_{0.90} = 10.50\text{ mm}$），撤离前 18/18 全部发生袋口擦碰，安全恢复率 **`0/18 (0%)`**；
+     - **`GPC-OPT (M=20)`**：安全恢复率仅 **`1/18 (5.6%)`**（无超时 `0/18`）；
+     - **`BC H4` / `Joint-FM` / `Ours Short-MLP H4`**：安全恢复率全部为 **`0/18 (0%)`**。
+3. **同 256D 世界模型 + 同粒子数 $K \in \{2, 4, 8, 16\}$ 控制变量消融**：
+   - 将同一个 `Full (256D)` 世界模型赋给 `GPC-RANK`，在全部 12 个留出滑脱交接状态上同种子、同 $K$ 对比：
+   - **`Ours` 在 $K=2, 4, 8, 16$ 下物理无碰撞撤回率全部达到 `12/12 (100%)`**，而 **`GPC-RANK (同 Full WM)` 在 $K=2$ 时仅 `3/12 (25%)`、即便算力翻 8 倍至 $K=16$ 也仅有 `6/12 (50%)`**，直接证明流内梯度引导在稀缺恢复先验下对纯采样排序的本质优势。
 
 ### Stage D：下一阶段单臂真实机械臂实验规划 (`docs/StageD_Real_Robot_Roadmap.md`)
 - 利用实验室**单臂真实机械臂**在不透明双槽弹性/回弹收纳容器上开展**真实墙钟时间（Wall-Clock Time，物理不暂停）**闭环实验：
