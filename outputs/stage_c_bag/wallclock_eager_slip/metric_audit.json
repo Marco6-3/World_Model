@@ -1,0 +1,1140 @@
+{
+  "criterion": "actual occupied slot; oriented lower face 50 mm above collar; measured collapse and re-grasp",
+  "episodes": 54,
+  "records": [
+    {
+      "key": [
+        "GPC-OPT",
+        "relaxed",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "relaxed",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "relaxed",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "relaxed",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "relaxed",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "relaxed",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_slow",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_slow",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_slow",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_slow",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_slow",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_slow",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_fast",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_fast",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_fast",
+        0,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_fast",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_fast",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_fast",
+        1,
+        2000,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "relaxed",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "relaxed",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "relaxed",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "relaxed",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "relaxed",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "relaxed",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_slow",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_slow",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_slow",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_slow",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_slow",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_slow",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_fast",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_fast",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_fast",
+        0,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_fast",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_fast",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_fast",
+        1,
+        2001,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": true
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "relaxed",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "relaxed",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "relaxed",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "relaxed",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "relaxed",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "relaxed",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_slow",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_slow",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_slow",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_slow",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_slow",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_slow",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_fast",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_fast",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_fast",
+        0,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "GPC-OPT",
+        "elastic_fast",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 1,
+        "second_slot_correct": false,
+        "withdraw_reopen": false,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.7",
+        "elastic_fast",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    },
+    {
+      "key": [
+        "Ours tau=0.9",
+        "elastic_fast",
+        1,
+        2002,
+        true
+      ],
+      "online": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      },
+      "audited": {
+        "second_slot": 0,
+        "second_slot_correct": true,
+        "withdraw_reopen": true,
+        "safe_recovery": false
+      }
+    }
+  ]
+}

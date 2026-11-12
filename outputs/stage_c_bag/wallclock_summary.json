@@ -1,0 +1,543 @@
+{
+  "protocol_version": "stage_c2_wallclock",
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "torch": "2.9.0+cu128",
+  "control_dt_ms": 33.333333333333336,
+  "checkpoint_hashes": {
+    "flows.pt": "bb2213ddd1bd2f265d8f40c1d0900025cb659f0e8be1cd1f731a195f2235358e",
+    "four.pt": "6e3c6e45d555eac6375bdb20a35890ab077498f979e7f6d714e6d49a725372c3",
+    "full.pt": "9875098eec61ad38958b87fddaacc1eb6c61c01db029fa9753b34bd5345f9808",
+    "short.pt": "da07a6e04e3dd5fb8b454eaf89d9349c977b282b56f8f3341411cbd269f4e774"
+  },
+  "planner_source_hashes": {
+    "bag_scene.py": "36e93161d3ea1b39dfe24f1e01b82d6923e35fffbea05434c2c3711dee14bf3b",
+    "bag_learning.py": "f225ffefdb7439efc208dc2e171e8b67ea0fbfec367b7add59ac21e28b80b0cb",
+    "bag_common.py": "becfbc2487ea5b5f2959d16e354642a683a2034322d052ed86acea04195de78e",
+    "mamba_wm.py": "58de0ded102081dc029c6aead6a81e8c06eeb83944d604326038eaaef3ddc43b"
+  },
+  "isolated_timing": {
+    "BC H4": {
+      "eager_parallel_scan_p50_ms": 25.024650003615534,
+      "cuda_graph_p50_ms": 4.019250001874752,
+      "cuda_graph_p95_ms": 4.4268999987252755,
+      "ticks_at_30hz_p50": 1,
+      "pre_optimization_p50_ms": 19.76099999865255,
+      "speedup_vs_pre_optimization": 4.92
+    },
+    "Joint-FM": {
+      "eager_parallel_scan_p50_ms": 40.0625999973272,
+      "cuda_graph_p50_ms": 3.916500001651002,
+      "cuda_graph_p95_ms": 4.241599999659229,
+      "ticks_at_30hz_p50": 1,
+      "pre_optimization_p50_ms": 33.117549999587936,
+      "speedup_vs_pre_optimization": 8.46
+    },
+    "GPC-RANK": {
+      "eager_parallel_scan_p50_ms": 44.78469999958179,
+      "cuda_graph_p50_ms": 6.181249995279359,
+      "cuda_graph_p95_ms": 6.5154550025908975,
+      "ticks_at_30hz_p50": 1,
+      "pre_optimization_p50_ms": 34.478499999750056,
+      "speedup_vs_pre_optimization": 5.58
+    },
+    "GPC-OPT": {
+      "eager_parallel_scan_p50_ms": 996.5855499976897,
+      "cuda_graph_p50_ms": 69.16950000231736,
+      "cuda_graph_p95_ms": 71.48616499762284,
+      "ticks_at_30hz_p50": 3,
+      "pre_optimization_p50_ms": 776.9647000004625,
+      "speedup_vs_pre_optimization": 11.23
+    },
+    "Ours Short-MLP H4": {
+      "eager_parallel_scan_p50_ms": 183.59550000241143,
+      "cuda_graph_p50_ms": 17.10724999793456,
+      "cuda_graph_p95_ms": 17.629569999553496,
+      "ticks_at_30hz_p50": 1,
+      "pre_optimization_p50_ms": 173.45484999987093,
+      "speedup_vs_pre_optimization": 10.14
+    },
+    "Ours 4D-WM": {
+      "eager_parallel_scan_p50_ms": 83.84105000004638,
+      "cuda_graph_p50_ms": 8.053400000790134,
+      "cuda_graph_p95_ms": 8.725615000003017,
+      "ticks_at_30hz_p50": 1,
+      "pre_optimization_p50_ms": 84.41429999948014,
+      "speedup_vs_pre_optimization": 10.48
+    },
+    "Ours tau=0.7": {
+      "eager_parallel_scan_p50_ms": 182.73060000137775,
+      "cuda_graph_p50_ms": 17.148200000519864,
+      "cuda_graph_p95_ms": 17.693060004967265,
+      "ticks_at_30hz_p50": 1,
+      "pre_optimization_p50_ms": 182.74614999972982,
+      "speedup_vs_pre_optimization": 10.66
+    },
+    "Ours tau=0.9": {
+      "eager_parallel_scan_p50_ms": 112.32230000314303,
+      "cuda_graph_p50_ms": 13.505200000508921,
+      "cuda_graph_p95_ms": 13.822354998774244,
+      "ticks_at_30hz_p50": 1,
+      "pre_optimization_p50_ms": 111.34790000050998,
+      "speedup_vs_pre_optimization": 8.24
+    }
+  },
+  "wallclock_cuda_graph": {
+    "normal": {
+      "BC H4": {
+        "n": 18,
+        "success": 10,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 9,
+        "decision_p50_ms": 5.256899999949383,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 1
+      },
+      "Joint-FM": {
+        "n": 18,
+        "success": 3,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 3,
+        "decision_p50_ms": 5.099799996969523,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 1
+      },
+      "GPC-RANK": {
+        "n": 18,
+        "success": 7,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 7,
+        "decision_p50_ms": 34.86250000423752,
+        "lag_ticks_p50": 2,
+        "lag_ticks_max": 3
+      },
+      "GPC-OPT": {
+        "n": 18,
+        "success": 1,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 1,
+        "decision_p50_ms": 68.91000000177883,
+        "lag_ticks_p50": 3,
+        "lag_ticks_max": 4
+      },
+      "Ours Short-MLP H4": {
+        "n": 18,
+        "success": 4,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 9,
+        "decision_p50_ms": 17.980999997234903,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 2
+      },
+      "Ours 4D-WM": {
+        "n": 18,
+        "success": 16,
+        "second_slot_correct": 16,
+        "reached_second_channel": 18,
+        "collision": 0,
+        "decision_p50_ms": 31.17700000075274,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 3
+      },
+      "Ours tau=0.7": {
+        "n": 18,
+        "success": 18,
+        "second_slot_correct": 18,
+        "reached_second_channel": 18,
+        "collision": 0,
+        "decision_p50_ms": 18.06620000570547,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 4
+      },
+      "Ours tau=0.9": {
+        "n": 18,
+        "success": 18,
+        "second_slot_correct": 18,
+        "reached_second_channel": 18,
+        "collision": 0,
+        "decision_p50_ms": 14.450999995460734,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 3
+      }
+    },
+    "collar_slip": {
+      "BC H4": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 7,
+        "withdraw_reopen": 18,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 18,
+        "collar_grazing_before_withdrawal": 18,
+        "insertion_budget_exhausted": 9,
+        "decision_p50_ms": 4.797299996425863,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 1
+      },
+      "Joint-FM": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 0,
+        "withdraw_reopen": 17,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 12,
+        "collar_grazing_before_withdrawal": 12,
+        "insertion_budget_exhausted": 0,
+        "decision_p50_ms": 4.929000002448447,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 1
+      },
+      "GPC-RANK": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 1,
+        "withdraw_reopen": 18,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 14,
+        "collar_grazing_before_withdrawal": 13,
+        "insertion_budget_exhausted": 11,
+        "decision_p50_ms": 6.881550001708092,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 3
+      },
+      "GPC-OPT": {
+        "n": 18,
+        "slipped": 6,
+        "slip_effective": 6,
+        "success": 3,
+        "withdraw_reopen": 6,
+        "safe_recovery": 3,
+        "safe_recovery_no_timeout": 0,
+        "collision": 2,
+        "collar_grazing_before_withdrawal": 0,
+        "insertion_budget_exhausted": 18,
+        "decision_p50_ms": 69.04944999769214,
+        "lag_ticks_p50": 3,
+        "lag_ticks_max": 6
+      },
+      "Ours Short-MLP H4": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 0,
+        "withdraw_reopen": 18,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 4,
+        "collar_grazing_before_withdrawal": 4,
+        "insertion_budget_exhausted": 5,
+        "decision_p50_ms": 17.7350000012666,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 2
+      },
+      "Ours 4D-WM": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 18,
+        "withdraw_reopen": 12,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 16,
+        "collar_grazing_before_withdrawal": 16,
+        "insertion_budget_exhausted": 1,
+        "decision_p50_ms": 8.672300002217526,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 3
+      },
+      "Ours tau=0.7": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 18,
+        "withdraw_reopen": 17,
+        "safe_recovery": 13,
+        "safe_recovery_no_timeout": 13,
+        "collision": 4,
+        "collar_grazing_before_withdrawal": 4,
+        "insertion_budget_exhausted": 0,
+        "decision_p50_ms": 17.766249995474936,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 5
+      },
+      "Ours tau=0.9": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 18,
+        "withdraw_reopen": 18,
+        "safe_recovery": 12,
+        "safe_recovery_no_timeout": 10,
+        "collision": 6,
+        "collar_grazing_before_withdrawal": 6,
+        "insertion_budget_exhausted": 2,
+        "decision_p50_ms": 17.762400006176904,
+        "lag_ticks_p50": 1,
+        "lag_ticks_max": 3
+      }
+    }
+  },
+  "wallclock_eager_ablation": {
+    "GPC-OPT": {
+      "n": 18,
+      "slipped": 18,
+      "slip_effective": 18,
+      "success": 6,
+      "withdraw_reopen": 0,
+      "safe_recovery": 0,
+      "safe_recovery_no_timeout": 0,
+      "collision": 18,
+      "collar_grazing_before_withdrawal": 12,
+      "insertion_budget_exhausted": 36,
+      "decision_p50_ms": 832.8110000002198,
+      "lag_ticks_p50": 25,
+      "lag_ticks_max": 35
+    },
+    "Ours tau=0.7": {
+      "n": 18,
+      "slipped": 18,
+      "slip_effective": 18,
+      "success": 18,
+      "withdraw_reopen": 18,
+      "safe_recovery": 5,
+      "safe_recovery_no_timeout": 5,
+      "collision": 13,
+      "collar_grazing_before_withdrawal": 13,
+      "insertion_budget_exhausted": 0,
+      "decision_p50_ms": 157.8933999990113,
+      "lag_ticks_p50": 5,
+      "lag_ticks_max": 6
+    },
+    "Ours tau=0.9": {
+      "n": 18,
+      "slipped": 18,
+      "slip_effective": 18,
+      "success": 18,
+      "withdraw_reopen": 18,
+      "safe_recovery": 3,
+      "safe_recovery_no_timeout": 3,
+      "collision": 15,
+      "collar_grazing_before_withdrawal": 15,
+      "insertion_budget_exhausted": 0,
+      "decision_p50_ms": 157.155300003069,
+      "lag_ticks_p50": 5,
+      "lag_ticks_max": 6
+    }
+  },
+  "paused_reference": {
+    "normal": {
+      "BC H4": {
+        "n": 18,
+        "success": 12,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 9,
+        "decision_p50_ms": 22.676650000448717,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Joint-FM": {
+        "n": 18,
+        "success": 4,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 6,
+        "decision_p50_ms": 37.358449999828736,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "GPC-RANK": {
+        "n": 18,
+        "success": 9,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 9,
+        "decision_p50_ms": 40.76514999997016,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "GPC-OPT": {
+        "n": 18,
+        "success": 6,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 3,
+        "decision_p50_ms": 832.637049999903,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Ours Short-MLP H4": {
+        "n": 18,
+        "success": 3,
+        "second_slot_correct": 9,
+        "reached_second_channel": 18,
+        "collision": 6,
+        "decision_p50_ms": 191.14779999927123,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Ours 4D-WM": {
+        "n": 18,
+        "success": 16,
+        "second_slot_correct": 18,
+        "reached_second_channel": 18,
+        "collision": 0,
+        "decision_p50_ms": 96.35475000050064,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Ours tau=0.7": {
+        "n": 18,
+        "success": 18,
+        "second_slot_correct": 18,
+        "reached_second_channel": 18,
+        "collision": 0,
+        "decision_p50_ms": 202.72389999990992,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Ours tau=0.9": {
+        "n": 18,
+        "success": 18,
+        "second_slot_correct": 18,
+        "reached_second_channel": 18,
+        "collision": 0,
+        "decision_p50_ms": 126.78050000067742,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      }
+    },
+    "collar_slip": {
+      "BC H4": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 6,
+        "withdraw_reopen": 18,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 18,
+        "collar_grazing_before_withdrawal": 18,
+        "insertion_budget_exhausted": 9,
+        "decision_p50_ms": 22.635550000359217,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Joint-FM": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 0,
+        "withdraw_reopen": 15,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 8,
+        "collar_grazing_before_withdrawal": 8,
+        "insertion_budget_exhausted": 0,
+        "decision_p50_ms": 37.66184999994948,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "GPC-RANK": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 1,
+        "withdraw_reopen": 18,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 12,
+        "collar_grazing_before_withdrawal": 12,
+        "insertion_budget_exhausted": 10,
+        "decision_p50_ms": 40.422949999538105,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "GPC-OPT": {
+        "n": 18,
+        "slipped": 6,
+        "slip_effective": 6,
+        "success": 4,
+        "withdraw_reopen": 6,
+        "safe_recovery": 1,
+        "safe_recovery_no_timeout": 0,
+        "collision": 2,
+        "collar_grazing_before_withdrawal": 0,
+        "insertion_budget_exhausted": 18,
+        "decision_p50_ms": 838.7920999998641,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Ours Short-MLP H4": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 0,
+        "withdraw_reopen": 18,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 1,
+        "collar_grazing_before_withdrawal": 0,
+        "insertion_budget_exhausted": 3,
+        "decision_p50_ms": 191.48909999967145,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Ours 4D-WM": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 16,
+        "withdraw_reopen": 15,
+        "safe_recovery": 0,
+        "safe_recovery_no_timeout": 0,
+        "collision": 18,
+        "collar_grazing_before_withdrawal": 18,
+        "insertion_budget_exhausted": 3,
+        "decision_p50_ms": 97.91240000049584,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Ours tau=0.7": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 18,
+        "withdraw_reopen": 18,
+        "safe_recovery": 18,
+        "safe_recovery_no_timeout": 18,
+        "collision": 0,
+        "collar_grazing_before_withdrawal": 0,
+        "insertion_budget_exhausted": 0,
+        "decision_p50_ms": 202.8866000000562,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      },
+      "Ours tau=0.9": {
+        "n": 18,
+        "slipped": 18,
+        "slip_effective": 18,
+        "success": 18,
+        "withdraw_reopen": 18,
+        "safe_recovery": 18,
+        "safe_recovery_no_timeout": 17,
+        "collision": 0,
+        "collar_grazing_before_withdrawal": 0,
+        "insertion_budget_exhausted": 1,
+        "decision_p50_ms": 202.28799999949842,
+        "lag_ticks_p50": 0,
+        "lag_ticks_max": 0
+      }
+    }
+  }
+}

@@ -162,7 +162,9 @@ $py = 'C:\isaacsim_env\Scripts\python.exe'
 
 > **最新项目状态总结与单臂真机冲击顶刊实验规划**：请参见 [`docs/StageD_Real_Robot_Roadmap.md`](docs/StageD_Real_Robot_Roadmap.md)  
 > **Stage C.2 保形校准与稀缺先验流内引导升级规范**：请参见 [`docs/StageC_2_Conformal_and_Guidance_Spec.md`](docs/StageC_2_Conformal_and_Guidance_Spec.md)  
-> **Stage C.2 双臂动态弹性袋口收纳完整实验报告**：请参见 [`outputs/StageC_Bag_Packing_实验报告.md`](outputs/StageC_Bag_Packing_实验报告.md)
+> **Stage C.2 双臂动态弹性袋口收纳完整实验报告**：请参见 [`outputs/StageC_Bag_Packing_实验报告.md`](outputs/StageC_Bag_Packing_实验报告.md)  
+> **Stage C.2 实时推理加速（`< 18 ms`）与非暂停墙钟（`--wall-clock`）异步闭环报告**：请参见 [`outputs/StageC_WallClock_实验报告.md`](outputs/StageC_WallClock_实验报告.md)  
+> **中英文投稿论文初稿与 LaTeX 源码**：[`paper/MANUSCRIPT_EN.md`](paper/MANUSCRIPT_EN.md) · [`paper/MANUSCRIPT_ZH.md`](paper/MANUSCRIPT_ZH.md) · [`paper/main.tex`](paper/main.tex)
 
 ### Stage C.2 旗舰动态弹性袋口多物品收纳核心实测结果
 
@@ -182,8 +184,11 @@ $py = 'C:\isaacsim_env\Scripts\python.exe'
 3. **同 256D 世界模型 + 同粒子数 $K \in \{2, 4, 8, 16\}$ 控制变量消融**：
    - 将同一个 `Full (256D)` 世界模型赋给 `GPC-RANK`，在全部 12 个留出滑脱交接状态上同种子、同 $K$ 对比：
    - **`Ours` 在 $K=2, 4, 8, 16$ 下物理无碰撞撤回率全部达到 `12/12 (100%)`**，而 **`GPC-RANK (同 Full WM)` 在 $K=2$ 时仅 `3/12 (25%)`、即便算力翻 8 倍至 $K=16$ 也仅有 `6/12 (50%)`**，直接证明流内梯度引导在稀缺恢复先验下对纯采样排序的本质优势。
+4. **单步内实时推理加速（`< 18 ms`）与非暂停物理（`--wall-clock`）异步闭环验证（[`outputs/StageC_WallClock_实验报告.md`](outputs/StageC_WallClock_实验报告.md)）**：
+   - **零重训底层加速**：通过 `MambaBlock` Hillis–Steele 并行前缀扫描与静态显存 `CUDAGraphPlanner`（192 组留出算例分槽/介入时刻 `0` 偏差，最大动作误差 $\le 4.13\times 10^{-5}\text{ m}$），将 `Ours (τ=0.9)` 与 `Ours (τ=0.7)` 独立 GPU 决策 P50 时延分别从 `111.35 ms` / `182.75 ms` 压缩至 **`13.51 ms`（8.24x 加速）** 与 **`17.15 ms`（10.66x 加速）**，均严格落入单个 `30 Hz` 控制步（$\Delta k = 1, 33.33\text{ ms}$）；而 `GPC-OPT` 即使同样启用 CUDA Graph 仍需 **`69.17 ms`**（$\Delta k = 3$，Eager 模式下达 `996.59 ms`）。
+   - **非暂停物理（`--wall-clock`）闭环实测（342 回合）**：在 GPU 推理期间物理引擎持续推进 $\Delta k$ 步并按 `actions[min(Δk, H-1):]` 时间对齐切入的真实异步协议下，`Ours (τ=0.7 & τ=0.9)` 常规装包继续保持 **`18/18 (100%)` 成功、`18/18` 二次分槽正确、`0/18` 夹碰**；在 `Collar-Slip` 突发滑脱下双物品最终入袋成功率保持 **`18/18 (100%)`**，且单步实时加速（$\Delta k = 1$）将严格零碰撞安全恢复率从多步滞后（`--no-cuda-graph`, $\Delta k = 5$, `~158 ms`）的 `5/18 (27.8%)` / `3/18 (16.7%)` 大幅拉升 **$2.6\times\sim 4.0\times$** 至 **`13/18 (72.2%, 0 超时)`** / **`12/18 (66.7%)`**，而全部 6 种对比基线的无超时安全恢复率均为 **`0/18 (0.0%)`**。
 
 ### Stage D：下一阶段单臂真实机械臂实验规划 (`docs/StageD_Real_Robot_Roadmap.md`)
-- 利用实验室**单臂真实机械臂**在不透明双槽弹性/回弹收纳容器上开展**真实墙钟时间（Wall-Clock Time，物理不暂停）**闭环实验：
+- 利用实验室**单臂真实机械臂（如 UR5）**在不透明双槽弹性/回弹收纳容器上开展**真实墙钟时间（Wall-Clock Time，物理不暂停）**闭环实验：
   1. **实验 R1（真实遮挡双物品连续分槽）**：验证 `256D Mamba-Past` 跨越 5~8 秒抓取长周期的真实遮挡槽位记忆（`100%` vs. `BC H4` `50%` 叠压卡死）；
-  2. **实验 R2（真实墙钟时间中途回弹紧急撤回）**：正面暴露 `GPC-OPT` 因 `~900 ms` 规划延迟在真实不暂停物理世界中来不及撤回而夹碰的致命缺陷，展示 `Ours (< 100 ms)` 的毫秒级实时避障恢复与二次装入能力。
+  2. **实验 R2（真实墙钟时间中途回弹紧急撤回）**：正面暴露 `GPC-OPT` 高规划延迟在真实不暂停物理世界中来不及撤回而夹碰的缺陷，展示 `Ours (< 18 ms)` 的单控制步内毫秒级避障恢复与二次装入能力。

@@ -90,6 +90,7 @@ class Models(nn.Module):
         self.register_buffer('mean',torch.zeros(OBS_DIM));self.register_buffer('std',torch.ones(OBS_DIM))
         self.register_buffer('am',torch.tensor(ACTION_MEAN));self.register_buffer('asd',torch.tensor(ACTION_STD))
         self.register_buffer('ss',torch.tensor(STATE_SCALE));self.register_buffer('gs',torch.tensor(GEO_SCALE))
+        self._planners={}
     def encode(self,obs):return (obs-self.mean)/self.std
     def actions(self,a):return (a-self.am)/self.asd
     def physical(self,a):return a*self.asd+self.am
@@ -306,7 +307,12 @@ def safety_risk(state,action,conformal_q=0.,*,emergency=False):
     pinch=4500.*occupied*F.relu(.028-clear_lb).square()+80.*impulse
     safe_gate=torch.sigmoid((clear_lb-.018)/.0005)
     # Aperture collapse disables downward attraction until the collar reopens.
-    if emergency:safe_gate=safe_gate*0
+    if torch.is_tensor(emergency):
+        safe_gate=safe_gate*(1.-emergency)
+        terminal_margin=.018+.017*emergency
+    else:
+        if emergency:safe_gate=safe_gate*0
+        terminal_margin=.035 if emergency else .018
     withdraw=4.*(1-safe_gate)*F.relu(.240-action[...,5])
     insert=.35*safe_gate*(action[...,5]-.055)
     # The linear term has a shallow holding equilibrium under a strong flow
@@ -317,7 +323,6 @@ def safety_risk(state,action,conformal_q=0.,*,emergency=False):
     cost=(pinch-.18*safe_gate*progress+withdraw+insert).mean(-1)
     closing=F.relu((clear_lb[:,-12]-clear_lb[:,-1])/12)
     projected=clear_lb[:,-1]-closing*24*(1-progress[:,-1].clamp(0,1))
-    terminal_margin=.035 if emergency else .018
     return cost+2800*F.relu(terminal_margin-projected).square()
 
 
@@ -332,7 +337,252 @@ def flow_descent(gradient):
     return 3.*gradient/norm.clamp_min(1e-8)
 
 
-def decide(models,history,method,rng,*,particles=None,world_kind=None,diagnostics=False):
+class CUDAGraphPlanner:
+    """Static-buffer CUDA Graph execution for sub-tick (30 Hz) guided planning."""
+
+    def __init__(self,model,joint:bool,particles:int):
+        self.model=model
+        self.joint=joint
+        self.particles=particles
+        self.flow=model.joint if joint else model.flow
+        self.channels=self.flow.channels
+        dev=model.mean.device
+        self.low=torch.tensor([-.09,-.23,.08,-.09,-.06,.04,.006,.006],device=dev)
+        self.high=torch.tensor([.02,-.04,.24,.09,.25,.25,.038,.038],device=dev)
+        self.eye3_K=torch.eye(3,device=dev).repeat(particles,1)
+        self.eye3_1=torch.eye(3,device=dev)
+        self.handle_xz=torch.tensor([-.048,0.,.175],device=dev)
+        self.handle_mask=torch.tensor([1.,0.,1.],device=dev)
+        self.handle_y=torch.tensor([0.,1.,0.],device=dev)
+        self.raw_buf=torch.zeros((1,HISTORY,OBS_DIM),device=dev)
+        self.obs_buf=torch.zeros((1,HISTORY,OBS_DIM),device=dev)
+        self.stage_buf=torch.zeros((1,3),device=dev)
+        self.belief_buf=torch.zeros((1,256),device=dev)
+        self.prob_buf=torch.zeros((3,),device=dev)
+        self.slots_buf=torch.zeros((2,),device=dev)
+        self.hint_buf=torch.zeros((1,2),device=dev)
+        self.emerg_buf=torch.zeros((),device=dev)
+        self.tau_buf=torch.zeros((1,1),device=dev)
+        self.guidance_buf=torch.zeros((),device=dev)
+        self.xK_buf=torch.zeros((particles,HORIZON,self.channels),device=dev)
+        self.x1_buf=torch.zeros((1,HORIZON,self.channels),device=dev)
+        self._build_graphs()
+
+    def _project(self,x):
+        action=self.model.physical(x[...,:8])
+        action=torch.maximum(self.low,torch.minimum(self.high,action))
+        lg=self.emerg_buf*action[...,6:7]+(1.-self.emerg_buf)*action[...,6:7].clamp(0.,.012)
+        action=torch.cat((action[...,:6],lg,action[...,7:]),-1)
+        previous=self.raw_buf[:,-1,-8:-2].expand(len(x),-1);steps=[]
+        for a in action.unbind(1):
+            delta=(a[:,:6]-previous).reshape(-1,2,3)
+            previous=previous+(delta*(.0075/delta.norm(dim=-1,keepdim=True).clamp_min(.0075))).flatten(1)
+            steps.append(torch.cat((previous,a[:,6:]),-1))
+        normalized=self.model.actions(torch.stack(steps,1))
+        return torch.cat((normalized,x[...,8:]),-1) if self.joint else normalized
+
+    def _predict(self,x,eye3):
+        n=len(x)
+        z=self.model.world.latent(self.belief_buf.expand(n*3,-1),self.stage_buf.expand(n*3,-1),
+                                  x[...,:8].repeat_interleave(3,0),eye3)
+        return self.model.world.decode_safety(z)*self.model.ss
+
+    def _risk_and_bounds(self,x,eye3):
+        n=len(x)
+        physical=self.model.physical(x[...,:8])
+        if self.joint:
+            bounds=x[...,8]*self.model.ss[0]
+            base=safety_risk(x[...,8:]*self.model.ss,physical,0.,emergency=self.emerg_buf)
+            return base,bounds
+        raw_last=self.raw_buf[0,-1]
+        safety=self._predict(x,eye3)
+        safety_3=safety.reshape(n,3,HORIZON,4)
+        bounds=(safety_3[...,0]*self.prob_buf[None,:,None]).sum(1)-self.model.world.conformal_q
+        base=safety_risk(safety,physical.repeat_interleave(3,0),self.model.world.conformal_q,emergency=self.emerg_buf).reshape(n,3)@self.prob_buf
+        pos=physical[...,3]
+        occupied_overlap=self.slots_buf[0]*torch.exp(-((pos+.048)/.025).square())+self.slots_buf[1]*torch.exp(-((pos-.048)/.025).square())
+        is_stage1=(self.stage_buf[0].argmax()==1).float()
+        cue_right=(raw_last[29]>.5).float()
+        target=is_stage1*(.048*(self.slots_buf[0]-self.slots_buf[1]))+(1.-is_stage1)*(.096*cue_right-.048)
+        cost=base+35.*(pos-target).square().mean(-1)+4.*occupied_overlap[:,-8:].mean(-1)
+        handle=self.handle_xz*self.handle_mask+(raw_last[0]-.100)*self.handle_y
+        near=torch.sigmoid((.026-(raw_last[5:8]-handle).norm())/.004)
+        gap=.032*(1.-near)+.008*near
+        holding=near*torch.sigmoid((.016-raw_last[-2])/.002)
+        target_y=handle[1]*(1.-holding)-.185*holding
+        emerg_cost=2000.*(physical[...,6]-gap).square().mean(-1)+.5*((physical[...,1]-target_y)/.060).square().mean(-1)
+        return cost+self.emerg_buf*emerg_cost,bounds
+
+    def _field(self,x,tau_scalar):
+        n=len(x)
+        return self.flow(x,tau_scalar.expand(n,1),self.obs_buf.expand(n,-1,-1),self.hint_buf.expand(n,-1))
+
+    @staticmethod
+    def _capture(fn):
+        stream=torch.cuda.Stream()
+        stream.wait_stream(torch.cuda.current_stream())
+        with torch.cuda.stream(stream):
+            for _ in range(3):fn()
+        torch.cuda.current_stream().wait_stream(stream)
+        graph=torch.cuda.CUDAGraph()
+        with torch.cuda.graph(graph):
+            out=fn()
+        return graph,out
+
+    def _build_graphs(self):
+        def encode_and_prior7():
+            with torch.no_grad():
+                obs=self.model.encode(self.raw_buf);self.obs_buf.copy_(obs)
+                stage=self.raw_buf[:,-1,25:28];self.stage_buf.copy_(stage)
+                b,logits=self.model.world.encode(obs)
+                self.belief_buf.copy_(b);self.prob_buf.copy_(logits.softmax(-1)[0])
+                slots=self.model.world.slots(b).sigmoid()[0];self.slots_buf.copy_(slots)
+                is_s1=(stage[0].argmax()==1).float()
+                hint=is_s1*(1.-slots)[None]+(1.-is_s1)*self.raw_buf[:,-1,28:30]
+                self.hint_buf.copy_(hint/hint.sum(-1,keepdim=True).clamp_min(1e-6))
+                x=self.xK_buf
+                for idx in range(7):
+                    t=x.new_full((len(x),1),idx/10)
+                    x=x+self.flow(x,t,obs.expand(len(x),-1,-1),self.hint_buf.expand(len(x),-1))/10
+                return x
+        self.g_prior7,self.out_prior7=self._capture(encode_and_prior7)
+
+        def euler_K():
+            with torch.no_grad():
+                return self.xK_buf+self._field(self.xK_buf,self.tau_buf)/10
+        self.g_eulerK,self.out_eulerK=self._capture(euler_K)
+
+        def eval_ep_K():
+            with torch.no_grad():
+                v=self._field(self.xK_buf,self.tau_buf)
+                ep=self.xK_buf+(1.-self.tau_buf[:,:,None])*v
+                scores,bounds=self._risk_and_bounds(ep,self.eye3_K)
+                return scores,bounds,self.xK_buf+v/10
+        self.g_evalK,self.out_evalK=self._capture(eval_ep_K)
+
+        def guided_1():
+            with torch.enable_grad():
+                cur=self.x1_buf.detach().requires_grad_(True)
+                v=self._field(cur,self.tau_buf)
+                ep=cur+(1.-self.tau_buf[:,:,None])*v
+                scores,_=self._risk_and_bounds(ep,self.eye3_1)
+                grad,=torch.autograd.grad(scores.sum(),cur)
+            with torch.no_grad():
+                return cur.detach()+(v.detach()-self.guidance_buf*flow_descent(grad.detach()))/10
+        self.g_guided1,self.out_guided1=self._capture(guided_1)
+
+        def proj_1():
+            with torch.no_grad():
+                p=self._project(self.x1_buf)
+                _,bounds=self._risk_and_bounds(p,self.eye3_1)
+                return p,bounds
+        self.g_proj1,self.out_proj1=self._capture(proj_1)
+
+        def proj_rank_K():
+            with torch.no_grad():
+                p=self._project(self.xK_buf)
+                scores,bounds=self._risk_and_bounds(p,self.eye3_K)
+                return p,scores,bounds
+        self.g_projK,self.out_projK=self._capture(proj_rank_K)
+
+        def opt_step_1():
+            with torch.enable_grad():
+                cur=self.x1_buf.detach().requires_grad_(True)
+                scores,_=self._risk_and_bounds(cur,self.eye3_1)
+                grad,=torch.autograd.grad(scores.sum(),cur)
+            with torch.no_grad():
+                return self._project(cur.detach()-.08*grad.detach())
+        self.g_opt1,self.out_opt1=self._capture(opt_step_1)
+
+
+def _decide_cuda_graph(model,history,config,joint,kind,rng,diagnostics):
+    key=(joint,config.particles)
+    planner=model._planners.get(key)
+    if planner is None:
+        planner=CUDAGraphPlanner(model,joint,config.particles)
+        model._planners[key]=planner
+    noise=temporal_noise((config.particles,HORIZON,planner.channels),generator=rng)
+    hist_np=np.asarray(history,dtype=np.float32)
+    stage_idx=int(np.argmax(hist_np[-1,25:28]))
+    if config.particles>1 and stage_idx==1:
+        noise[:config.particles//2,:,3]-=.35
+        noise[config.particles//2:,:,3]+=.35
+    emergency=bool(hist_np[-1,4]<.085 or hist_np[-1,4]-hist_np[-2,4]<-.006)
+    aperture=hist_np[:,4]
+    opened=np.maximum.accumulate(aperture>.095)
+    recovering=bool(((aperture<.070)&opened).any() and hist_np[-1,10]>.170)
+    planner.raw_buf[0].copy_(torch.from_numpy(hist_np))
+    planner.xK_buf.copy_(noise)
+    planner.emerg_buf.fill_(1.0 if emergency else 0.0)
+    planner.g_prior7.replay()
+    start=round(config.tau_start*10);guidance=.45
+    intervention_min=None;adaptive=False
+    if start==10:
+        planner.xK_buf.copy_(planner.out_prior7)
+        for idx in (7,8,9):
+            planner.tau_buf.fill_(idx/10)
+            planner.g_eulerK.replay()
+            planner.xK_buf.copy_(planner.out_eulerK)
+        if config.particles>1:
+            planner.g_projK.replay()
+            p_all,scores,bounds=planner.out_projK
+            best=int(scores.argmin())
+            res_norm=p_all[best:best+1]
+            min_lb=float(bounds[best].min())
+        else:
+            planner.x1_buf.copy_(planner.xK_buf)
+            planner.g_proj1.replay()
+            res_norm=planner.out_proj1[0].clone()
+            for _ in range(config.opt_steps):
+                planner.x1_buf.copy_(res_norm)
+                planner.g_opt1.replay()
+                res_norm.copy_(planner.out_opt1)
+            min_lb=float(planner.out_proj1[1][0].min())
+    else:
+        planner.xK_buf.copy_(planner.out_prior7)
+        planner.tau_buf.fill_(.7)
+        planner.g_evalK.replay()
+        scores,bounds,x_after_7=planner.out_evalK
+        best=int(scores.argmin())
+        intervention_min=float(bounds[best].min())
+        adaptive=emergency or intervention_min<.018
+        if adaptive:start=7;guidance=6.
+        elif recovering:start=7
+        planner.guidance_buf.fill_(guidance)
+        if start==7:
+            planner.x1_buf.copy_(planner.xK_buf[best:best+1])
+            for idx in (7,8,9):
+                planner.tau_buf.fill_(idx/10)
+                planner.g_guided1.replay()
+                planner.x1_buf.copy_(planner.out_guided1)
+        else:
+            planner.xK_buf.copy_(x_after_7)
+            planner.tau_buf.fill_(.8)
+            planner.g_eulerK.replay()
+            planner.xK_buf.copy_(planner.out_eulerK)
+            planner.tau_buf.fill_(.9)
+            planner.g_evalK.replay()
+            best9=int(planner.out_evalK[0].argmin())
+            planner.x1_buf.copy_(planner.xK_buf[best9:best9+1])
+            planner.g_guided1.replay()
+            planner.x1_buf.copy_(planner.out_guided1)
+        planner.g_proj1.replay()
+        res_norm=planner.out_proj1[0]
+        min_lb=float(planner.out_proj1[1][0].min())
+    prediction=int(planner.slots_buf.argmax())
+    details=dict(predicted_occupied_slot=prediction,particles=config.particles,world_kind=kind,
+                 emergency=emergency,recovering=recovering,adaptive_intervention=bool(adaptive or recovering),
+                 tau_actual=start/10,guidance=guidance,intervention_min_clear_lb_m=intervention_min)
+    if diagnostics:
+        if joint or config.opt_steps>0:
+            with torch.no_grad():
+                safety=planner._predict(res_norm,planner.eye3_1).reshape(1,3,HORIZON,4)
+                min_lb=float(((safety[...,0]*planner.prob_buf[None,:,None]).sum(1)-model.world.conformal_q).min())
+        details['min_clear_lb_m']=min_lb
+    return model.physical(res_norm[0,:,:8]).cpu().numpy(),details
+
+
+def decide(models,history,method,rng,*,particles=None,world_kind=None,diagnostics=False,use_cuda_graph=True):
     kind=world_kind or ('short' if method in ('BC H4','Joint-FM','GPC-RANK','GPC-OPT','Ours Short-MLP H4') else 'four' if method=='Ours 4D-WM' else 'full')
     model=models[kind];joint=method=='Joint-FM'
     configs={'BC H4':Search(1),'Joint-FM':Search(1,tau_start=.7),'GPC-RANK':Search(PARTICLES),
@@ -341,6 +591,8 @@ def decide(models,history,method,rng,*,particles=None,world_kind=None,diagnostic
              'Ours tau=0.9':Search(PARTICLES,tau_start=.9)}
     config=configs[method]
     if particles is not None:config=Search(particles,config.opt_steps,config.tau_start)
+    if use_cuda_graph and model.mean.is_cuda and round(config.tau_start*10) in (7,9,10):
+        return _decide_cuda_graph(model,history,config,joint,kind,rng,diagnostics)
     raw=torch.as_tensor(history,dtype=torch.float32,device=model.mean.device)[None]
     obs=model.encode(raw);stage=raw[:,-1,25:28]
     flow=model.joint if joint else model.flow
@@ -380,7 +632,7 @@ def decide(models,history,method,rng,*,particles=None,world_kind=None,diagnostic
         z=model.world.latent(belief.expand(n*3,-1),stage.expand(n*3,-1),
                             x[...,:8].repeat_interleave(3,0),torch.eye(3,device=x.device).repeat(n,1))
         return model.world.decode_safety(z)*model.ss
-    def risk(x):
+    def risk(x,*,safety=None):
         nonlocal belief,prob,slots
         physical=model.physical(x[...,:8])
         if joint:return safety_risk(x[...,8:]*model.ss,physical,emergency=emergency)
@@ -389,7 +641,7 @@ def decide(models,history,method,rng,*,particles=None,world_kind=None,diagnostic
                 belief,logits=model.world.encode(obs);prob=logits.softmax(-1)[0]
                 slots=model.world.slots(belief).sigmoid()[0]
         n=len(x)
-        safety=predict(x)
+        if safety is None:safety=predict(x)
         base=safety_risk(safety,physical.repeat_interleave(3,0),model.world.conformal_q,emergency=emergency).reshape(n,3)@prob
         pos=physical[...,3]
         occupied_overlap=slots[0]*torch.exp(-((pos+.048)/.025).square())+slots[1]*torch.exp(-((pos-.048)/.025).square())
@@ -413,20 +665,28 @@ def decide(models,history,method,rng,*,particles=None,world_kind=None,diagnostic
     intervention_min=None;adaptive=False
     for index in range(10):
         tau=index/10
+        v7=None;best7=None
         if index==7 and start<10:
             with torch.no_grad():
-                endpoint=x+.3*field(x,.7)
-                if joint:bounds=endpoint[...,8]*model.ss[0]
+                v7=field(x,.7)
+                endpoint=x+.3*v7
+                if joint:
+                    bounds=endpoint[...,8]*model.ss[0]
+                    scores7=risk(endpoint)
                 else:
-                    safety=predict(endpoint).reshape(len(x),3,HORIZON,4)
-                    bounds=(safety[...,0]*prob[None,:,None]).sum(1)-model.world.conformal_q
-                best=int(risk(endpoint).argmin())
-                intervention_min=float(bounds[best].min())
+                    safety=predict(endpoint)
+                    bounds=(safety.reshape(len(x),3,HORIZON,4)[...,0]*prob[None,:,None]).sum(1)-model.world.conformal_q
+                    scores7=risk(endpoint,safety=safety)
+                best7=int(scores7.argmin())
+                intervention_min=float(bounds[best7].min())
                 adaptive=emergency or intervention_min<.018
                 if adaptive:start=7;guidance=6.
                 elif recovering:start=7
         if index==start and len(x)>1:
-            with torch.no_grad():x=x[risk(x+(1-tau)*field(x,tau)).argmin().reshape(1)]
+            if best7 is not None:
+                x=x[best7:best7+1]
+            else:
+                with torch.no_grad():x=x[risk(x+(1-tau)*field(x,tau)).argmin().reshape(1)]
         if index>=start:
             with torch.enable_grad():
                 current=x.detach().requires_grad_(True)
@@ -435,7 +695,7 @@ def decide(models,history,method,rng,*,particles=None,world_kind=None,diagnostic
                 grad,=torch.autograd.grad(risk(endpoint).sum(),current)
             with torch.no_grad():x=current+(velocity-guidance*flow_descent(grad))/10
         else:
-            with torch.no_grad():x=x+field(x,tau)/10
+            with torch.no_grad():x=x+(v7 if v7 is not None else field(x,tau))/10
     with torch.no_grad():x=project(x)
     for _ in range(config.opt_steps):
         with torch.enable_grad():

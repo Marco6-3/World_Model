@@ -29,7 +29,7 @@ def dump(path, data):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("command", choices=("smoke", "calibrate", "collect", "fit", "evaluate", "probe", "report"))
+    p.add_argument("command", choices=("smoke", "calibrate", "collect", "fit", "evaluate", "probe", "report", "timing"))
     p.add_argument("--out", type=Path, default=OUT)
     p.add_argument("--robot-usd", type=Path, default=ASSET)
     p.add_argument("--model-root", type=Path)
@@ -42,15 +42,23 @@ def main():
     p.add_argument("--flow-steps", type=int, default=5000)
     p.add_argument("--world-steps", type=int, default=3500)
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    p.add_argument("--wall-clock", action="store_true", help="Advance unpaused physics during GPU inference and align chunks by elapsed control ticks")
+    p.add_argument("--no-cuda-graph", action="store_true", help="Disable CUDA Graph capture in decide() and run eager execution")
+    p.add_argument("--perturbed", choices=("both", "true", "false"), default="both", help="Select normal, perturbed Collar-Slip, or both evaluation regimes")
+    p.add_argument("--timing-file", default="realtime_timing.json", help="Output filename for isolated timing benchmark")
     args = p.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     torch.set_num_threads(1)
     torch.set_float32_matmul_precision("high")
-    if args.command in ("fit", "evaluate") and args.device != "cuda":
-        raise RuntimeError("Stage C training and policy evaluation require the requested CUDA environment")
+    if args.command in ("fit", "evaluate", "timing") and args.device != "cuda":
+        raise RuntimeError("Stage C training, timing, and policy evaluation require the requested CUDA environment")
     if args.command == "fit":
         from bag_learning import fit
         fit(args)
+        return
+    if args.command == "timing":
+        from bag_timing import measure_realtime_comparison
+        measure_realtime_comparison(args.model_root or args.out, target_file=args.timing_file)
         return
     if args.command == "report":
         from bag_report import build_report

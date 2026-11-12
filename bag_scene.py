@@ -17,7 +17,8 @@ from bag_packing import MODES, METHODS, dump
 
 from bag_common import (ROOT, COLLAR_Z, LIP_HALF, OPEN, CLOSED, FLOOR, OCCLUDE_Z, SIZE, SLOTS,
                         STAGING, HANDLE_OFFSET, DYNAMICS, CONTROL_DT, OBS_DIM, ACTION_DIM, HISTORY,
-                        HORIZON, THRESHOLD, history_indices, visible_contents, measure_trace, effective_clearance, slot_pos)
+                        HORIZON, THRESHOLD, history_indices, visible_contents, measure_trace,
+                        effective_clearance, slot_pos, wallclock_lag_ticks, align_action_chunk)
 
 
 def envelope(pose, size):
@@ -391,6 +392,14 @@ def evaluate(task,args):
     from hashlib import sha256
     model_root=args.model_root or args.out
     models=load_models(model_root,args.device)
+    wall_clock=bool(getattr(args,'wall_clock',False))
+    use_cuda_graph=not bool(getattr(args,'no_cuda_graph',False))
+    pert_arg=getattr(args,'perturbed','both')
+    perturbed_modes=(False,True) if pert_arg=='both' else ((True,) if pert_arg=='true' else (False,))
+    dummy_hist=np.zeros((HISTORY,OBS_DIM),dtype=np.float32)
+    for m_warm in args.methods:
+        decide(models,dummy_hist,m_warm,torch.Generator().manual_seed(0),use_cuda_graph=use_cuda_graph)
+    if args.device=='cuda':torch.cuda.synchronize()
     seeds=args.seeds or [2000,2001,2002]
     journal=args.out/'episodes.jsonl'
     prior=[json.loads(l) for l in journal.read_text().splitlines()] if journal.exists() else []
@@ -400,51 +409,109 @@ def evaluate(task,args):
     source_hashes={name:sha256((Path(__file__).resolve().parent/name).read_bytes()).hexdigest()
                    for name in ('bag_scene.py','bag_learning.py','bag_common.py','mamba_wm.py')}
     if any(r.get('planner_source_hashes')!=source_hashes for r in prior):raise ValueError('Planner source changed; choose a new evaluation directory')
+    if any(bool(r.get('wall_clock',False))!=wall_clock or bool(r.get('use_cuda_graph',True))!=use_cuda_graph for r in prior):
+        raise ValueError('Rollout timing mode changed; choose a new evaluation directory')
     with journal.open('a',encoding='utf-8') as stream:
         for seed in seeds:
             for mode in args.modes:
                 for order in (0,1):
-                    for perturbed in (False,True):
+                    for perturbed in perturbed_modes:
                         for method in args.methods:
                             key=(method,mode,order,seed,perturbed)
                             if key in done:continue
                             task.reset(mode,order,seed)
                             rng=torch.Generator().manual_seed(seed+12000)
                             latency=[];probes=[];planning=[];budgets=[];commits=[];interrupts=0
+                            lag_ticks_all=[];chunk_offsets_all=[]
                             for phase,item in enumerate(task.sequence):
                                 task.phase=phase;task.active=item;task.observations[-1]=task.observe()
                                 task.spread([0,.22,.215],.032);task.pickup(item)
                                 start=task.tick
+                                inflight=[]
                                 while task.tick-start < 216:
-                                    begin=perf_counter()
-                                    actions,diagnostic=decide(models,task.history(),method,rng)
-                                    latency.append((perf_counter()-begin)*1000)
-                                    planning.append(dict(t=task.tick,**diagnostic))
-                                    if phase==1:probes.append(diagnostic)
-                                    executed=0
-                                    for action in actions[:min(6,216-(task.tick-start))]:
-                                        previous_aperture=task.env.aperture
-                                        task.step(action,learn=True,perturb=perturbed)
-                                        executed+=1
+                                    if not wall_clock:
+                                        if args.device=='cuda':torch.cuda.synchronize()
+                                        begin=perf_counter()
+                                        actions,diagnostic=decide(models,task.history(),method,rng,use_cuda_graph=use_cuda_graph)
+                                        if args.device=='cuda':torch.cuda.synchronize()
+                                        latency.append((perf_counter()-begin)*1000)
+                                        planning.append(dict(t=task.tick,**diagnostic))
+                                        if phase==1:probes.append(diagnostic)
+                                        executed=0
+                                        for action in actions[:min(6,216-(task.tick-start))]:
+                                            previous_aperture=task.env.aperture
+                                            task.step(action,learn=True,perturb=perturbed)
+                                            executed+=1
+                                            if task.release_ready():break
+                                            if previous_aperture-task.env.aperture>.006:
+                                                interrupts+=1
+                                                break
+                                        commits.append(executed)
                                         if task.release_ready():break
-                                        if previous_aperture-task.env.aperture>.006:
-                                            interrupts+=1
-                                            break
-                                    commits.append(executed)
-                                    if task.release_ready():break
+                                    else:
+                                        t_obs=task.tick
+                                        hist=task.history()
+                                        if args.device=='cuda':torch.cuda.synchronize()
+                                        begin=perf_counter()
+                                        actions,diagnostic=decide(models,hist,method,rng,use_cuda_graph=use_cuda_graph)
+                                        if args.device=='cuda':torch.cuda.synchronize()
+                                        infer_ms=(perf_counter()-begin)*1000
+                                        latency.append(infer_ms)
+                                        dk=wallclock_lag_ticks(infer_ms,CONTROL_DT)
+                                        lag_executed=0
+                                        interrupted_during_infer=False
+                                        while lag_executed<dk and task.tick-start<216:
+                                            cmd=inflight.pop(0) if inflight else task.last_action
+                                            previous_aperture=task.env.aperture
+                                            task.step(cmd,learn=True,perturb=perturbed)
+                                            lag_executed+=1
+                                            if task.release_ready():break
+                                            if previous_aperture-task.env.aperture>.006:
+                                                interrupts+=1
+                                                interrupted_during_infer=True
+                                        t_apply=task.tick
+                                        aligned,offset=align_action_chunk(actions,lag_executed)
+                                        inflight=list(aligned)
+                                        post_executed=0
+                                        if not interrupted_during_infer and not task.release_ready():
+                                            budget_left=216-(task.tick-start)
+                                            for _ in range(min(max(0,6-lag_executed),budget_left,len(inflight))):
+                                                cmd=inflight.pop(0)
+                                                previous_aperture=task.env.aperture
+                                                task.step(cmd,learn=True,perturb=perturbed)
+                                                post_executed+=1
+                                                if task.release_ready():break
+                                                if previous_aperture-task.env.aperture>.006:
+                                                    interrupts+=1
+                                                    break
+                                        lag_ticks_all.append(lag_executed)
+                                        chunk_offsets_all.append(offset)
+                                        planning.append(dict(t=t_obs,t_apply=t_apply,infer_ms=infer_ms,dk_ticks=dk,
+                                                             lag_ticks=lag_executed,chunk_offset=offset,post_ticks=post_executed,
+                                                             interrupted_during_infer=interrupted_during_infer,**diagnostic))
+                                        if phase==1:probes.append(diagnostic)
+                                        commits.append(lag_executed+post_executed)
+                                        if task.release_ready():break
                                 budgets.append(not task.release_ready())
                                 task.learn_ranges.append((start,task.tick));task.end_item()
                             task.phase=2;task.close()
                             result=task.summary(method)
-                            result.update(perturbed=perturbed,execution_context=args.execution_context,perturbation_version="forced_finger_release_v2" if perturbed else "none",decision_ms=latency,slot_predictions=probes,planning_diagnostics=planning,insertion_budget_exhausted=budgets,committed_steps=commits,aperture_interrupts=interrupts,
-                                          checkpoint_hashes=hashes,planner_source_hashes=source_hashes,device=args.device,torch=str(torch.__version__))
+                            result.update(perturbed=perturbed,wall_clock=wall_clock,use_cuda_graph=use_cuda_graph,
+                                          execution_context=args.execution_context,
+                                          perturbation_version="forced_finger_release_v2" if perturbed else "none",
+                                          decision_ms=latency,lag_ticks=lag_ticks_all,chunk_offsets=chunk_offsets_all,
+                                          slot_predictions=probes,planning_diagnostics=planning,
+                                          insertion_budget_exhausted=budgets,committed_steps=commits,
+                                          aperture_interrupts=interrupts,checkpoint_hashes=hashes,
+                                          planner_source_hashes=source_hashes,device=args.device,torch=str(torch.__version__))
                             name=f"{seed}_{mode}_{order}_{int(perturbed)}_{METHODS.index(method)}.npz"
                             result['trace_file']='traces/'+name
                             task.save(args.out/result['trace_file'],result)
                             stream.write(json.dumps(result,allow_nan=False)+'\n');stream.flush();done.add(key)
-                            print(f"Bag {len(done)} {method} {mode}/{order}/{seed} perturb={perturbed}: success={result['success']} collision={result['collision']} slot={result['second_slot_correct']}",flush=True)
+                            print(f"Bag {len(done)} {method} {mode}/{order}/{seed} perturb={perturbed} wall_clock={wall_clock}: success={result['success']} collision={result['collision']} slot={result['second_slot_correct']} p50_ms={np.median(latency):.2f}",flush=True)
     rows=[json.loads(l) for l in journal.read_text().splitlines()]
-    dump(args.out/'results.json',dict(seeds=seeds,modes=list(args.modes),methods=list(args.methods),episodes=rows,
+    dump(args.out/'results.json',dict(seeds=seeds,modes=list(args.modes),methods=list(args.methods),
+                                    wall_clock=wall_clock,use_cuda_graph=use_cuda_graph,episodes=rows,
                                     physics='IsaacLab/PhysX rigid prismatic-collar proxy',control_dt=CONTROL_DT,
                                     collision_threshold_Ns=THRESHOLD,history_tokens=HISTORY,history_span_steps=444,
                                     identity_slot_shortcut=False,protocol_version='stage_c2'))

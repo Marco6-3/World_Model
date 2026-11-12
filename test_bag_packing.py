@@ -7,8 +7,10 @@ import json
 import bag_packing
 import numpy as np
 import torch
-from bag_common import history_indices, visible_contents, measure_trace, effective_clearance, slot_pos, SIZE, FLOOR
-from bag_learning import BagWorld, safety_risk, clean_observations, calibrate_conformal, load_windows, flow_descent
+from bag_common import (history_indices, visible_contents, measure_trace, effective_clearance,
+                        slot_pos, SIZE, FLOOR, CONTROL_DT, wallclock_lag_ticks, align_action_chunk)
+from bag_learning import BagWorld, Models, decide, safety_risk, clean_observations, calibrate_conformal, load_windows, flow_descent
+from mamba_wm import MambaBlock
 
 
 class BagTests(unittest.TestCase):
@@ -176,6 +178,57 @@ class BagTests(unittest.TestCase):
         withdrawn=effective_clearance(-.02,[0,0,.25],[0,0,.28],0)
         self.assertLess(near,0)
         self.assertGreater(withdrawn,.05)
+
+    def test_mamba_parallel_scan_matches_sequential_transition_and_gradients(self):
+        torch.manual_seed(42)
+        block=MambaBlock(d_model=32,d_state=8,d_conv=4,expand=2)
+        for length in (1,12,24,64):
+            u_par=torch.randn(3,length,32,requires_grad=True)
+            u_seq=u_par.detach().clone().requires_grad_(True)
+            out_par=block(u_par)
+            x,gate=block.in_proj(u_seq).chunk(2,dim=-1)
+            x=torch.nn.functional.silu(block.conv(x.transpose(1,2))[...,:length].transpose(1,2))
+            decay,drive,read=block.select(x).split((block.inner,block.d_state,block.d_state),dim=-1)
+            state=x.new_zeros((len(x),block.inner,block.d_state))
+            a=-block.A_log.exp()
+            rows=[]
+            for xt,dt,bt,ct in zip(*(v.unbind(1) for v in (x,decay,drive,read)),strict=True):
+                state,y=block._transition(xt,dt,bt,ct,state,a)
+                rows.append(y)
+            out_seq=block.norm(u_seq+block.out_proj(torch.stack(rows,1)*torch.nn.functional.silu(gate)))
+            torch.testing.assert_close(out_par,out_seq,atol=1e-5,rtol=1e-5)
+            g_par,=torch.autograd.grad(out_par.square().sum(),u_par)
+            g_seq,=torch.autograd.grad(out_seq.square().sum(),u_seq)
+            torch.testing.assert_close(g_par,g_seq,atol=1e-5,rtol=1e-5)
+
+    def test_cuda_graph_planner_matches_eager_decide(self):
+        if not torch.cuda.is_available():
+            self.skipTest('CUDA required for CUDAGraphPlanner test')
+        torch.manual_seed(123)
+        models={k:Models(k).cuda().eval().requires_grad_(False) for k in ('full','short','four')}
+        hist=np.zeros((64,39),dtype=np.float32)
+        hist[:,4]=.110;hist[-1,4]=.065;hist[-1,10]=.19;hist[-1,26]=1.;hist[-1,28:30]=[.5,.5]
+        for method in ('BC H4','Joint-FM','GPC-RANK','GPC-OPT','Ours tau=0.7','Ours tau=0.9'):
+            a_graph,d_graph=decide(models,hist,method,torch.Generator().manual_seed(77),diagnostics=True,use_cuda_graph=True)
+            a_eager,d_eager=decide(models,hist,method,torch.Generator().manual_seed(77),diagnostics=True,use_cuda_graph=False)
+            np.testing.assert_allclose(a_graph,a_eager,atol=1e-4,rtol=1e-4)
+            self.assertEqual(d_graph['predicted_occupied_slot'],d_eager['predicted_occupied_slot'])
+            self.assertEqual(d_graph['tau_actual'],d_eager['tau_actual'])
+            self.assertAlmostEqual(d_graph['min_clear_lb_m'],d_eager['min_clear_lb_m'],places=4)
+
+    def test_wallclock_lag_and_chunk_alignment(self):
+        self.assertEqual(wallclock_lag_ticks(14.44,CONTROL_DT),1)
+        self.assertEqual(wallclock_lag_ticks(17.25,CONTROL_DT),1)
+        self.assertEqual(wallclock_lag_ticks(64.60,CONTROL_DT),2)
+        self.assertEqual(wallclock_lag_ticks(182.75,CONTROL_DT),6)
+        self.assertEqual(wallclock_lag_ticks(780.0,CONTROL_DT),24)
+        chunk=np.arange(24*8,dtype=np.float32).reshape(24,8)
+        aligned1,off1=align_action_chunk(chunk,1)
+        self.assertEqual(off1,1);self.assertEqual(len(aligned1),23)
+        np.testing.assert_array_equal(aligned1[0],chunk[1])
+        aligned24,off24=align_action_chunk(chunk,24)
+        self.assertEqual(off24,23);self.assertEqual(len(aligned24),1)
+        np.testing.assert_array_equal(aligned24[0],chunk[23])
 
 
 if __name__=='__main__':

@@ -76,3 +76,17 @@ def measure_trace(frames, stages, learned, attached, order, slip_tick):
     return dict(second_slot=slot,second_slot_correct=bool(slot==1-int(order)),
                 withdraw_tick=withdraw,reopen_tick=reopen,withdraw_reopen=bool(withdraw is not None and reopen is not None))
 
+
+def wallclock_lag_ticks(infer_ms, control_dt=CONTROL_DT):
+    """Discrete 30 Hz control ticks elapsed during non-blocking GPU inference."""
+    dt_ms = float(control_dt) * 1000.0
+    return max(1, int(np.ceil(max(0.0, float(infer_ms)) / dt_ms)))
+
+
+def align_action_chunk(actions, lag_ticks):
+    """Drop prefix actions that expired while the planner was computing."""
+    actions = np.asarray(actions, dtype=np.float32)
+    offset = min(max(0, int(lag_ticks)), len(actions) - 1)
+    return actions[offset:], int(offset)
+
+

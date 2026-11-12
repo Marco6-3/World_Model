@@ -34,13 +34,18 @@ class MambaBlock(nn.Module):
         x, gate = self.in_proj(u).chunk(2, dim=-1)
         x = F.silu(self.conv(x.transpose(1, 2))[..., :u.size(1)].transpose(1, 2))
         decay, drive, read = self.select(x).split((self.inner, self.d_state, self.d_state), dim=-1)
-        state = x.new_zeros((len(x), self.inner, self.d_state))
+        delta = F.softplus(decay + self.delta_bias)
         a = -self.A_log.exp()
-        outputs = []
-        for xt, dt, bt, ct in zip(*(v.unbind(1) for v in (x, decay, drive, read)), strict=True):
-            state, y = self._transition(xt, dt, bt, ct, state, a)
-            outputs.append(y)
-        return self.norm(u + self.out_proj(torch.stack(outputs, 1) * F.silu(gate)))
+        p = (delta[..., None] * a).exp()
+        q = (delta * x)[..., None] * drive[..., None, :]
+        step = 1
+        length = u.size(1)
+        while step < length:
+            q = torch.cat((q[:, :step], p[:, step:] * q[:, :-step] + q[:, step:]), dim=1)
+            p = torch.cat((p[:, :step], p[:, step:] * p[:, :-step]), dim=1)
+            step <<= 1
+        y = (q * read[..., None, :]).sum(-1) + self.D * x
+        return self.norm(u + self.out_proj(y * F.silu(gate)))
 
     def start(self, u):
         conv = u.new_zeros((len(u), self.inner, self.d_conv - 1))
